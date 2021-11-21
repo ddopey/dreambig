@@ -583,6 +583,11 @@
 		    list_length = 74;
 		    preamble.style.width = `${super_width * 0.8}px`;
 		    preamble.style.height = `${super_height * 0.3}px`;
+		    if(super_width > super_height) {
+		    	body.style.fontSize = "1.3vw";
+		    } else {
+		    	body.style.fontSize = "1.3vh";
+		    }
 
 		left_question.innerText = left_questions[0];
 		right_question.innerText = right_questions[0];
