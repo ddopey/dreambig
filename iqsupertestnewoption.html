@@ -1,0 +1,689 @@
+<!doctype html>
+<html dir="ltr" lang="ru">
+	<head>
+		<meta charset="uft-8">
+	    <title>Супертест</title>
+		<style>
+
+		 body, html {
+		 	 height: 100%;
+       display: grid;
+       font-size: 1.3vw;
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: sans-serif;
+		 }
+
+		 #test1 {
+		 	display: none;
+		 }
+
+		.vermiddle {
+			vertical-align: middle;
+			margin: 0;
+		}
+
+		.fraction {
+			display: inline;
+			border: 0;
+		}
+
+		.fixedtable .fraction td {
+			border:  0;
+		}
+
+		.fixedtable .fraction td.line {
+			border-bottom: 1px solid black;
+		}
+
+		.fixedtable .fraction td.cellsp {
+			border-bottom: 2px solid black;
+		}
+
+		.low {
+			vertical-align: middle;
+		}
+
+		.fixedtable .low {
+			vertical-align: middle;
+			line-height: 100%;
+		} 
+
+		  .table {
+		  	border: 1px solid black;
+			  border-collapse: collapse;
+			  margin: 10%;
+			  margin-bottom: 2%;
+			  table-layout: fixed;
+		  }
+
+		  .buttontable {
+		  	margin: auto;
+		  	text-align: center;
+		  	margin-bottom: 2%;
+		  }
+
+		  .table tr, .table td {
+		  	border: 1px solid black;
+			  border-collapse: collapse;
+		  }
+
+			.fontsize {
+				font-size: 3vw;
+			}
+
+			.bold {
+				font-weight: bold;
+			}
+
+			.center {
+				text-align: center;
+			}
+
+			.justify {
+				text-align: justify;
+			}
+
+			.preamble {
+				margin:  auto;
+				text-align: center;
+				width: 80%;
+				font-size: 2vw;
+			}
+
+			 .centertext {
+			 text-align: center;
+			}
+
+			.fixedtable {
+				width: 90%;
+			}
+
+			.forbutton {
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+			}
+
+			.fixedtable, .fixedtable td {
+				table-layout: fixed;
+				text-align: center;
+				vertical-align: middle;
+				font-size: 2vw;
+				margin:  auto;
+				border: 1px solid black;
+			  border-collapse: collapse;
+			  border-spacing: 0;
+			}
+
+ 			/*
+			.fixedtable .justify {
+				text-align: justify;
+			}
+			*/
+			
+			.fixedtable #differentrow  {
+				border-left: 0;
+				border-right: 0;
+				border-bottom: 0;
+			}
+		 	
+		</style>
+
+	</head>
+	<body id="body">
+		<!--Here we have the start section of the test -->
+		<div id="preamble" class="preamble">
+			<h2>Тест на определение способностей</h2>
+			<p class="justify">Далее Вам будет предложен тест на определение способностей в разных сферах мыслительной деятельности. Он состоит из 7 разделов. 
+			В большинстве разделов по 10 вопросов. Отвечая на них, старайтесь не смотреть в Интернет и не обращаться за помощью к посторонним - тогда показанный результат будет наиболее объективным.</p>
+			<div id="start"><button class="fontsize">НАЧАТЬ</button></div>
+		</div>
+		 <table id="test1" class="fixedtable">
+		 	<tr><td colspan="5"><h2 id="questionssection">I. Вычисления</h2></td></tr>
+    	<tr><td id="statement" colspan="5" class="justify"></td></tr>
+    	  <tr id="labels">
+	    	 	<td><label for="choice1" id="l1"></label></td>
+	    	 	<td><label for="choice2" id="l2"></label></td>
+	    	 	<td><label for="choice3" id="l3"></label></td>
+	    	 	<td><label for="choice4" id="l4"></label></td>
+	    	 	<td><label for="choice5" id="l5"></label></td>
+    	 </tr>
+    	 <tr id="variants">
+         <td id="td1">
+	    	 <input type="radio" name="questions" id="choice1" value="" class="vermiddle">
+	       </td> 
+	       <td id="td2">
+	 			 <input type="radio" name="questions" id="choice2" value="" class="vermiddle">
+	    	 </td>
+	    	 <td id="td3">
+	    	 <input type="radio" name="questions" id="choice3" value="" class="vermiddle">
+	    	 </td>
+	    	 <td id="td4">
+	    	 <input type="radio" name="questions" id="choice4" value="" class="vermiddle">
+ 				 </td>
+ 				 <td id="td5">
+	    	 <input type="radio" name="questions" id="choice5" value="" class="vermiddle">
+	    	 </td>
+    	 </tr>
+    	 <tr id="differentrow" class="forbutton"><td class="centertext forbutton" id="centertexttd" colspan="5"><button id="forward" class="fontsize">ДАЛЬШЕ</button></td></tr>
+    </table>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="js/iqsupertest.js"></script>
+		<script src="js/iqresults.js"></script>
+    <script>
+
+    window.onload = function () {
+
+    	let start = document.getElementById("start"),
+    	    test = document.getElementById("test1"),
+    	    body = document.getElementById("body"),
+    	    statement = document.getElementById("statement"),
+    	    question_header = document.getElementById("questionssection"),
+    	    forward = document.getElementById('forward'),
+    	    variants = document.getElementById('variants'),
+    	    labels = document.getElementById("labels"),
+    	    td1 = document.getElementById("td1"),
+    	    td2 = document.getElementById("td2"),
+    	    td3 = document.getElementById("td3"),
+    	    td4 = document.getElementById("td4"),
+    	    td5 = document.getElementById("td5"),
+    	    preamble = document.getElementById("preamble");
+    	start.addEventListener("click", start_math);
+
+    	//**************************************math section start************************************************ 
+
+    	function start_math() {
+    		preamble.style.display = "none";
+    		test.style.display = "block";
+    		statement.innerText = math_questions[current_index];
+    		math_variants[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    		});
+    		forward.addEventListener('click', math_q);
+
+    	}
+
+      function math_q() {
+      	let selected = document.querySelector('input[name="questions"]:checked');
+      	math_given_answers.push(selected.value); 
+      	current_index += 1;
+
+      	if(current_index == math_questions.length) {
+      		math_correct_answers.forEach((el, index) => {
+      			if (el == math_given_answers[index]) {
+      				math_rating += 1;
+      				console.log(math_rating);
+      			}
+      		});
+      		console.log(math_given_answers);
+      		forward.removeEventListener('click', math_q);
+      		current_index = 0;
+      		forward.addEventListener('click', words_q);
+      		statement.innerText = words_questions[current_index];
+      		question_header.innerText = "II. Лексика"
+      		words_answers[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    		});
+
+      	}
+
+      	else {
+
+     /* 	let selected = document.querySelector('input[name="questions"]:checked');
+      	math_given_answers.push(selected.value); */
+      	
+
+      	statement.innerHTML = math_questions[current_index];
+    		math_variants[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    		});
+    	 }
+
+      }
+
+      //***************************words section**********************************************
+
+      function words_q() {
+      	let selected = document.querySelector('input[name="questions"]:checked');
+      	words_given_answers.push(selected.value); 
+      	current_index += 1;
+      	
+      	if(current_index == words_questions.length) {
+
+      		words_correct_answers.forEach((el, index) => {
+      			if (el == words_given_answers[index]) {
+      				words_rating += 1;
+      				console.log(words_rating);
+      			}
+      		});
+      		console.log(words_given_answers);
+      		forward.removeEventListener('click', words_q);
+      		current_index = 0;
+      		forward.addEventListener('click', erudition_q);
+      		
+      		statement.innerText = erudition_questions[current_index];
+      		question_header.innerText = "III. Эрудиция"
+      		erudition_answers[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    			});
+
+      	}
+
+      	else {
+      		statement.innerHTML = words_questions[current_index];
+    			words_answers[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    		});
+      	}
+      }
+
+
+      //**************************erudition section********************************************
+
+      function erudition_q () {
+      	let selected = document.querySelector('input[name="questions"]:checked');
+      	erudition_given_answers.push(selected.value); 
+      	current_index += 1;
+
+      	if(current_index == erudition_questions.length) {
+
+      		erudition_correct_answers.forEach((el, index) => {
+      			if (el == erudition_given_answers[index]) {
+      				erudition_rating += 1;
+      				console.log(erudition_rating);
+      			}
+      		});
+      		console.log(erudition_given_answers);
+      		forward.removeEventListener('click', erudition_q);
+      		current_index = 0;
+      		forward.addEventListener('click', verballogic_q);
+      		
+      		statement.innerText = verbal_logic_questions[current_index];
+      		question_header.innerText = "IV. Вербальная логика"
+      		verbal_logic_answers[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    			});
+
+      	}
+
+      	else {
+      		statement.innerHTML = erudition_questions[current_index];
+    			erudition_answers[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    		});
+      	}
+      }
+
+      //****************************verbal logic section***************************************
+
+      function verballogic_q() {
+      	let selected = document.querySelector('input[name="questions"]:checked');
+      	verbal_logic_given_answers.push(selected.value); 
+      	current_index += 1;
+
+      	if(current_index == verbal_logic_questions.length) {
+
+      		verbal_logic_correct_answers.forEach((el, index) => {
+      			if (el == verbal_logic_given_answers[index]) {
+      				verbal_logic_rating += 1;
+      				console.log(verbal_logic_rating);
+      			}
+      		});
+      		console.log(verbal_logic_given_answers);
+      		forward.removeEventListener('click', verballogic_q);
+      		current_index = 0;
+      		forward.addEventListener('click', information_processing_q);
+      		
+      		statement.innerText = information_processing_questions[current_index];
+      		question_header.innerText = "V. Внимание"
+      		information_processing_answers[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    			});
+
+      	}
+
+      	else {
+      		statement.innerHTML = verbal_logic_questions[current_index];
+    			verbal_logic_answers[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    		});
+      	}
+      }
+
+      //****************************infromation processing section****************************
+
+      function information_processing_q() {
+      	let super_width = window.innerWidth,
+	    	    super_height = window.innerHeight,
+            row, cell;
+      	let selected = document.querySelector('input[name="questions"]:checked');
+      	information_processing_given_answers.push(selected.value); 
+      	current_index += 1;
+
+      	if(current_index == information_processing_questions.length) {
+
+      		information_processing_correct_answers.forEach((el, index) => {
+      			if (el == information_processing_given_answers[index]) {
+      				information_processing_rating += 1;
+      				console.log(information_processing_rating);
+      			}
+      		});
+      		console.log(information_processing_given_answers);
+      		forward.removeEventListener('click', information_processing_q);
+      		current_index = 0;
+      		forward.addEventListener('click', spatial_intelligence_q);
+      		
+      		statement.innerText = spatial_intelligence_questions[current_index];
+      		question_header.innerText = "VI. Пространственное мышление"
+      		spatial_intelligence_answers[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    			});
+    			row = test.insertRow(2);
+	      	cell = row.insertCell(0);
+	      	cell.innerHTML = `<img src="img/test/spatial_intelligence/q5.jpg" id="questionone">`;
+	      	cell.setAttribute("colspan", 5);
+	      	cell.setAttribute("id", "cell");
+	      	document.getElementById("questionone").style.height = `${super_height / 3.5}px`;
+	      	document.getElementById("questionone").style.width = `${super_height / 3.5 * 1.05}px`;
+
+      	}
+
+      	else {
+      	  statement.innerHTML = information_processing_questions[current_index];
+    			information_processing_answers[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    		});
+
+      	 if(current_index == 3) {
+      	 	row = test.insertRow(2);
+      	 	cell = row.insertCell(0);
+      	 	cell.innerHTML = `<img src="img/test/q81.jpg" id="q4">`;
+      	 	cell.setAttribute("colspan", 5);
+      	 	cell.setAttribute("id", "cell");
+      	 	document.getElementById("q4").style.height = `${super_height / 3.5}px`;
+      	 	document.getElementById("q4").style.width= `${super_height / 3.5 * 1.5}px`;
+      	}
+      	 if ((current_index == 4) || (current_index == 5)) {
+      		document.getElementById('cell').innerHTML = `<img src="img/test/flat.jpg" id="q5">`;
+      		document.getElementById("q5").style.height = `${super_height / 3.5}px`;
+      	 	document.getElementById("q5").style.width= `${super_height / 3.5 * 1.8}px`;
+      	}
+      	if((current_index == 6) || (current_index == 7)) {
+      		document.getElementById('cell').innerHTML = `<img src="img/test/tourism.jpg" id="q6">`;
+      		document.getElementById("q6").style.height = `${super_height / 3}px`;
+      	 	document.getElementById("q6").style.width = `${super_height / 3 * 0.88}px`;
+      	}
+      	if(current_index == 8) {
+      		test.deleteRow(2);
+      	}
+
+      	}
+      }
+
+      //***************************spatial intelligence****************************************
+
+      /*
+    	  variants.deleteCell(4);
+    		labels.deleteCell(4);
+    		td1.style.width = td2.style.width = td3.style.width = td4.style.width = `${super_width * 0.9 / 4}px`;
+	      test.style.width = `${td1 + td2 + td3 + td4}px`;
+	    */
+
+      
+      function spatial_intelligence_q() {
+      	let super_width = window.innerWidth,
+	    	    super_height = window.innerHeight,
+            row, cell, newrow, newcell, cell1;
+      	let selected = document.querySelector('input[name="questions"]:checked');
+      	spatial_intelligence_given_answers.push(selected.value); 
+      	current_index += 1;
+
+	      if(current_index == spatial_intelligence_questions.length) {
+
+	      	spatial_intelligence_correct_answers.forEach((el, index) => {
+      			if (el == spatial_intelligence_given_answers[index]) {
+      				spatial_intelligence_rating += 1;
+      				console.log(spatial_intelligence_rating);
+      			}
+      		});
+      		console.log(spatial_intelligence_given_answers);
+      		forward.removeEventListener('click', spatial_intelligence_q);
+      		current_index = 0;
+      		forward.addEventListener('click', nonverbal_logic_q);
+
+      		//here we return the fifth td in the table;
+
+      		cell = variants.insertCell(4);
+    			cell1 = labels.insertCell(4);
+    			cell.setAttribute("id", "td5");
+    			cell1.setAttribute("id", "label5");
+    			td5 = document.getElementById("td5");
+      		td1.style.width = td2.style.width = td3.style.width = td4.style.width = td5.style.width = `${super_width * 0.9 / 5}px`;
+		    	test.style.width = `${td1 + td2 + td3 + td4 + td5}px`;
+		    	td5.innerHTML = `<input type="radio" name="questions" id="choice5" value="" class="vermiddle">`;
+		    	cell1.innerHTML = `<label for="choice5" id="l5"></label>`;
+
+		    	//**************************************************************************************************************************
+
+		    	newrow = test.insertRow(2);
+	      	newcell = newrow.insertCell(0);
+	      	newcell.setAttribute("id", "newcell");
+	      	newcell.setAttribute("colspan", 5);
+	      	newrow.setAttribute("id", "newrow");
+
+	      	document.getElementById("cell").innerHTML = `<img src="img/test/logic/q1/a1.png" id="lq1">`;
+	      	document.getElementById("lq1").style.height = `${super_height / 5}px`;
+	      	document.getElementById("lq1").style.width = `${super_height / 5 * 4.26}px`;
+
+	      	document.getElementById("newcell").innerHTML = `<img src="img/test/logic/q1/q1.png" id="la1">`;
+	      	document.getElementById("la1").style.height = `${super_height / 5}px`;
+	      	document.getElementById("la1").style.width = `${super_height / 5 * 4.26}px`;
+      		
+      		statement.innerText = nonverbal_logic_question;
+      		question_header.innerText = "VII. Невербальная логика"
+      		nonverbal_logic_answers.forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    			});
+
+	      }
+	      else {
+	      	statement.innerHTML = spatial_intelligence_questions[current_index];
+    			spatial_intelligence_answers[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    		});
+
+    			if(current_index == 1) {
+	      	 	document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q6.jpg" id="questiontwo">`;
+	      	 	document.getElementById("questiontwo").style.height = `${super_height / 3.5}px`;
+	      	 	document.getElementById("questiontwo").style.width = `${super_height / 3.5 * 2.37}px`;
+	      	 	
+    			}
+    			if(current_index == 2) {
+	      	 	document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q8.jpg" id="questionthree">`;
+	      	 	document.getElementById("questionthree").style.height = `${super_height / 3.5}px`;
+	      	 	document.getElementById("questionthree").style.width = `${super_height / 3.5 * 0.97}px`;
+	      	 	
+    			}
+    			if(current_index == 3) {
+    				variants.deleteCell(4);
+    		    labels.deleteCell(4);
+    		    td1.style.width = td2.style.width = td3.style.width = td4.style.width = `${super_width * 0.9 / 4}px`;
+	          test.style.width = `${td1 + td2 + td3 + td4}px`;
+
+	          document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q1.jpg" id="questionfour">`;
+	      	 	document.getElementById("questionfour").style.height = `${super_height / 3.5}px`;
+	      	 	document.getElementById("questionfour").style.width = `${super_height / 3.5 * 2.5}px`;
+    			}
+
+    			if(current_index == 4) {
+	          document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q2.png" id="questionfive">`;
+	      	 	document.getElementById("questionfive").style.height = `${super_height / 3.5}px`;
+	      	 	document.getElementById("questionfive").style.width = `${super_height / 3.5 * 2.08}px`;
+    			}
+
+    			if(current_index == 5) {
+    				document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q3.png" id="questionsix">`;
+	      	 	document.getElementById("questionsix").style.height = `${super_height / 3.5}px`;
+	      	 	document.getElementById("questionsix").style.width = `${super_height / 3.5 * 2.6}px`;
+    			}
+
+    			if(current_index == 6) {
+    				document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q4.png" id="questionseven">`;
+	      	 	document.getElementById("questionseven").style.height = `${super_height / 3.5}px`;
+	      	 	document.getElementById("questionseven").style.width = `${super_height / 3.5 * 3.35}px`;
+    			}
+
+    			if(current_index == 7) {
+    				document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q7.jpg" id="questioneight">`;
+	      	 	document.getElementById("questioneight").style.height = `${super_height / 3.5}px`;
+	      	 	document.getElementById("questioneight").style.width = `${super_height / 3.5 * 1.5}px`;
+    			}
+	      }
+
+
+      }
+
+
+      //***************************nonverbal logic********************************************
+      
+      function nonverbal_logic_q() {
+    		let super_width = window.innerWidth,
+    	    super_height = window.innerHeight;
+      	let selected = document.querySelector('input[name="questions"]:checked');
+      	nonverbal_logic_given_answers.push(selected.value); 
+      	current_index += 1;
+
+      	if(current_index == 10) {
+      		nonverbal_logic_correct_answers.forEach((el, index) => {
+      			if (el == nonverbal_logic_given_answers[index]) {
+      				nonverbal_logic_rating += 1;
+      				console.log(nonverbal_logic_rating);
+      			}
+      		});
+      		forward.removeEventListener('click', nonverbal_logic_q);
+      		shape_final_table();
+      	}
+
+      	else {
+      		document.getElementById("cell").innerHTML = `<img src="img/test/logic/q${current_index + 1}/a${current_index + 1}.png" id="lq${current_index + 1}">`;
+      		document.getElementById(`lq${current_index + 1}`).style.height = `${super_height / 5}px`;
+	      	document.getElementById(`lq${current_index + 1}`).style.width = `${super_height / 5 * 4.26}px`;
+      		
+      		document.getElementById("newcell").innerHTML = `<img src="img/test/logic/q${current_index + 1}/q${current_index + 1}.png" id="la${current_index + 1}">`;
+      		document.getElementById(`la${current_index + 1}`).style.height = `${super_height / 5}px`;
+	      	document.getElementById(`la${current_index + 1}`).style.width = `${super_height / 5 * 4.26}px`;
+      	} 
+      }
+
+      //***************************here we shape the results***********************************
+
+      function shape_final_table() {
+      	const general_rating = [math_rating, words_rating, erudition_rating, verbal_logic_rating,  information_processing_rating, spatial_intelligence_rating, nonverbal_logic_rating];
+      	test.style.display = "none";
+      	body.style.display = "block";
+		  let head = "<table class='table' id='finaltable'>";
+		  let heading = "<tr class='center'><td colspan='2' class='center'><h2>Результаты теста</h2></td></tr>";
+		  let middle = "";
+		  let bottom = "</table>";
+		  let btn = "<table class='buttontable'><tr class='center'><td class='center'><button id='printres' class='fontsize'>СОХРАНИТЬ</button></td></tr></table>";
+		  let temp = 10;
+
+		  const res_matrix_all = {
+		  	1:0,
+		  	2:0,
+		  	3:1,
+		  	4:1,
+		  	5:2,
+		  	6:2,
+		  	7:3,
+		  	8:3,
+		  	9:4,
+		  	10:4
+		  };
+      
+      sectionheadings.forEach((elem, index) => {
+      	if(index == 5) {temp = 8}
+      	middle += `<tr class='center'><td colspan='2' class='center'><h3>${elem}</h3></td></tr>`;
+      	middle += `<tr><td class='bold'>Процент набранных баллов за раздел:</td><td class='center bold'>${general_rating[index] / temp * 100} %</td>`;
+      	middle += `<tr><td colspan='2'>${general_results[index][res_matrix_all[general_rating[index]]]}</td></tr>`;
+      });
+
+      body.innerHTML = head + heading + middle + bottom + btn;
+      let result_button = document.getElementById("printres");
+      result_button.addEventListener("click", function(){
+      	let pdf_content = document.getElementById("finaltable");
+      	let options = {
+		      margin:       0.5,
+		      filename:     'results.pdf',
+		      image:        { type: 'jpeg', quality: 0.98 },
+		      html2canvas:  { scale: 1 },
+		      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+		    };
+		    html2pdf(pdf_content, options);
+      });
+
+      }
+
+      //***************************resize section**********************************************
+    	
+    	function resize_window() {
+    		console.log('resize called');
+  		  let super_width = window.innerWidth,
+	    	    super_height = window.innerHeight;
+		    if(super_width > super_height) {
+		    	body.style.fontSize = "1.3vw";
+		    } else {
+		    	body.style.fontSize = "1.3vh";
+		    } 
+    		td1.style.width = td2.style.width = td3.style.width = td4.style.width = td5.style.width = `${super_width * 0.9 / 5}px`;
+		    test.style.width = `${td1 + td2 + td3 + td4 + td5}px`;
+		    /*
+		    if(body.getElementsByTagName("img")) {
+		    	let images = Array.from(body.getElementsByTagName("img"));
+		    	images.forEach(el => {
+		    		let ratio = el.width/el.height;
+		    		if(el.width > super_width) {
+		    			if(ratio > 1) {
+		    				el.style.width = `${super_width * 0.9}px`;
+		    				el.style.height = `${el.style.width/ratio}px`;
+		    			}
+		    			else {
+		    				el.style.width = `${super_width * 0.9}px`;
+		    				el.style.height = `${el.style.width * ratio}px`;
+		    			}
+		    			
+		    		}
+		    		if(el.height > super_height) {
+		    			if(ratio > 1) {
+		    				el.style.height = `${super_height * 0.9}px`;
+		    				el.style.width = `${el.style.width * ratio}px`;
+		    			}
+		    			else {
+		    				el.style.height = `${super_height * 0.9}px`;
+		    				el.style.width = `${el.style.width / ratio}px`;
+		    			}
+		    		}
+		    	});
+		    }
+		    */
+			}
+				resize_window();
+				window.addEventListener("resize", resize_window);
+			}
+    </script>
+	</body>
+</html>

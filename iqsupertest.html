@@ -1,0 +1,307 @@
+<!doctype html>
+<html dir="ltr" lang="ru">
+	<head>
+		<meta charset="uft-8">
+	    <title>Супертест</title>
+		<style>
+
+		 body, html {
+		 	 height: 100%;
+       display: grid;
+       font-size: 1.3vw;
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: sans-serif;
+		 }
+
+
+		 #test1 {
+		 	display: none;
+		 }
+
+		.vermiddle {
+			vertical-align: middle;
+			margin: 0;
+		}
+
+		.fraction {
+			display: inline;
+			border: 0;
+		}
+
+		.fixedtable .fraction td {
+			border:  0;
+		}
+
+		.fixedtable .fraction td.line {
+			border-bottom: 1px solid black;
+		}
+
+		.fixedtable .fraction td.cellsp {
+			border-bottom: 2px solid black;
+		}
+
+		.low {
+			vertical-align: middle;
+		}
+
+		.fixedtable .low {
+			vertical-align: middle;
+			line-height: 100%;
+		} 
+
+		  .table {
+		  	border: 1px solid black;
+			  border-collapse: collapse;
+			  margin: 10%;
+			  margin-bottom: 2%;
+			  table-layout: fixed;
+		  }
+
+		  .buttontable {
+		  	margin: auto;
+		  	text-align: center;
+		  	margin-bottom: 2%;
+		  }
+
+		  .table tr, .table td {
+		  	border: 1px solid black;
+			  border-collapse: collapse;
+		  }
+
+			.fontsize {
+				font-size: 3vw;
+			}
+
+			.bold {
+				font-weight: bold;
+			}
+
+			.center {
+				text-align: center;
+			}
+
+			.justify {
+				text-align: justify;
+			}
+
+			.preamble {
+				margin:  auto;
+				text-align: center;
+				width: 80%;
+				font-size: 2vw;
+			}
+
+			 .centertext {
+			 text-align: center;
+			}
+
+			.fixedtable {
+				width: 90%;
+			}
+
+			.forbutton {
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+			}
+
+			.fixedtable, .fixedtable td {
+				table-layout: fixed;
+				text-align: center;
+				vertical-align: middle;
+				font-size: 2vw;
+				margin:  auto;
+				border: 1px solid black;
+			  border-collapse: collapse;
+			  border-spacing: 0;
+			}
+
+ 			/*
+			.fixedtable .justify {
+				text-align: justify;
+			}
+			*/
+			
+			.fixedtable #differentrow  {
+				border-left: 0;
+				border-right: 0;
+				border-bottom: 0;
+			}
+		 	
+		</style>
+
+	</head>
+	<body id="body">
+		<!--Here we have the start section of the test -->
+		<div id="preamble" class="preamble">
+			<h2>Тест на определение способностей</h2>
+			<p class="justify">Далее Вам будет предложен тест на определение способностей в разных сферах мыслительной деятельности. Он состоит из 7 разделов. 
+			В каждом разделе по 10 вопросов. Отвечая на них, старайтесь не смотреть в Интернет и не обращаться за помощью к посторонним - тогда показанный результат будет наиболее объективным.</p>
+			<div id="start"><button class="fontsize">НАЧАТЬ</button></div>
+		</div>
+		 <table id="test1" class="fixedtable">
+		 	<tr><td colspan="5"><h2 id="questionssection">I. Вычисления</h2></td></tr>
+    	<tr><td id="statement" colspan="5" class="justify"></td></tr>
+    	 <tr id="variants">
+         <td id="td1">
+	    	 <input type="radio" name="questions" id="choice1" value="" class="vermiddle">
+	    	 <label for="choice1" id="l1"></label>
+	       </td> 
+	       <td id="td2">
+	 			 <input type="radio" name="questions" id="choice2" value="" class="vermiddle">
+	    	 <label for="choice2" id="l2"></label>
+	    	 </td>
+	    	 <td id="td3">
+	    	 <input type="radio" name="questions" id="choice3" value="" class="vermiddle">
+	    	 <label for="choice3" id="l3"></label>
+	    	 </td>
+	    	 <td id="td4">
+	    	 <input type="radio" name="questions" id="choice4" value="" class="vermiddle">
+	    	 <label for="choice4" id="l4"></label>
+ 				 </td>
+ 				 <td id="td5">
+	    	 <input type="radio" name="questions" id="choice5" value="" class="vermiddle">
+	    	 <label for="choice5" id="l5"></label>
+	    	 </td>
+    	 </tr>
+    	 <tr id="differentrow" class="forbutton"><td class="centertext forbutton" id="centertexttd" colspan="5"><button id="forward" class="fontsize">ДАЛЬШЕ</button></td></tr>
+    </table>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="js/iqsupertest.js"></script>
+    <script>
+
+    body.onload = function () {
+
+    	let start = document.getElementById("start"),
+    	    test = document.getElementById("test1"),
+    	    body = document.getElementById("body"),
+    	    statement = document.getElementById("statement"),
+    	    question_header = document.getElementById("questionssection"),
+    	    forward = document.getElementById('forward'),
+    	    td1 = document.getElementById("td1"),
+    	    td2 = document.getElementById("td2"),
+    	    td3 = document.getElementById("td3"),
+    	    td4 = document.getElementById("td4"),
+    	    td5 = document.getElementById("td5"),
+    	    preamble = document.getElementById("preamble");
+    	start.addEventListener("click", start_math);
+
+    	//**************************************math section start************************************************ 
+
+    	function start_math() {
+    		preamble.style.display = "none";
+    		test.style.display = "block";
+    		statement.innerText = math_questions[current_index];
+    		math_variants[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    		});
+    		forward.addEventListener('click', math_q);
+
+    	}
+
+      function math_q() {
+      	let selected = document.querySelector('input[name="questions"]:checked');
+      	math_given_answers.push(selected.value); 
+      	current_index += 1;
+
+      	if(current_index == math_questions.length) {
+      		math_correct_answers.forEach((el, index) => {
+      			if (el == math_given_answers[index]) {
+      				math_rating += 1;
+      				console.log(math_rating);
+      			}
+      		});
+      		console.log(math_given_answers);
+      		forward.removeEventListener('click', math_q);
+      		current_index = 0;
+      		forward.addEventListener('click', words_q);
+      		statement.innerText = words_questions[current_index];
+      		question_header.innerText = "II. Лексика"
+      		words_answers[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    		});
+
+      	}
+
+      	else {
+
+     /* 	let selected = document.querySelector('input[name="questions"]:checked');
+      	math_given_answers.push(selected.value); */
+      	
+
+      	statement.innerHTML = math_questions[current_index];
+    		math_variants[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    		});
+    	 }
+
+      }
+
+      //***************************words section**********************************************
+
+      function words_q() {
+      	let selected = document.querySelector('input[name="questions"]:checked');
+      	words_given_answers.push(selected.value); 
+      	current_index += 1;
+      	
+      	if(current_index == words_questions.length) {
+
+      		words_correct_answers.forEach((el, index) => {
+      			if (el == words_given_answers[index]) {
+      				words_rating += 1;
+      				console.log(words_rating);
+      			}
+      		});
+      		console.log(words_given_answers);
+      		forward.removeEventListener('click', words_q);
+      		current_index = 0;
+      		forward.addEventListener('click', erudition_q);
+      		
+      		statement.innerText = erudition_questions[current_index];
+      		question_header.innerText = "III. Эрудиция"
+      		erudition_answers[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    			});
+
+      	}
+
+      	else {
+      		statement.innerHTML = words_questions[current_index];
+    			words_answers[current_index].forEach((elem, index) => {
+    			document.getElementById(`choice${index + 1}`).value = elem;
+    			document.getElementById(`l${index + 1}`).innerText = elem;
+    		});
+      	}
+      }
+
+
+      //**************************erudition section********************************************
+
+      function erudition_q () {
+
+      }
+
+      //***************************resize section**********************************************
+    	
+    	function resize_window() {
+  		  let super_width = window.innerWidth,
+	    	    super_height = window.innerHeight;
+		    if(super_width > super_height) {
+		    	body.style.fontSize = "1.3vw";
+		    } else {
+		    	body.style.fontSize = "1.3vh";
+		    } 
+    		td1.style.width = td2.style.width = td3.style.width = td4.style.width = td5.style.width = `${super_width * 0.9 / 5}px`;
+		    test.style.width = `${td1 + td2 + td3 + td4 + td5}px`;
+			}
+				resize_window();
+				window.addEventListener("resize", resize_window);
+			}
+    </script>
+	</body>
+</html>
