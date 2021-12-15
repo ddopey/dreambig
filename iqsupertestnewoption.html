@@ -41,6 +41,14 @@
 			border-bottom: 2px solid black;
 		}
 
+		.imageresize {
+			/*display: block;
+			width: 100%;
+			height: auto;*/
+			max-width: 60%;
+			max-height: 30%;
+		}
+
 		.low {
 			vertical-align: middle;
 		}
@@ -391,11 +399,11 @@
     			});
     			row = test.insertRow(2);
 	      	cell = row.insertCell(0);
-	      	cell.innerHTML = `<img src="img/test/spatial_intelligence/q5.jpg" id="questionone">`;
+	      	cell.innerHTML = `<img src="img/test/spatial_intelligence/q5.jpg" id="questionone" class='imageresize'>`;
 	      	cell.setAttribute("colspan", 5);
 	      	cell.setAttribute("id", "cell");
-	      	document.getElementById("questionone").style.height = `${super_height / 3.5}px`;
-	      	document.getElementById("questionone").style.width = `${super_height / 3.5 * 1.05}px`;
+	      	//document.getElementById("questionone").style.height = `${super_height / 3.5}px`;
+	      	//document.getElementById("questionone").style.width = `${super_height / 3.5 * 1.05}px`;
 
       	}
 
@@ -409,21 +417,21 @@
       	 if(current_index == 3) {
       	 	row = test.insertRow(2);
       	 	cell = row.insertCell(0);
-      	 	cell.innerHTML = `<img src="img/test/q81.jpg" id="q4">`;
+      	 	cell.innerHTML = `<img src="img/test/q81.jpg" id="q4" class='imageresize'>`;
       	 	cell.setAttribute("colspan", 5);
       	 	cell.setAttribute("id", "cell");
-      	 	document.getElementById("q4").style.height = `${super_height / 3.5}px`;
-      	 	document.getElementById("q4").style.width= `${super_height / 3.5 * 1.5}px`;
+      	 	//document.getElementById("q4").style.height = `${super_height / 3.5}px`;
+      	 	//document.getElementById("q4").style.width= `${super_height / 3.5 * 1.5}px`;
       	}
       	 if ((current_index == 4) || (current_index == 5)) {
-      		document.getElementById('cell').innerHTML = `<img src="img/test/flat.jpg" id="q5">`;
-      		document.getElementById("q5").style.height = `${super_height / 3.5}px`;
-      	 	document.getElementById("q5").style.width= `${super_height / 3.5 * 1.8}px`;
+      		document.getElementById('cell').innerHTML = `<img src="img/test/flat.jpg" id="q5" class='imageresize'>`;
+      		//document.getElementById("q5").style.height = `${super_height / 3.5}px`;
+      	 	//document.getElementById("q5").style.width= `${super_height / 3.5 * 1.8}px`;
       	}
       	if((current_index == 6) || (current_index == 7)) {
-      		document.getElementById('cell').innerHTML = `<img src="img/test/tourism.jpg" id="q6">`;
-      		document.getElementById("q6").style.height = `${super_height / 3}px`;
-      	 	document.getElementById("q6").style.width = `${super_height / 3 * 0.88}px`;
+      		document.getElementById('cell').innerHTML = `<img src="img/test/tourism.jpg" id="q6" class='imageresize'>`;
+      		//document.getElementById("q6").style.height = `${super_height / 3}px`;
+      	 	//document.getElementById("q6").style.width = `${super_height / 3 * 0.88}px`;
       	}
       	if(current_index == 8) {
       		test.deleteRow(2);
@@ -472,7 +480,7 @@
     			td5 = document.getElementById("td5");
       		td1.style.width = td2.style.width = td3.style.width = td4.style.width = td5.style.width = `${super_width * 0.9 / 5}px`;
 		    	test.style.width = `${td1 + td2 + td3 + td4 + td5}px`;
-		    	td5.innerHTML = `<input type="radio" name="questions" id="choice5" value="" class="vermiddle">`;
+		    	td5.innerHTML = `<input type="radio" name="questions" id="choice5" value="" class="vermiddle" class='imageresize'>`;
 		    	cell1.innerHTML = `<label for="choice5" id="l5"></label>`;
 
 		    	//**************************************************************************************************************************
@@ -483,13 +491,13 @@
 	      	newcell.setAttribute("colspan", 5);
 	      	newrow.setAttribute("id", "newrow");
 
-	      	document.getElementById("cell").innerHTML = `<img src="img/test/logic/q1/a1.png" id="lq1">`;
-	      	document.getElementById("lq1").style.height = `${super_height / 5}px`;
-	      	document.getElementById("lq1").style.width = `${super_height / 5 * 4.26}px`;
+	      	document.getElementById("cell").innerHTML = `<img src="img/test/logic/q1/a1.png" id="lq1" class='imageresize'>`;
+	      	//document.getElementById("lq1").style.height = `${super_height / 5}px`;
+	      	//document.getElementById("lq1").style.width = `${super_height / 5 * 4.26}px`;
 
-	      	document.getElementById("newcell").innerHTML = `<img src="img/test/logic/q1/q1.png" id="la1">`;
-	      	document.getElementById("la1").style.height = `${super_height / 5}px`;
-	      	document.getElementById("la1").style.width = `${super_height / 5 * 4.26}px`;
+	      	document.getElementById("newcell").innerHTML = `<img src="img/test/logic/q1/q1.png" id="la1" class='imageresize'>`;
+	      	//document.getElementById("la1").style.height = `${super_height / 5}px`;
+	      	//document.getElementById("la1").style.width = `${super_height / 5 * 4.26}px`;
       		
       		statement.innerText = nonverbal_logic_question;
       		question_header.innerText = "VII. Невербальная логика"
@@ -507,15 +515,15 @@
     		});
 
     			if(current_index == 1) {
-	      	 	document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q6.jpg" id="questiontwo">`;
-	      	 	document.getElementById("questiontwo").style.height = `${super_height / 3.5}px`;
-	      	 	document.getElementById("questiontwo").style.width = `${super_height / 3.5 * 2.37}px`;
+	      	 	document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q6.jpg" id="questiontwo" class='imageresize'>`;
+	      	 	//document.getElementById("questiontwo").style.height = `${super_height / 3.5}px`;
+	      	 	//document.getElementById("questiontwo").style.width = `${super_height / 3.5 * 2.37}px`;
 	      	 	
     			}
     			if(current_index == 2) {
-	      	 	document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q8.jpg" id="questionthree">`;
-	      	 	document.getElementById("questionthree").style.height = `${super_height / 3.5}px`;
-	      	 	document.getElementById("questionthree").style.width = `${super_height / 3.5 * 0.97}px`;
+	      	 	document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q8.jpg" id="questionthree" class='imageresize'>`;
+	      	 	//document.getElementById("questionthree").style.height = `${super_height / 3.5}px`;
+	      	 	//document.getElementById("questionthree").style.width = `${super_height / 3.5 * 0.97}px`;
 	      	 	
     			}
     			if(current_index == 3) {
@@ -524,33 +532,33 @@
     		    td1.style.width = td2.style.width = td3.style.width = td4.style.width = `${super_width * 0.9 / 4}px`;
 	          test.style.width = `${td1 + td2 + td3 + td4}px`;
 
-	          document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q1.jpg" id="questionfour">`;
-	      	 	document.getElementById("questionfour").style.height = `${super_height / 3.5}px`;
-	      	 	document.getElementById("questionfour").style.width = `${super_height / 3.5 * 2.5}px`;
+	          document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q1.jpg" id="questionfour" class='imageresize'>`;
+	      	 	//document.getElementById("questionfour").style.height = `${super_height / 3.5}px`;
+	      	 	//document.getElementById("questionfour").style.width = `${super_height / 3.5 * 2.5}px`;
     			}
 
     			if(current_index == 4) {
-	          document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q2.png" id="questionfive">`;
-	      	 	document.getElementById("questionfive").style.height = `${super_height / 3.5}px`;
-	      	 	document.getElementById("questionfive").style.width = `${super_height / 3.5 * 2.08}px`;
+	          document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q2.png" id="questionfive" class='imageresize'>`;
+	      	 	//document.getElementById("questionfive").style.height = `${super_height / 3.5}px`;
+	      	 	//document.getElementById("questionfive").style.width = `${super_height / 3.5 * 2.08}px`;
     			}
 
     			if(current_index == 5) {
-    				document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q3.png" id="questionsix">`;
-	      	 	document.getElementById("questionsix").style.height = `${super_height / 3.5}px`;
-	      	 	document.getElementById("questionsix").style.width = `${super_height / 3.5 * 2.6}px`;
+    				document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q3.png" id="questionsix" class='imageresize'>`;
+	      	 	//document.getElementById("questionsix").style.height = `${super_height / 3.5}px`;
+	      	 	//document.getElementById("questionsix").style.width = `${super_height / 3.5 * 2.6}px`;
     			}
 
     			if(current_index == 6) {
-    				document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q4.png" id="questionseven">`;
-	      	 	document.getElementById("questionseven").style.height = `${super_height / 3.5}px`;
-	      	 	document.getElementById("questionseven").style.width = `${super_height / 3.5 * 3.35}px`;
+    				document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q4.png" id="questionseven" class='imageresize'>`;
+	      	 	//document.getElementById("questionseven").style.height = `${super_height / 3.5}px`;
+	      	 	//document.getElementById("questionseven").style.width = `${super_height / 3.5 * 3.35}px`;
     			}
 
     			if(current_index == 7) {
-    				document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q7.jpg" id="questioneight">`;
-	      	 	document.getElementById("questioneight").style.height = `${super_height / 3.5}px`;
-	      	 	document.getElementById("questioneight").style.width = `${super_height / 3.5 * 1.5}px`;
+    				document.getElementById("cell").innerHTML = `<img src="img/test/spatial_intelligence/q7.jpg" id="questioneight" class='imageresize'>`;
+	      	 	//document.getElementById("questioneight").style.height = `${super_height / 3.5}px`;
+	      	 	//document.getElementById("questioneight").style.width = `${super_height / 3.5 * 1.5}px`;
     			}
 	      }
 
@@ -579,13 +587,13 @@
       	}
 
       	else {
-      		document.getElementById("cell").innerHTML = `<img src="img/test/logic/q${current_index + 1}/a${current_index + 1}.png" id="lq${current_index + 1}">`;
-      		document.getElementById(`lq${current_index + 1}`).style.height = `${super_height / 5}px`;
-	      	document.getElementById(`lq${current_index + 1}`).style.width = `${super_height / 5 * 4.26}px`;
+      		document.getElementById("cell").innerHTML = `<img src="img/test/logic/q${current_index + 1}/a${current_index + 1}.png" id="lq${current_index + 1}" class='imageresize'>`;
+      		//document.getElementById(`lq${current_index + 1}`).style.height = `${super_height / 5}px`;
+	      	//document.getElementById(`lq${current_index + 1}`).style.width = `${super_height / 5 * 4.26}px`;
       		
-      		document.getElementById("newcell").innerHTML = `<img src="img/test/logic/q${current_index + 1}/q${current_index + 1}.png" id="la${current_index + 1}">`;
-      		document.getElementById(`la${current_index + 1}`).style.height = `${super_height / 5}px`;
-	      	document.getElementById(`la${current_index + 1}`).style.width = `${super_height / 5 * 4.26}px`;
+      		document.getElementById("newcell").innerHTML = `<img src="img/test/logic/q${current_index + 1}/q${current_index + 1}.png" id="la${current_index + 1}" class='imageresize' class='imageresize'>`;
+      		//document.getElementById(`la${current_index + 1}`).style.height = `${super_height / 5}px`;
+	      	//document.getElementById(`la${current_index + 1}`).style.width = `${super_height / 5 * 4.26}px`;
       	} 
       }
 
@@ -651,35 +659,6 @@
 		    } 
     		td1.style.width = td2.style.width = td3.style.width = td4.style.width = td5.style.width = `${super_width * 0.9 / 5}px`;
 		    test.style.width = `${td1 + td2 + td3 + td4 + td5}px`;
-		    /*
-		    if(body.getElementsByTagName("img")) {
-		    	let images = Array.from(body.getElementsByTagName("img"));
-		    	images.forEach(el => {
-		    		let ratio = el.width/el.height;
-		    		if(el.width > super_width) {
-		    			if(ratio > 1) {
-		    				el.style.width = `${super_width * 0.9}px`;
-		    				el.style.height = `${el.style.width/ratio}px`;
-		    			}
-		    			else {
-		    				el.style.width = `${super_width * 0.9}px`;
-		    				el.style.height = `${el.style.width * ratio}px`;
-		    			}
-		    			
-		    		}
-		    		if(el.height > super_height) {
-		    			if(ratio > 1) {
-		    				el.style.height = `${super_height * 0.9}px`;
-		    				el.style.width = `${el.style.width * ratio}px`;
-		    			}
-		    			else {
-		    				el.style.height = `${super_height * 0.9}px`;
-		    				el.style.width = `${el.style.width / ratio}px`;
-		    			}
-		    		}
-		    	});
-		    }
-		    */
 			}
 				resize_window();
 				window.addEventListener("resize", resize_window);
