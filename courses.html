@@ -443,18 +443,6 @@
           return t;
         }
 
-        /*
-        window.addEventListener("DOMContentLoaded", function() {
-          let knockout_section = document.getElementById("knockoutsection");
-          let test2_container = document.getElementById("test2");
-          knockout_section.style.display = 'none';
-          knockout_section.classList.remove("d-flex");
-
-          test2_container.classList.remove("d-flex");
-          test2_container.style.display = 'none';
-        });
-        */
-
         window.onload = function() {
 
           function resize_screen() {
@@ -767,25 +755,6 @@
             knockout_section.innerHTML = table;
           }
 
-          /*
-          function shape_final_table() {
-            let perc = (100/(final_profs_array.length-1)).toFixed(2);
-          let head = `<div class="col-lg-5 single-trainer" id="resultstest4"><div class="thumb d-flex justify-content-sm-center"><table style="border: 1px solid black; border-collapse: collapse">`;
-          let middle = `<tr style="border: 1px solid black; border-collapse: collapse"><td>ПРОФЕССИЯ</td><td style="border: 1px solid black; border-collapse: collapse">СОВПАДЕНИЕ</td></tr>`;
-          let bottom = `</table></div></div>`;
-          for (let key in final_scores_object) {
-            let temp_value = final_scores_object[key] * perc;
-            if(temp_value >= 50) {
-              middle += `<tr style="border: 1px solid black; border-collapse: collapse"><td>${key.toUpperCase()}</td><td style="border: 1px solid black; border-collapse: collapse">${temp_value.toFixed(2)}%</td></tr>`;
-          }
-            round.innerText = "Финальный результат";
-            let table = head + middle + bottom;
-            knockout_section.innerHTML = table;
-
-          }
-
-        }
-        */
       }
 
         /*************************************************** arrays and objects ***************************************************************/

@@ -1,0 +1,439 @@
+<!doctype html>
+<html dir="ltr" lang="ru">
+	<head>
+		<meta charset="uft-8">
+	    <title>Выбор профессии</title>
+		<style>
+
+		 body, html {
+		 	 height: 100%;
+       display: grid;
+       font-size: 1.3vw;
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: sans-serif;
+		 }
+
+		 /*choosing the options*/
+		 .fun {
+		   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+		   transform: translate3d(0, 0, 0);
+  		 perspective: 1000px;
+		 }
+
+
+		 #test1 {
+		 	display: none;
+		 }
+
+		.vermiddle {
+			vertical-align: middle;
+			margin: 0;
+		}
+
+		.fraction {
+			display: inline;
+			border: 0;
+		}
+
+		.fixedtable .fraction td {
+			border:  0;
+		}
+
+		.fixedtable .fraction td.line {
+			border-bottom: 1px solid black;
+		}
+
+		.fixedtable .fraction td.cellsp {
+			border-bottom: 2px solid black;
+		}
+
+		.imageresize {
+			/*display: block;
+			width: 100%;
+			height: auto;*/
+			max-width: 60%;
+			max-height: 60%;
+		}
+
+		.low {
+			vertical-align: middle;
+		}
+
+		.fixedtable .low {
+			vertical-align: middle;
+			line-height: 100%;
+		} 
+
+		  .table {
+		  	border: 1px solid black;
+			  border-collapse: collapse;
+			  margin: 10%;
+			  margin-bottom: 2%;
+			  table-layout: fixed;
+		  }
+
+		  .invisible {
+		  	display: "none";
+		  }
+
+		  .buttontable {
+		  	margin: auto;
+		  	text-align: center;
+		  	margin-bottom: 2%;
+		  }
+
+		  .table tr, .table td {
+		  	border: 1px solid black;
+			  border-collapse: collapse;
+		  }
+
+			.fontsize {
+				font-size: 3vw;
+			}
+
+			.bold {
+				font-weight: bold;
+			}
+
+			.paddingbottom {
+				padding-bottom: 3vw;
+			}
+
+			.center {
+				text-align: center;
+			}
+
+			.justify {
+				text-align: justify;
+			}
+
+			.preamble {
+				margin:  auto;
+				text-align: center;
+				width: 80%;
+				font-size: 2vw;
+			}
+
+			 .centertext {
+			 text-align: center;
+			}
+
+			.fixedtable {
+				width: 90%;
+			}
+
+			.forbutton {
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+			}
+
+			.fixedtable, .fixedtable td {
+				table-layout: fixed;
+				text-align: center;
+				vertical-align: middle;
+				font-size: 2vw;
+				margin:  auto;
+				/*border: 1px solid black;*/
+				border: 0;
+			  border-collapse: collapse;
+			  border-spacing: 0;
+			}
+
+ 			/*
+			.fixedtable .justify {
+				text-align: justify;
+			}
+			*/
+			
+			.fixedtable #differentrow  {
+				border-left: 0;
+				border-right: 0;
+				border-bottom: 0;
+			}
+		 	
+		</style>
+
+	</head>
+	<body id="body">
+		<!--Here we have the start section of the test -->
+		<div id="preamble" class="preamble">
+			<h2>Выберайте профессию осознанно!</h2>
+			<p class="justify">Вам будет предложен тест, который поможет определить наиболее подходящие Вам профессии. Оценивайте утверждения искренне и честно - тогда показанный результат будет наиболее объективным.</p>
+			<div id="start"><button class="fontsize">НАЧАТЬ</button></div>
+		</div>
+		 <table id="test1" class="fixedtable">
+		 	<tr><td colspan="3"><h2 id="questionssection">I. Оцените высказывание</h2></td></tr>
+    	<tr><td id="statement" colspan="3" class="justify paddingbottom"></td></tr>
+    	  <tr id="images">
+	    	 	<td id="img1"><img class="imageresize" src="img/trainer/t1.jpg" alt="" /></td>
+	    	 	<td id="img2"><img class="imageresize" src="img/trainer/t5.jpg" alt="" /></td>
+	    	 	<td id="img3"><img class="imageresize" src="img/trainer/t6.jpg" alt="" /></td>
+    	 </tr>
+    	 <tr id="variants">
+         <td id="td1">
+         	<h5>ДА, ЭТО МОЁ</h5>
+	       </td> 
+	       <td id="td2">
+	       	<h5>НУ, НЕ ЗНАЮ...</h5>
+	    	 </td>
+	    	 <td id="td3">
+	    	 	<h5>НЕТ, НЕ ПРО МЕНЯ!</h5>
+	    	 </td>
+    	 </tr>
+    	 <!--<tr id="differentrow" class="forbutton"><td class="centertext forbutton" id="centertexttd" colspan="3"><button id="forward" class="fontsize">ДАЛЬШЕ</button></td></tr>-->
+    </table>
+    <!--<table id="test2" class="invisible fixedtable">-->
+    </table>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+  	//general parameters
+
+  	let all_keys_and_values = {
+      "nature": 0,
+      "machines": 0,
+      "symbol_system": 0,
+      "arts": 0,
+      "human": 0
+    }
+
+    let great_key = 0;
+
+    const statements = [
+        ["Легко знакомлюсь с людьми", "human", 1],
+        ["Могу подолгу что-нибудь мастерить","machines", 1],
+        ["Люблю ходить в музеи, театры, на выставки", "arts", 1],
+        ["Охотно наблюдаю за растениями, животными", "nature", 1],
+        ["Охотно могу что-нибудь вычислять, чертить", "symbol_system", 1],
+        ["С удовольствием общаюсь со сверстниками или малышами", "human", 1],
+        ["С удовольствием ухаживаю за растениями и животными", "nature", 1],
+        ["Обычно делаю мало ошибок в письменных работах", "symbol_system", 1],
+        ["Мои изделия обычно вызывают интерес у других людей", "machines", 2],
+        ["Люди считают, что у меня есть художественные способности", "arts", 2],
+        ["Охотно смотрю видео или читаю о растениях, животных", "nature", 1],
+        ["Принимаю участие в спектаклях, концертах", "arts", 1],
+        ["Люблю смотреть видео или читать об устройстве механизмов, приборов, машин", "machines", 1],
+        ["Подолгу могу разгадывать головоломки, задачи, ребусы", "symbol_system", 2],
+        ["Легко улаживаю разногласия между людьми", "human", 2],
+        ["Считают, что у меня есть способности к работе с техникой", "machines", 2],
+        ["Людям нравится мое художественное творчество", "arts", 2],
+        ["У меня есть способности к работе с растениями и животными", "nature", 2],
+        ["Я могу ясно излагать свои мысли в письменной форме", "symbol_system", 2],
+        ["Я почти никогда ни с кем не ссорюсь", "human", 1],
+        ["Результаты моего технического творчества одобряют даже незнакомые люди", "machines", 1],
+        ["Мне легко даются иностранные языки", "symbol_system", 1],
+        ["Мне часто случается помогать даже незнакомым людям", "human", 2],
+        ["Подолгу могу заниматься музыкой, рисованием, читать книги и т. д", "arts", 1],
+        ["Могу влиять на ход развития растений и животных", "nature", 2],
+        ["Люблю разбираться в устройстве механизмов, приборов", "machines", 1],
+        ["Мне обычно удается убедить людей в своей правоте", "human", 1],
+        ["Слежу за новостями о растениях и животных", "nature", 1],
+        ["Люблю смотреть видео и читать литературу научно-популярного и публицистического характера", "symbol_system", 1],
+        ["Стараюсь понять секреты мастерства и пробую свои силы в живописи, музыке и т. п.", "arts", 1]
+        ];
+
+  //object with professions
+
+    const professions = {
+      nature: ["Агроном", "Археолог", "Астроном", "Биоинженер", "Биолог", "Биохимик", "Ботаник", "Генетик", "Географ", "Геолог", "Гидролог", "Зоолог", "Метеоролог", "Физик", "Философ", "Эколог"], //16
+      machines: ["Инженер", "Каменщик", "Колорист", "Летчик", "Метролог", "Механик", "Моряк", "Производственный мастер", "Сварщик", "Системный администратор", "Слесарь", "Химик-технолог", "Электрик"], //13
+      symbol_system: ["Архитектор", "Аудитор", "Бухгалтер", "Историк", "Копирайтер", "Лингвист", "Маркетолог", "Математик", "Менеджер по продукту", "Нотариус", "Переводчик", "Программист", "Сметчик", "Социолог", "Политолог", "Специалист по информационной безопасности", "Тестировщик", "Фармацевт", "Филолог", "Финансист", "Экономист", "SEO-специалист"], //22
+      arts: ["Бренд-менеджер", "Дизайнер", "Музыкант", "Режиссер", "Скульптор", "Фотограф", "Художник"], //7
+      human: ["Воспитатель детского сада", "Врач", "Дипломат", "Журналист", "Культуролог", "Логист", "Логопед", "Медсестра/Медбрат", "Менеджер по PR", "Менеджер по ВЭД", "Менеджер по закупкам", "Менеджер по персоналу", "Менеджер по продажам", "Налоговый инспектор", "Психиатр", "Психолог", "Риелтор", "Страховой агент", "Учитель", "Юрист", "Event-менеджер", "SMM-специалист"] //22
+    }
+
+    const definitions = {
+    	"Агроном": "специалист в области земледелия, обладающий всесторонними знаниями в области выращивания и сбора урожая растений",
+    	"Археолог": "учёный, который изучает быт и культуру древних цивилизаций по сохранившимся останкам их жизнедеятельности. В основные задачи работы археолога входит проведение раскопок для поиска источников исследования.", 
+    	"Астроном": "человек, изучающий небесные объекты, например, звёзды, планеты и их спутники, кометы.",
+    	"Биоинженер": "учёный, специализирующийся на целенаправленном изменении свойств живого организма.",
+    	"Биолог": "занимается исследованиями растительного и животного мира Земли. Он изучает все аспекты жизни живых организмов Земли, их структуру, рост, развитие, происхождение, эволюцию и распределение по планете.",
+    	"Биохимик": "специалист, занимающийся изучением химического состава живых организмов и клеток, а также химических процессов, являющихся основой их жизнедеятельности.",
+    	"Ботаник": "специалист в области науки о растениях, их жизни, внешнем и внутреннем строении. Работа ботаников заключается в сборе и изучении растений, составлении специальных справочников и классификаторов, участии в различных разработках сельского хозяйства.",
+    	"Генетик": "учёный, изучающий законы и механизмы наследственности и изменчивости: условий зарождения организмов, их изменчивости и передачи наследственных свойств, и методов управления этими процессами.",
+    	"Географ": "человек, изучающий географию Земли. Проводит исследования, пишет научные работы, участвует в экспедициях. Может работать по следующим специализациям: краеведение, физическая география, геоморфология, гляциология, экономическая география, геоинформатика.",
+    	"Геолог": "пециалист по изучению состава и строения горных пород с целью поисков и разведки месторождений полезных ископаемых.",
+    	"Гидролог": "специалист по изучению водной поверхности Земли, её свойств, распространения и протекающих в ней процессов (круговорот воды в природе и пр.).",
+    	"Зоолог": "ученый, который изучает животный мир. Задачами современных зоологов являются изучение уже существующих видов животных, поиск новых видов, защита животных, которые находятся под угрозой исчезновения, исследования болезней животных.",
+    	"Метеоролог": "специалист по погоде, наблюдатель и исследователь атмосферных явлений. Метеорологи наблюдают за природными явлениями, анализируют их и составляют прогнозы.",
+    	"Физик": "исследует природу, а именно физические тела и физические явления. Суть работы - проверка логических заключений экспериментом.",
+    	"Философ": "мыслитель, который стремится не только познать мир, но и разгадать главные вопросы мироздания. Профессия возникла много веков назад, но до сих пор не теряет актуальности.",
+    	"Эколог": "специалист, занимающийся анализом биосферной ситуации и разработкой мер для уменьшения существующего и возможного вреда природе. Эколог выявляет причины природных катаклизмов и разрабатывает возможности снижения воздействия человеческого фактора на окружающую среду.",
+    	"Инженер": "человек, который создает, усовершенствует, ремонтирует разнообразные технические приспособления, оборудование, машины, установки, коммуникации",
+    	"Каменщик": "рабочий, участвующий в возведении и ремонте жилых домов, мостов, промышленных и других сооружений из природных и искусственных строительных материалов.",
+    	"Колорист": "составитель колера, специалист по смешению красителей, подбору цветовой гаммы.",
+    	"Летчик": "специалист, управляющий самолетом или вертолетом, а также иными летательными аппаратами.",
+    	"Метролог": "специалист, приводящий характеристики и настройки измерительного инструментария в соответствие с установленными стандартами, контролирующий точность приборов путем разработки и применения поверочных схем, методик и эксплуатационных инструкций.",
+    	"Механик": "квалифицированный рабочий, имеющий профессиональное образование и занятый обслуживанием, ремонтом технических средств (необязательно связанных с механизмами), например: автомеханик, авиамеханик, электромеханик, радиомеханик, механик по ремонту бытовой техники",
+    	"Моряк":"общее название для множества специалистов, работающих на грузовых и пассажирских судах разных типов, а также на военных кораблях.",
+    	"Производственный мастер": "человек, который хорошо разбирается в определённом типе оборудования, ремонтирует и настраивает его, часто является ещё и руководителем группы людей, занимающихся обслуживанием такого оборудования",
+    	"Сварщик": "занимается соединением металлических конструкций, деталей, изделий, ёмкостей и трубопроводов разного вида, состава, предназначения и уровня сложности. В своей работе сварщики используют электрическую дуговую сварку или газовый факел.",
+    	"Системный администратор": "специалист, который отвечает за работу информационной инфраструктуры компании, обеспечивает ее настройку, поддерживает работоспособность, занимается ее развитием и совершенствованием.",
+    	"Слесарь": "специалист по механической ручной обработке металлов и изделий из них, включая операции по их сборке, разборке и ремонту на производстве или в быту.",
+    	"Химик-технолог": "занимается проведением исследований и химических экспертиз, разработкой химических составов разнообразной продукции, отвечает за технологический процесс ее производства.",
+    	"Электрик": "специалист, занимающийся монтажом, ремонтом и обслуживанием бытового и промышленного электрооборудования."
+    }
+    	
+    	    
+
+    window.onload = function () {
+
+    	let start = document.getElementById("start"),
+    	    test = document.getElementById("test1"),
+    	    test2 = document.getElementById("test2"),
+    	    body = document.getElementById("body"),
+    	    statement = document.getElementById("statement"),
+    	    question_header = document.getElementById("questionssection"),
+    	  //  forward = document.getElementById('forward'),
+    	    variants = document.getElementById('variants'),
+    	    images = document.getElementById("images"),
+    	    td1 = document.getElementById("td1"),
+    	    td2 = document.getElementById("td2"),
+    	    td3 = document.getElementById("td3"),
+    	    img1 = document.getElementById("img1"),
+    	    img2 = document.getElementById("img2"),
+    	    img3 = document.getElementById("img3"),
+    	    preamble = document.getElementById("preamble");
+    	start.addEventListener("click", start_questions);
+
+    	//**************************************math section start************************************************ 
+
+    	function start_questions() {
+    		preamble.style.display = "none";
+    		test.style.display = "block";
+    		statement.innerText = `${great_key + 1}. ${statements[great_key][0]}`;
+    	//	forward.addEventListener('click', math_q);
+    	td1.addEventListener("click", make_it_plus);
+    	img1.addEventListener("click", make_it_plus);
+    	td2.addEventListener("click", make_it_zero);
+    	img2.addEventListener("click", make_it_zero);
+    	td3.addEventListener("click", make_it_minus);
+    	img3.addEventListener("click", make_it_minus);
+
+    	//td1.addEventListener("mousedown", color_border);
+    	//td1.addEventListener("mouseup", remove_border);
+
+    	}
+
+
+  		function make_it_plus() {
+        all_keys_and_values[statements[great_key][1]] += statements[great_key][2];
+        great_key += 1;
+        if(great_key <= (statements.length - 1)) {
+          statement.innerText = `${great_key + 1}. ${statements[great_key][0]}`;
+        }
+        else if (great_key > statements.length) {
+        	second_stage();
+        }   
+      }
+
+      function make_it_zero() {
+        great_key += 1;
+        if(great_key <= (statements.length - 1)) {
+          statement.innerText = `${great_key + 1}. ${statements[great_key][0]}`;
+        }
+        else if (great_key > statements.length) {
+        	second_stage();
+        }      
+      }
+
+      function make_it_minus() {
+        all_keys_and_values[statements[great_key][1]] += -statements[great_key][2];
+        great_key += 1;
+        if(great_key <= (statements.length - 1)) {
+          statement.innerText = `${great_key + 1}. ${statements[great_key][0]}`;
+        }
+        else if (great_key > statements.length) {
+        	second_stage();
+        }
+      }
+
+      function second_stage() {
+	      d1.removeEventListener("click", make_it_plus);
+	    	img1.removeEventListener("click", make_it_plus);
+	    	td2.removeEventListener("click", make_it_zero);
+	    	img2.removeEventListener("click", make_it_zero);
+	    	td3.removeEventListener("click", make_it_minus);
+	    	img3.removeEventListener("click", make_it_minus);
+	    	test.style.display = 'none';
+      }
+
+      function color_border(e) {
+        e.target.style.border = "0.5vh dashed red";
+      }
+
+      function remove_border(e) {
+        e.target.style.border = "";
+      }
+
+      //***************************here we shape the results***********************************
+
+      function shape_final_table() {
+      	const general_rating = [math_rating, words_rating, erudition_rating, verbal_logic_rating,  information_processing_rating, spatial_intelligence_rating, nonverbal_logic_rating];
+      	test.style.display = "none";
+      	body.style.display = "block";
+		  let head = "<table class='table' id='finaltable'>";
+		  let heading = "<tr class='center'><td colspan='2' class='center'><h2>Результаты теста</h2></td></tr>";
+		  let middle = "";
+		  let bottom = "</table>";
+		  let btn = "<table class='buttontable'><tr class='center'><td class='center'><button id='printres' class='fontsize'>СОХРАНИТЬ</button></td></tr></table>";
+		  let temp = 10;
+
+		  const res_matrix_all = {
+		  	1:0,
+		  	2:0,
+		  	3:1,
+		  	4:1,
+		  	5:2,
+		  	6:2,
+		  	7:3,
+		  	8:3,
+		  	9:4,
+		  	10:4
+		  };
+      
+      sectionheadings.forEach((elem, index) => {
+      	if(index == 5) {temp = 8}
+      	middle += `<tr class='center'><td colspan='2' class='center'><h3>${elem}</h3></td></tr>`;
+      	middle += `<tr><td class='bold'>Процент набранных баллов за раздел:</td><td class='center bold'>${general_rating[index] / temp * 100} %</td>`;
+      	middle += `<tr><td colspan='2'>${general_results[index][res_matrix_all[general_rating[index]]]}</td></tr>`;
+      });
+
+      body.innerHTML = head + heading + middle + bottom + btn;
+      let result_button = document.getElementById("printres");
+      result_button.addEventListener("click", function(){
+      	let pdf_content = document.getElementById("finaltable");
+      	let options = {
+		      margin:       0.5,
+		      filename:     'results.pdf',
+		      image:        { type: 'jpeg', quality: 0.98 },
+		      html2canvas:  { scale: 1 },
+		      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+		    };
+		    html2pdf(pdf_content, options);
+      });
+
+      }
+
+      //***************************resize section**********************************************
+    	
+    	function resize_window() {
+    		console.log('resize called');
+  		  let super_width = window.innerWidth,
+	    	    super_height = window.innerHeight;
+		    if(super_width > super_height) {
+		    	body.style.fontSize = "1.3vw";
+		    } else {
+		    	body.style.fontSize = "1.3vh";
+		    } 
+    		td1.style.width = td2.style.width = td3.style.width = `${super_width * 0.9 / 3}px`;
+		    test.style.width = `${td1 + td2 + td3}px`;
+			}
+				resize_window();
+				window.addEventListener("resize", resize_window);
+			}
+    </script>
+	</body>
+</html>
