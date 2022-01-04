@@ -623,7 +623,7 @@ const jobs_based_on_spheres = {
 	    	question_header.innerText = "II. Оцените, нравится ли Вам делать то, что приведено в высказывании:";
 				img2.innerHTML = "<h4>ИЛИ</h4>";
 				td2.innerHTML = " ";
-				statement.innerText = second_stage_questions[great_key];
+				statement.innerText = `${great_key + 1}. ${second_stage_questions[great_key]}`;
 				td1.addEventListener("click", second_plus);
 	    	img1.addEventListener("click", second_plus);
 				td3.addEventListener("click", second_minus);
@@ -671,7 +671,8 @@ const jobs_based_on_spheres = {
       //flat array of suitable professions after stage one
 
 	for (let key in all_keys_and_values){
-      		if(all_keys_and_values[key] > 1) {
+		//!!!!!!!!!!!!!!!!!!!!!!!!!!
+      		if(all_keys_and_values[key] > 2) {
 		professions[key].forEach(el => list_of_professions_one.push(el));
 		} 
         }
@@ -679,7 +680,8 @@ const jobs_based_on_spheres = {
       // flat array of suitable professions after stage two
 
 	for (let clue in second_test_scores) {
-		if(second_test_scores[clue] > 1) {
+		//!!!!!!!!!!!!!!!!!!!!!!!!
+		if(second_test_scores[clue] > 2) {
 		jobs_based_on_spheres[clue].forEach(elem => list_of_professions_two.push(elem));
 		}
 	}
