@@ -757,6 +757,12 @@ const jobs_based_on_spheres = {
       //function for preparing to section four
 
       function stage_four() {
+      	if(general_list_of_professions.length == 0) {
+      		shape_final_table();
+      	} else if(general_list_of_professions.length == 1) {
+      		final_scores_object[general_list_of_professions[0]] = 1;
+      		shape_final_table();
+      	}
       	general_list_of_professions_copy = [...general_list_of_professions];
         general_list_of_professions.forEach(el => {
           final_scores_object[el] = 0;
@@ -822,6 +828,42 @@ const jobs_based_on_spheres = {
   	    //console.log(e.currentTarget.id);
   	    //console.log(current_index);
         if(general_list_of_professions_copy.length > 1) {
+
+        	if(general_list_of_professions.length == 2) {
+	        	current_element = general_list_of_professions[0];
+	          general_list_of_professions_copy.shift();
+	          //console.log(general_list_of_professions);
+	          //console.log(general_list_of_professions_copy);
+
+	          td1.innerHTML = `<h5>${current_element.toUpperCase()}</h5>`;
+	    	   	td3.innerHTML = `<h5>${general_list_of_professions_copy[0].toUpperCase()}</h5>`;
+
+	    	   	          if((e.currentTarget.id == "td1")||(e.currentTarget.id == "img1")) {
+            final_scores_object[current_element] += 1;
+          //  final_scores_object[final_profs_array_copy[current_index]] -= 1;
+        }
+          else if((e.currentTarget.id == "td3")||(e.currentTarget.id == "img3")) {
+          //  final_scores_object[current_element] -= 1;
+            final_scores_object[general_list_of_professions_copy[current_index]] += 1;
+          }
+
+             img1.removeEventListener("click", choose_current_profession);
+    	       img3.removeEventListener("click", choose_current_profession);
+    	       td1.removeEventListener("click", choose_current_profession);
+    	       td3.removeEventListener("click", choose_current_profession);
+
+    	       img1.removeEventListener("mousedown", color_border);
+    	       img3.removeEventListener("mousedown", color_border);
+    	       td1.removeEventListener("mousedown", color_border);
+    	       td3.removeEventListener("mousedown", color_border);
+
+    	       img1.removeEventListener("mouseup", remove_border);
+    	       img3.removeEventListener("mouseup", remove_border);
+    	       td1.removeEventListener("mouseup", remove_border);
+    	       td3.removeEventListener("mouseup", remove_border);
+              
+             shape_final_table();
+      } 
         
         //check if it's the first iteration
 
@@ -861,9 +903,11 @@ const jobs_based_on_spheres = {
           //console.log(general_list_of_professions_copy[current_index].toUpperCase());
           let temp = general_list_of_professions_copy[current_index].toUpperCase();
           
-          td3.innerHTML = `<h5>${/*general_list_of_professions_copy[current_index].toUpperCase()*/temp}</h5>`;
+          td3.innerHTML = `<h5>${temp}</h5>`;
 
-      	} else if (general_list_of_professions_copy.length == 1) {
+      	} /*else if (general_list_of_professions_copy.length == 2) {}*/ 
+
+      	else if (general_list_of_professions_copy.length == 1) {
               if((e.currentTarget.id == "td1")||(e.currentTarget.id == "img1")) {
                 final_scores_object[current_element] += 1;
               //  final_scores_object[final_profs_array_copy[0]] -= 1;
@@ -918,8 +962,13 @@ const jobs_based_on_spheres = {
 
       	let middle_professions = ``;
 
-      	let perc = (100/(general_list_of_professions.length-1)).toFixed(2);
+      	let perc = 0;
 
+      	if(general_list_of_professions.length == 1) {
+      		perc = 100.00;
+      	} else if(general_list_of_professions.length > 1){
+      		perc = (100/(general_list_of_professions.length-1)).toFixed(2);
+        }
       	num = 1;
 
       	const final_scores_object_sorted = Object.fromEntries(
