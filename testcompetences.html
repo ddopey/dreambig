@@ -1,0 +1,298 @@
+﻿<!doctype html>
+<html dir="ltr" lang="ru">
+	<head>
+		<meta charset="uft-8">
+	    <title>Выбор профессии</title>
+		<style>
+
+		 body, html {
+		 	 height: 100%;
+       display: grid;
+       font-size: 1.3vw;
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: sans-serif;
+		 }
+
+		 #test1 {
+		 	display: none;
+		 }
+
+                .invisible {
+                 display: none; 
+                }
+
+                .margintop {
+                
+                margin-top: 2rem;
+                
+                } 
+
+                .subjects {
+		margin: auto;
+                border: 2px solid black;
+                border-radius: 0.5rem;
+                padding: 1rem;  
+                }
+
+                #startbutton:hover {
+                 background-color: green;    
+                }
+                
+               .marg {
+                 margin-top: -1.5rem;
+                }
+                
+                .marg1 {
+                 margin-top: -0.5rem;
+                }
+
+                .radius {
+                border-radius: 0.5rem;
+                border: 2px solid black;
+                padding: 0.5rem;
+                }
+                
+                .left {
+                text-align: left;
+                padding-bottom: 5%;
+                }
+
+                .tick {
+                 background-size: contain;
+                 width: 4rem;
+                 height: 2rem;
+                 background-repeat: no-repeat;
+                }
+
+                .emtd {
+		 width: 2rem;
+                }
+
+                .emtick {
+                background-image: url(img/emptytick.png);
+                }
+
+                .octick {
+                background-image: url(img/occupiedtick.png);
+                }
+
+                .borderbottom {
+                 border-bottom: 2px solid black;
+                }
+
+		  .table {
+		  	border: 1px solid black;
+			  border-collapse: collapse;
+			  margin: 10%;
+			  margin-bottom: 2%;
+			  table-layout: fixed;
+		  }
+
+		  .invisible {
+		  	display: "none";
+		  }
+
+		 
+			.fontsize {
+				font-size: 3vw;
+			}
+
+			.bold {
+				font-weight: bold;
+			}
+
+			.paddingbottom {
+				padding-bottom: 3vw;
+			}
+
+      .superpadding {
+			  padding: 10%;
+			}
+
+			.center {
+				text-align: center;
+			}
+
+			.justify {
+				text-align: justify;
+			}
+
+			.preamble {
+				margin:  auto;
+				text-align: center;
+				width: 80%;
+				font-size: 2vw;
+			}
+
+			.centertext {
+			 text-align: center;
+			}
+
+			.fixedtable {
+				width: 90%;
+			}
+
+			.forbutton {
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+			}
+
+			.fixedtable, .fixedtable td {
+				table-layout: fixed;
+				text-align: center;
+				vertical-align: middle;
+				font-size: 2vw;
+				margin:  auto;
+				border: 1px solid black;
+				/* border: 0; */
+			  border-collapse: collapse;
+			  border-spacing: 0;
+			}
+
+			.fixedtable .five {
+			  width: 5%;
+			}
+                        
+			.fixedtable .ten {
+			  width: 10%;
+			}
+
+			.fixedtable .fifteen {
+			 width: 15%;
+                        }	
+                         
+
+  			.fixedtable .fontsizesmall {
+			  font-size: 2vw;
+			}
+
+ 			
+			.fixedtable .justify {
+				text-align: justify;
+			}
+			
+		 	
+		</style>
+
+	</head>
+	<body id="body">
+		<!--Here we have the start section of the test -->
+		<div id="preamble" class="preamble">
+			<h2 class="marg1">Тест на знания и навыки</h2>
+			<p class="centertext marg">Выберите любимые школьные предметы (лучше несколько).</p>
+                        <table class="subjects marg1">
+                          <tr >
+                           <td class="left">Английский</td><td class="emtd"></td><td id="eng" class="tick emtick"></td>
+                          </tr>
+                          <tr>
+                           <td class="left">Биология</td><td class="emtd"></td><td id="biol" class="tick emtick"></td>
+                          </tr>
+                          <tr>
+                           <td class="left">География</td><td class="emtd"></td><td id="geo" class="tick emtick"></td>
+                          </tr>
+                          <tr>
+                           <td class="left">Информатика</td><td class="emtd"></td><td id="inf" class="tick emtick"></td>
+                          </tr>
+                          <tr>
+                           <td class="left">История</td><td class="emtd"></td><td id="hist" class="tick emtick"></td>
+                          </tr>
+                          <tr>
+                           <td class="left">Литература</td><td class="emtd"></td><td id="lit" class="tick emtick"></td>
+                          </tr>
+                          <tr>
+                           <td class="left">Обществознание</td><td class="emtd"></td><td id="societ" class="tick emtick"></td>
+                          </tr>
+                          <tr>
+                           <td class="left">Физика</td><td class="emtd"></td><td id="phys" class="tick emtick"></td>
+                          </tr>
+                          <tr>
+                           <td class="left">Химия</td><td class="emtd"></td><td id="chem" class="tick emtick"></td>
+                          </tr>
+                          <tr>
+                            <td colspan="3" id="start" class="center fontsize"><span id="startbutton" class="radius">ГОТОВО</span></td>
+                          </tr>
+                        </table>
+                        
+		</div>
+
+                <div id="assignment" class="invisible preamble">
+                  <p>Далее Вам предлагается пройти мини-тесты по выбранным школьным предметам (плюс русский язык, математика, вербальная и невербальная логика). Необходимо сохранить сертификат, полученный по итогам каждого мини-теста.</p>
+   
+                <!--
+                <div id="engtest" data-test="engtest" class="invisible margintop">
+                  This is a placeholder for English test.
+                </div>
+
+                
+                <div id="bioltest" data-test="bioltest" class="invisible margintop">
+                  This is a placeholder for Biology test.
+                </div>
+
+                <div id="geotest" data-test="geotest" class="invisible margintop">
+                  This is a placeholder for Geography test.
+                </div>
+
+              -->
+
+                <!-- Online Test Pad Test Widget (#192762) Biology Test-->
+                
+								<div id="otp_wgt_xa6ioon57bdzw" data-test="bioltest" class="invisible"></div>
+
+								<script type="text/javascript">
+						    var otp_wjs_dt = (new Date).getTime();
+						    (function (w, d, n, s, rp) {
+						        w[n] = w[n] || [];
+						        rp = {};
+						        w[n].push(function () {
+						            otp_render_widget(d.getElementById("otp_wgt_xa6ioon57bdzw"), 'onlinetestpad.com', 'xa6ioon57bdzw', rp);
+						        }); 
+						        s = d.createElement("script");
+						        s.type = "text/javascript";
+						        s.src = "//onlinetestpad.com/js/widget.js?" + otp_wjs_dt;
+						        s.async = true;
+						        d.getElementsByTagName("head")[0].appendChild(s);
+						    		})(this, this.document, "otp_widget_callbacks");
+								</script>
+								
+                </div>
+      
+        <script>
+         function change_ticks() {
+         if(this.classList.contains("emtick")) {this.classList.remove("emtick"); this.classList.add("octick");}
+         else if(this.classList.contains("octick")) {this.classList.remove("octick"); this.classList.add("emtick");}
+         }
+         window.onload = function() {
+         
+         let preamble = document.getElementById("preamble");
+         let startbutton = document.getElementById("startbutton");
+         let assignment = document.getElementById("assignment");
+
+         startbutton.addEventListener("click", mini_test_start);     
+
+         let tds = Array.from(document.querySelectorAll(".tick")); 
+         tds.forEach(el => el.addEventListener("click", change_ticks));
+
+         function mini_test_start() {
+          preamble.classList.add("invisible");
+          assignment.classList.remove("invisible");
+
+          Array.from(document.querySelectorAll(".tick")).forEach(el => {
+
+          if(el.classList.contains("octick")) {
+           let test_name = el.id +`test`;
+           console.log(test_name);
+           document.querySelector(`[data-test=${test_name}]`).classList.remove("invisible");
+          }
+          
+
+          });
+          
+         }    
+
+
+}
+        </script> 
+	</body>
+</html>
