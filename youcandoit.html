@@ -1,0 +1,632 @@
+﻿<!doctype html>
+<html dir="ltr" lang="ru">
+	<head>
+		<meta charset="uft-8">
+	    <title>Выбор профессии</title>
+		<style>
+
+		 body, html {
+		 	 height: 100%;
+       display: grid;
+       font-size: 1.3vw;
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: sans-serif;
+		 }
+
+		 .digits-choice {
+		 	border-radius: 0.5rem;
+		 	border: 1px solid red;
+		 	padding: 1rem;
+		 	margin:  0.5rem;
+		 }
+
+		 .digit-chosen {
+		 	border: 1px solid green;
+		 	background-color: green;
+		 	color: white;
+		 	font-weight: bold;
+		 }
+
+		 .digits-choice:hover {
+		 	border: 1px solid green;
+		 }
+
+		 .digits-row {
+
+		 }
+
+		 #test1 {
+		 	display: none;
+		 }
+
+                .invisible {
+                 display: none; 
+                }
+
+                .margintop {
+                
+                margin-top: 2rem;
+                
+                } 
+
+                .subjects {
+
+								margin: auto;
+                border: 2px solid black;
+                border-radius: 0.5rem;
+                padding: 1rem; 
+                /*font-size: 2.5vw;*/
+                /*height: 80%;
+                width: 40%;*/
+                /*min-width: 40%;*/
+                }
+
+                .question-table {
+                	width: 90%;
+	                margin: auto;
+	                border: 2px solid black;
+	                border-radius: 0.5rem;
+	                padding: 0.5rem; 
+								  border-spacing: 0.5rem;
+                }
+
+                .question-table td {
+									text-align: left;
+									vertical-align: middle;
+									font-size: 2vw;
+									border-radius: 0.5rem;
+									border:  1px solid black;
+									padding: 0.5rem; 
+								}
+
+								.smallerfont {
+									font-size: 1vw;
+									font-weight: bold;
+								}
+
+								.outline {
+									border: 2px solid red;
+								}
+
+								.outline:hover {
+									border: 2px solid green;
+								}
+
+                #startbutton:hover {
+                 background-color: green;    
+                }
+
+                #biolready:hover {
+                	background-color: green;
+                	color: white;
+                }
+
+                .marginready {
+                	margin:auto;
+                	margin-top: 1.5rem;
+                	margin-bottom: 1.5rem;
+                }
+                
+               .marg {
+                 margin-top: -1.5rem;
+                }
+                
+                .marg1 {
+                 margin-top: -0.5rem;
+                }
+
+                .radius {
+                border-radius: 0.5rem;
+                border: 2px solid black;
+                padding: 0.5rem;
+                }
+                
+                .left {
+                text-align: left;
+                padding-bottom: 5%;
+                }
+
+                .tick {
+                 background-size: contain;
+                 width: 4rem;
+                 height: 2rem;
+                 background-repeat: no-repeat;
+                }
+
+                .emtd {
+		 width: 2rem;
+                }
+
+                .emtick {
+                background-image: url(emptytick.png);
+                }
+
+                .octick {
+                background-image: url(occupiedtick.png);
+                }
+
+                .borderbottom {
+                 border-bottom: 2px solid black;
+                }
+
+		  .table {
+		  	border: 1px solid black;
+			  border-collapse: collapse;
+			  margin: 10%;
+			  margin-bottom: 2%;
+			  table-layout: fixed;
+		  }
+
+		  .invisible {
+		  	display: "none";
+		  }
+
+		 
+			.fontsize {
+				font-size: 3vw;
+			}
+
+			.inputfontsize {
+				font-size: 2vw;
+			}
+
+			.bold {
+				font-weight: bold;
+			}
+
+			.paddingbottom {
+				padding-bottom: 3vw;
+			}
+
+      .superpadding {
+			  padding: 10%;
+			}
+
+			.center {
+				text-align: center;
+			}
+
+			.justify {
+				text-align: justify;
+			}
+
+			.preamble {
+				margin:  auto;
+				text-align: center;
+				width: 80%;
+				font-size: 2vw;
+			}
+
+			.centertext {
+			 text-align: center;
+			}
+
+			.fixedtable {
+				width: 90%;
+			}
+
+			.heading-width {
+				width: 90%;
+			}
+
+			.forbutton {
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+			}
+
+			.fixedtable, .fixedtable td {
+				table-layout: fixed;
+				text-align: center;
+				vertical-align: middle;
+				font-size: 2vw;
+				margin:  auto;
+				border: 1px solid black;
+				/* border: 0; */
+			  border-collapse: collapse;
+			  border-spacing: 0;
+			}
+
+			.fixedtable .five {
+			  width: 5%;
+			}
+                        
+			.fixedtable .ten {
+			  width: 10%;
+			}
+
+			.fixedtable .fifteen {
+			 width: 15%;
+                        }	
+                         
+
+  			.fixedtable .fontsizesmall {
+			  font-size: 2vw;
+			}
+
+ 			
+			.fixedtable .justify {
+				text-align: justify;
+			}
+			
+		 	
+		</style>
+
+	</head>
+	<body id="body">
+		<!--Here we have the start section of the test -->
+		<div id="preamble" class="preamble">
+			<h2 class="marg1">Тест на знания и навыки</h2>
+			<p class="centertext marg">Выберите любимые школьные предметы (лучше несколько).</p>
+
+          <table class="subjects marg1" id="subjects">
+            <tr >
+             <td class="left">Английский</td><td class="emtd"></td><td id="eng" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">Биология</td><td class="emtd"></td><td id="biol" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">География</td><td class="emtd"></td><td id="geo" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">Информатика</td><td class="emtd"></td><td id="inf" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">История</td><td class="emtd"></td><td id="hist" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">Литература</td><td class="emtd"></td><td id="lit" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">Обществознание</td><td class="emtd"></td><td id="societ" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">Физика</td><td class="emtd"></td><td id="phys" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">Химия</td><td class="emtd"></td><td id="chem" class="tick emtick"></td>
+            </tr>
+            <tr>
+              <td colspan="3" id="start" class="center fontsize"><span id="startbutton" class="radius">ГОТОВО</span></td>
+            </tr>
+          </table>
+                        
+			</div>
+
+                <div id="assignment" class="invisible preamble">
+                  <p id="assignmentstatement">Далее Вам предлагается пройти мини-тесты по выбранным школьным предметам (плюс русский язык, математика, вербальная и невербальная логика).</p>
+   
+                
+                <div id="bioltest" data-test="bioltest" class="invisible margintop">
+                	<h2>БИОЛОГИЯ</h2>
+
+                	<div id="biol1">
+	                	<h5>1. Рассмотрите таблицу «Биология – комплексная наука» и заполните пустую ячейку, вписав соответствующий термин.</h5>
+	                	<table class="question-table">
+	                		<tr><td>Разделы биологии</td><td>Объекты изучения</td></tr>
+	                		<tr><td>Анатомия</td><td>Строение внутренних органов организма</td></tr>
+	                		<tr><td><input id="biolinput" type="text" class="inputfontsize outline" placeholder="П............"></td><td>Ископаемые переходные формы организмов</td></tr>
+	                	</table>
+                  </div>
+
+                  <div id="biol2">
+                  	<h5>2. Установите последовательность событий, происходящих при получении гетерозисных организмов. Выберите соответствующую последовательность цифр.</h5>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td class="digits-row">
+	                				<p><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span></p>
+	                			</td>
+	                			<td>Получение гомозиготных линий</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="digits-row">
+	                				<p><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span></p></td>
+	                				<td>Многократное самоопыление родительских растений
+	                				</td>
+	                			</tr>
+	                		<tr>
+	                			<td class="digits-row">
+	                				<p><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span></p></td>
+	                				<td>Подбор исходных растений с определенными признаками</td>
+	                			</tr>
+	                		<tr><td class="digits-row">
+	                			<p><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span></p></td>
+	                			<td>Получение высокопродуктивных гибридов
+	                			</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="digits-row">
+	                			<p class="center"><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span></p>
+	                			</td>
+	                			<td>Скрещивание организмов двух разных чистых линий</td>
+	                		</tr>
+	                	</table>
+                  </div>
+
+                   <div id="biol3">
+                  	<h5>3. Установите последовательность систематических групп растений, начиная с самого высокого ранга. Выберите соответствующую последовательность цифр.</h5>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td class="digits-row">
+	                				<p><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span><span class="digits-choice">6</span></p>
+	                			</td>
+	                			<td>Мятлик луговой</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="digits-row center">
+	                				<p><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span><span class="digits-choice">6</span></p></td>
+	                				<td>Мятлик</td>
+	                			</tr>
+	                		<tr>
+	                			<td class="digits-row center">
+	                				<p><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span><span class="digits-choice">6</span></p></td>
+	                				<td>Покрытосеменные</td>
+	                			</tr>
+	                		<tr><td class="digits-row center">
+	                			<p><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span><span class="digits-choice">6</span></p></td>
+	                			<td>Однодольные</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="digits-row center">
+	                			<p><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span><span class="digits-choice">6</span></p>
+	                			</td>
+	                			<td>Растения</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="digits-row center">
+	                			<p><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span><span class="digits-choice">6</span></p>
+	                			</td>
+	                			<td>Злаковые</td>
+	                		</tr>
+	                	</table>
+                  </div>
+
+                  <div id="biol4">
+                  	<h5>4. Установите хронологическую последовательность перечисленных событий, происходивших на Земле. Выберите соответствующую последовательность цифр.</h5>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td class="digits-row">
+	                				<p><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span></p>
+	                			</td>
+	                			<td>Выход животных на сушу</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="digits-row">
+	                				<p><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span></p></td>
+	                				<td>Возникновение фотосинтеза у прокариот</td>
+	                			</tr>
+	                		<tr>
+	                			<td class="digits-row">
+	                				<p><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span></p></td>
+	                				<td>Формирование озонового экрана</td>
+	                			</tr>
+	                		<tr><td class="digits-row">
+	                			<p><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span></p></td>
+	                			<td>Абиогенный синтез органических веществ</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="digits-row">
+	                			<p><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span></p>
+	                			</td>
+	                			<td>Появление клеточных форм жизни</td>
+	                		</tr>
+	                	</table>
+                  </div>
+
+                  <div id="biol5">
+                  	<h5>5. Установите соответствие между характеристиками и типами ткани человека: к каждой позиции, данной во втором столбце, подберите соответствующую позицию из первого столбца.</h5>
+	                	<table class="question-table">
+	                		<tr><th>Типы ткани</th><th>Характеристики</th></tr>
+	                		<tr>
+	                			<td class="digits-row">
+	                				<p class="smallerfont"><span class="digits-choice">Эпителиальная</span><span class="digits-choice">Соединительная</span><span class="digits-choice">Нервная</span></p>
+	                			</td>
+	                			<td>Проводит импульсы</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="digits-row">
+	                				<p class="smallerfont"><span class="digits-choice">Эпителиальная</span><span class="digits-choice">Соединительная</span><span class="digits-choice">Нервная</span></p></td>
+	                				<td>Выполняет функцию опоры</td>
+	                			</tr>
+	                		<tr>
+	                			<td class="digits-row">
+	                				<p class="smallerfont"><span class="digits-choice">Эпителиальная</span><span class="digits-choice">Соединительная</span><span class="digits-choice">Нервная</span></p></td>
+	                				<td>Образует наружный слой кожи</td>
+	                			</tr>
+	                		<tr><td class="digits-row">
+	                			<p class="smallerfont"><span class="digits-choice">Эпителиальная</span><span class="digits-choice">Соединительная</span><span class="digits-choice">Нервная</span></p></td>
+	                			<td>Вырабатывает антитела</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="digits-row">
+	                			<p class="smallerfont"><span class="digits-choice">Эпителиальная</span><span class="digits-choice">Соединительная</span><span class="digits-choice">Нервная</span></p>
+	                			</td>
+	                			<td>Состоит из тесно прилегающих друг к другу клеток</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="digits-row">
+	                			<p class="smallerfont"><span class="digits-choice">Эпителиальная</span><span class="digits-choice">Соединительная</span><span class="digits-choice">Нервная</span></p>
+	                			</td>
+	                			<td>Содержит клетки глии</td>
+	                		</tr>
+	                	</table>
+                  </div>
+
+                </div>
+                				<table class="marginready" id="bioldivready">
+                         	<tr>
+                            <td id="ready" class="center fontsize"><span id="biolready" class="radius">ГОТОВО</span></td>
+                          </tr>
+                        </table>
+
+                  <div id="biolresult" class="invisible">
+                  	<h2>Ваш результат: <span id="biolscore"></span> из 5 возможных</h2>
+                  </div>
+                        
+              
+
+                <!-- Online Test Pad Test Widget (#192762) Biology Test-->
+
+                <!--
+                
+								<div id="otp_wgt_xa6ioon57bdzw" data-test="bioltest" class="invisible"></div>
+
+								<script type="text/javascript">
+						    var otp_wjs_dt = (new Date).getTime();
+						    (function (w, d, n, s, rp) {
+						        w[n] = w[n] || [];
+						        rp = {};
+						        w[n].push(function () {
+						            otp_render_widget(d.getElementById("otp_wgt_xa6ioon57bdzw"), 'onlinetestpad.com', 'xa6ioon57bdzw', rp);
+						        }); 
+						        s = d.createElement("script");
+						        s.type = "text/javascript";
+						        s.src = "//onlinetestpad.com/js/widget.js?" + otp_wjs_dt;
+						        s.async = true;
+						        d.getElementsByTagName("head")[0].appendChild(s);
+						    		})(this, this.document, "otp_widget_callbacks");
+								</script>
+
+							-->
+								
+                </div>
+      
+        <script>
+         function change_ticks() {
+         if(this.classList.contains("emtick")) {this.classList.remove("emtick"); this.classList.add("octick");}
+         else if(this.classList.contains("octick")) {this.classList.remove("octick"); this.classList.add("emtick");}
+         }
+
+         function choose_digit(e){
+        // 	if(e.currentTarget.classList.contains("digits-row")) {
+         		let all = Array.from(e.currentTarget.getElementsByTagName("span"));
+         		all.forEach(el => {el.classList.remove("digit-chosen"); el.classList.add("digit-choice");
+         	});
+         		if(e.target.tagName == "SPAN") {
+         		e.target.classList.add("digit-chosen");
+         	}
+      //   	}
+         }
+         
+         let biology = {
+         	correct_answers: ["палеонтология", "32154", "534621", "45231", ["Нервная", "Соединительная", "Эпителиальная", "Соединительная", "Эпителиальная", "Нервная"]],
+         	given_answers: [],
+         	score: 0
+         };
+
+         window.onload = function() {
+         
+         let preamble = document.getElementById("preamble"),
+             startbutton = document.getElementById("startbutton"),
+             assignment = document.getElementById("assignment"),
+             assignmentstatement = document.getElementById("assignmentstatement"),
+             biolbutton = document.getElementById("biolready"),
+             bioltestsection = document.getElementById("bioltest"),
+             bioldivready = document.getElementById("bioldivready"),
+             biolresult = document.getElementById("biolresult"),
+             subjects_table = document.getElementById("subjects"),
+             biolscore = document.getElementById("biolscore");
+
+             if(window.innerWidth > window.innerHeight) {
+             	subjects_table.style.fontSize = "2.2vw";
+             }
+             else {
+             	subjects_table.style.fontSize = "2.2vh";
+             }
+
+
+         startbutton.addEventListener("click", mini_test_start);  
+
+         biolbutton.addEventListener("click", show_biology_result);   
+
+         let tds = Array.from(document.querySelectorAll(".tick")); biolready
+         tds.forEach(el => el.addEventListener("click", change_ticks));
+
+         function mini_test_start() {
+          preamble.classList.add("invisible");
+          assignment.classList.remove("invisible");
+
+          Array.from(document.querySelectorAll(".tick")).forEach(el => {
+
+          if(el.classList.contains("octick")) {
+           let test_name = el.id +`test`;
+           console.log(test_name);
+           document.querySelector(`[data-test=${test_name}]`).classList.remove("invisible");
+          }
+          
+          });
+          //add event listeners for tests with choosing sequences
+          Array.from(document.querySelectorAll(".digits-row")).forEach(el => el.addEventListener("click", choose_digit));
+          
+         } 
+
+         function show_biology_result() {
+         	//count question 1
+         	if(document.getElementById("biolinput").value.toLowerCase() == biology.correct_answers[0]) {
+         		biology.score += 1;
+         		console.log(biology.score);
+         	}
+         	//count question 2
+         	let second_answers = Array.from(document.getElementById("biol2").querySelectorAll(".digit-chosen"));
+         	let second_answers_str = "";
+         	second_answers.forEach(el => {
+         		second_answers_str += el.innerText;
+         	});
+          if(second_answers_str == biology.correct_answers[1]) {
+          	biology.score += 1;
+          	console.log(biology.score);
+          }
+          //count question 3
+          let third_answers = Array.from(document.getElementById("biol3").querySelectorAll(".digit-chosen"));
+          let third_answers_str = "";
+          third_answers.forEach(el => {
+          	third_answers_str += el.innerText;
+          });
+          if(third_answers_str == biology.correct_answers[2]) {
+          	biology.score += 1;
+          	console.log(biology.score);
+          }
+          //count question 4
+          let fourth_answers = Array.from(document.getElementById("biol4").querySelectorAll(".digit-chosen"));
+          let fourth_answers_str = "";
+          fourth_answers.forEach(el => {
+          	fourth_answers_str += el.innerText;
+          });
+          if(fourth_answers_str == biology.correct_answers[3]) {
+          	biology.score += 1;
+          	console.log(biology.score);
+          }
+          //count question 5
+          let fifth_answers = Array.from(document.getElementById("biol5").querySelectorAll(".digit-chosen"));
+          let fifth_answers_arr = [];
+          fifth_answers.forEach(el => {
+          	fifth_answers_arr.push(el);
+          });
+          let temp = 0;
+          fifth_answers_arr.forEach((el, index) => {
+          	if(el.innerText == biology.correct_answers[4][index]) {
+          		temp += 1;
+          		console.log(temp);
+          	}
+          });
+          if(temp == 6) {
+          	biology.score += 1;
+          	console.log(biology.score);
+          }
+          
+          assignmentstatement.classList.add("invisible");
+          bioltestsection.classList.add("invisible");
+          bioldivready.classList.add("invisible");
+          biolresult.classList.remove("invisible");
+          biolscore.innerText = biology.score;
+
+
+         }   
+
+
+}
+        </script> 
+	</body>
+</html>
