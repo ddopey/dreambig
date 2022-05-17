@@ -2621,6 +2621,7 @@
    				subjects_table.innerHTML = table_content;
    				subjects_table.style.display = "table";
    				subjects_table.classList.remove("subjects");
+   				assignment.classList.remove("preamble");
    				subjects_table.classList.add("question-table");
    				preamble.classList.remove("invisible");
    				preamble.querySelector(".marg2").innerText = "ИТОГИ";
@@ -2636,7 +2637,6 @@
 
    				let finish_button = document.getElementById("finish");
    				finish_button.classList.remove("invisible");
-   				//let pdf_content = document.getElementById("subjects");
    				finish_button.addEventListener("click", function() {
    					
   						let options = {
