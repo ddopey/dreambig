@@ -758,12 +758,10 @@
    									<table class="question-table">
    										<tr>
    											<td colspan="5" class="imgcontainer" style="background-image: url(img/test/logic/q1/q1.png)">
-   												<!--<img src="img/test/logic/q1/q1.png"/>-->
    											</td>
    										</tr>
    										<tr>
    											<td colspan="5" class="imgcontainer" style="background-image: url(img/test/logic/q1/a1.png)">
-   												<!--<img src="img/test/logic/q1/a1.png"/>-->
    											</td>
    										</tr>
    										<tr class="digits-row">
@@ -2640,14 +2638,13 @@
    				finish_button.classList.remove("invisible");
    				//let pdf_content = document.getElementById("subjects");
    				finish_button.addEventListener("click", function() {
-   					//window.print();
    					
   						let options = {
 					      margin:       0.5,
 					      filename:     'results.pdf',
 					      image:        { type: 'jpeg', quality: 0.98 },
 					      html2canvas:  { scale: 1 },
-					      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+					      jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
 					    };
     					html2pdf(subjects_table, options);
    				});
