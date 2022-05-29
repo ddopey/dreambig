@@ -8,7 +8,7 @@
 		 body, html {
 		 	 height: 100%;
        display: grid;
-       font-size: 1.3vw;
+       font-size: /*1.3vw*/ 1.3rem;
        margin: 0;
        padding: 0;
        box-sizing: border-box;
@@ -176,14 +176,14 @@
                 .question-table td {
 									text-align: left;
 									vertical-align: middle;
-									font-size: 2vw;
+									font-size: /*2vw*/2rem;
 									border-radius: 0.5rem;
 									border:  1px solid black;
 									padding: 0.5rem; 
 								}
 
 								.smallerfont {
-									font-size: 1vw;
+									font-size: /*1vw*/ 1rem;
 									font-weight: bold;
 								}
 
@@ -286,11 +286,11 @@
 
 		 
 			.fontsize {
-				font-size: 2vw;
+				font-size: /*2vw*/2rem;
 			}
 
 			.inputfontsize {
-				font-size: 2vw;
+				font-size: /*2vw*/ 2rem;
 			}
 
 			.bold {
@@ -298,7 +298,7 @@
 			}
 
 			.paddingbottom {
-				padding-bottom: 3vw;
+				padding-bottom: /*3vw*/ 3rem;
 			}
 
       .superpadding {
@@ -317,7 +317,7 @@
 				margin:  auto;
 				text-align: center;
 				width: 80%;
-				font-size: 2vw;
+				font-size: /*2vw*/;
 				background-color: white;
 				border-radius: 0.5rem;
 				padding-bottom: 1rem;
@@ -434,7 +434,7 @@
    								<div id="math1">
    									<table class="zeroborder"><tr><td><h5>1. Найдите значение выражения (6,7 – 3,2) * 2,4</h5></td></tr></table>
    									<table class="question-table">
-   										<tr class="digits-row">
+   										<tr class="digits-row showborder">
    											<td class="removeborder">
    												<p class="center">
    													<span class="digits-choice">6,5</span>
@@ -2418,7 +2418,8 @@
          biolbutton.addEventListener("click", show_vlogic_result);
          */
 
-         let tds = Array.from(document.querySelectorAll(".tick")); biolready
+         let tds = Array.from(document.querySelectorAll(".tick")); 
+         //biolready
          tds.forEach(el => el.addEventListener("click", change_ticks));
 
          function mini_test_start() {
@@ -2463,7 +2464,7 @@
 
           preamble.classList.add("invisible");
           assignment.classList.remove("invisible");
-          Array.from(document.querySelectorAll(".tick")).forEach(el => {
+          Array.from(subjects_table.querySelectorAll(".tick")).forEach(el => {
           if(el.classList.contains("octick")) {
            let test_name = el.id +`test`;
            console.log(test_name);
