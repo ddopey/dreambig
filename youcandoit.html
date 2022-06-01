@@ -50,6 +50,8 @@
 		 	display: block;
 		 	width: 80%;
 		 	font-weight: bold;
+		 	margin: auto;
+		 	margin-top: 5%;
 		 }
 
 		 .comma {
@@ -120,6 +122,15 @@
                 .margintop {
                 margin-top: 2rem;
                 } 
+                /*
+                .topmargin {
+                	margin-top: 5%;
+                }
+                */
+
+                .marginbottom {
+                	margin-bottom: 5%;
+                }
 
                 .zeroborder {
                 	width: 90%;
@@ -185,6 +196,15 @@
 								.smallerfont {
 									font-size: /*1vw*/ 1rem;
 									font-weight: bold;
+								}
+
+								.question-table td.smallerfont {
+									font-size: 1rem;
+									font-weight: bold;
+								}
+
+								.smallestfont {
+									font-size: 0.7rem;
 								}
 
 								.outline {
@@ -290,7 +310,7 @@
 			}
 
 			.inputfontsize {
-				font-size: /*2vw*/ 2rem;
+				font-size: /*2vw*/ 1.2rem;
 			}
 
 			.bold {
@@ -425,7 +445,7 @@
 			</div>
 
                 <div id="assignment" class="invisible preamble">
-                  <table class="zeroborder"><tr><td><p id="assignmentstatement">Далее Вам предлагается пройти мини-тесты по выбранным школьным предметам (плюс математика, русский язык, вербальная и невербальная логика).</p></td></tr></table>
+                  <table class="zeroborder"><tr><td><h4 id="assignmentstatement">Далее Вам предлагается пройти мини-тесты по выбранным школьным предметам (плюс математика, русский язык, вербальная и невербальная логика).</h4></td></tr></table>
    
 
    							<div id="mathtest" data-test="mathtest" class="invisible margintop">
@@ -606,25 +626,19 @@
    							<div id="verballogic1">
    									<table class="zeroborder"><tr><td><h5>1. Машиного отца зовут Николай Викторович, а дедушку - Василий Петрович. Какое отчество у Машиной мамы?</h5></td></tr></table>
    									<table class="question-table">
-   										<tr class="digits-row">
+   										<tr class="digits-row center">
    											<td class="removeborder">
    												<p class="center">
-   													<span class="digits-choice bold">Петровна</span>
+   													<span class="digits-choice bold block">Петровна</span>
+   													<span class="digits-choice bold block">Викторовна</span>
+   													<span class="digits-choice bold block">Николаевна</span>
    												</p>
    											</td>
    											<td class="removeborder">
    												<p class="center">
-   													<span class="digits-choice bold">Викторовна</span>
-   												</p>
-   											</td>
-   											<td class="removeborder">
-   												<p class="center">
-   													<span class="digits-choice bold">Николаевна</span>
-   												</p>
-   											</td>
-   											<td class="removeborder">
-   												<p class="center">
-   													<span class="digits-choice bold">Васильевна</span>
+   													<span class="digits-choice bold block">Васильевна</span>
+   													<span class="digits-choice bold block">Ивановна</span>
+   													<span class="digits-choice bold block">Андреевна</span>
    												</p>
    											</td>
    										</tr>
@@ -637,22 +651,14 @@
    										<tr class="digits-row">
    											<td class="removeborder">
    												<p class="center">
-   													<span class="digits-choice bold">Грейпфрут</span>
+   													<span class="digits-choice bold block">Грейпфрут</span>
+   													<span class="digits-choice bold block">Ананас</span>
    												</p>
    											</td>
    											<td class="removeborder">
    												<p class="center">
-   													<span class="digits-choice bold">Ананас</span>
-   												</p>
-   											</td>
-   											<td class="removeborder">
-   												<p class="center">
-   													<span class="digits-choice bold">Банан</span>
-   												</p>
-   											</td>
-   											<td class="removeborder">
-   												<p class="center">
-   													<span class="digits-choice bold">Яблоко</span>
+   													<span class="digits-choice bold block">Банан</span>
+   													<span class="digits-choice bold block">Яблоко</span>
    												</p>
    											</td>
    										</tr>
@@ -663,19 +669,12 @@
    									<table class="zeroborder"><tr><td><h5>3. Пять сестер находятся на даче. Первая читает книгу, вторая готовит еду, третья играет в шахматы, четвертая разгадывает кроссворд. А чем занимается пятая сестра?</h5></td></tr></table>
    									<table class="question-table">
    										<tr class="digits-row">
-   											<td class="removeborder">
+   											<td class="removeborder center">
    												<p class="center">
-   													<span class="digits-choice bold">Читает книгу</span>
-   												</p>
-   											</td>
-   											<td class="removeborder">
-   												<p class="center">
-   													<span class="digits-choice bold">Готовит еду</span>
-   												</p>
-   											</td>
-   											<td class="removeborder">
-   												<p class="center">
-   													<span class="digits-choice bold">Играет в шахматы</span>
+   													<span class="digits-choice bold block topmargin">Читает книгу</span>
+   													<span class="digits-choice bold block topmargin">Готовит еду</span>
+   													<span class="digits-choice bold block topmargin">Играет в шахматы</span>
+   													<span class="digits-choice bold block topmargin">Разгадывает кроссворд</span>
    												</p>
    											</td>
    										</tr>
@@ -1432,7 +1431,7 @@
 	                			<td class="digits-row">
 	                					<span class="digits-choice block">She didn’t have a special music talent.</span>
 	                					<span class="digits-choice block">She attended a musical school for 9 years.</span>
-	                					<span class="digits-choice block">She didn’t like playing the piano very much.</span>
+	                					<span class="digits-choice block marginbottom">She didn’t like playing the piano very much.</span>
 	                			</td>
 	                		</tr>
 	                	</table>
@@ -1445,7 +1444,7 @@
 	                			<td class="digits-row">
 	                					<span class="digits-choice block">This profession runs in her family.</span>
 	                					<span class="digits-choice block">She wanted to overcome the stage fright.</span>
-	                					<span class="digits-choice block">Acting on stage felt natural to her.</span>
+	                					<span class="digits-choice block marginbottom">Acting on stage felt natural to her.</span>
 	                			</td>
 	                		</tr>
 	                	</table>
@@ -1458,7 +1457,7 @@
 	                			<td class="digits-row">
 	                					<span class="digits-choice block">She thinks David Lynch is the best director.</span>
 	                					<span class="digits-choice block">She feels she could herself direct a film one day.</span>
-	                					<span class="digits-choice block">She thinks she was fortunate to work with many talented directors.</span>
+	                					<span class="digits-choice block marginbottom">She thinks she was fortunate to work with many talented directors.</span>
 	                			</td>
 	                		</tr>
 	                	</table>
@@ -2158,36 +2157,36 @@
 	                	<table class="question-table">
 	                		<tr><th>Типы ткани</th><th>Характеристики</th></tr>
 	                		<tr>
-	                			<td class="digits-row">
-	                				<p class="smallerfont"><span class="digits-choice">Эпителиальная</span><span class="digits-choice">Соединительная</span><span class="digits-choice">Нервная</span></p>
+	                			<td class="digits-row zeroborder">
+	                				<p class="smallerfont center"><span class="digits-choice block">Эпителиальная</span><span class="digits-choice block">Соединительная</span><span class="digits-choice block">Нервная</span></p>
 	                			</td>
-	                			<td>Проводит импульсы</td>
+	                			<td style="width: 50%">Проводит импульсы</td>
 	                		</tr>
 	                		<tr>
 	                			<td class="digits-row">
-	                				<p class="smallerfont"><span class="digits-choice">Эпителиальная</span><span class="digits-choice">Соединительная</span><span class="digits-choice">Нервная</span></p></td>
-	                				<td>Выполняет функцию опоры</td>
+	                				<p class="smallerfont center"><span class="digits-choice block">Эпителиальная</span><span class="digits-choice block">Соединительная</span><span class="digits-choice block">Нервная</span></p></td>
+	                				<td style="width: 50%">Выполняет функцию опоры</td>
 	                			</tr>
 	                		<tr>
 	                			<td class="digits-row">
-	                				<p class="smallerfont"><span class="digits-choice">Эпителиальная</span><span class="digits-choice">Соединительная</span><span class="digits-choice">Нервная</span></p></td>
-	                				<td>Образует наружный слой кожи</td>
+	                				<p class="smallerfont center"><span class="digits-choice block">Эпителиальная</span><span class="digits-choice block">Соединительная</span><span class="digits-choice block">Нервная</span></p></td>
+	                				<td style="width: 50%">Образует наружный слой кожи</td>
 	                			</tr>
 	                		<tr><td class="digits-row">
-	                			<p class="smallerfont"><span class="digits-choice">Эпителиальная</span><span class="digits-choice">Соединительная</span><span class="digits-choice">Нервная</span></p></td>
-	                			<td>Вырабатывает антитела</td>
+	                			<p class="smallerfont center"><span class="digits-choice block">Эпителиальная</span><span class="digits-choice block">Соединительная</span><span class="digits-choice block">Нервная</span></p></td>
+	                			<td style="width: 50%">Вырабатывает антитела</td>
 	                		</tr>
 	                		<tr>
 	                			<td class="digits-row">
-	                			<p class="smallerfont"><span class="digits-choice">Эпителиальная</span><span class="digits-choice">Соединительная</span><span class="digits-choice">Нервная</span></p>
+	                			<p class="smallerfont center"><span class="digits-choice block">Эпителиальная</span><span class="digits-choice block">Соединительная</span><span class="digits-choice block">Нервная</span></p>
 	                			</td>
-	                			<td>Состоит из тесно прилегающих друг к другу клеток</td>
+	                			<td style="width: 50%">Состоит из тесно прилегающих друг к другу клеток</td>
 	                		</tr>
 	                		<tr>
 	                			<td class="digits-row">
-	                			<p class="smallerfont"><span class="digits-choice">Эпителиальная</span><span class="digits-choice">Соединительная</span><span class="digits-choice">Нервная</span></p>
+	                			<p class="smallerfont center"><span class="digits-choice block">Эпителиальная</span><span class="digits-choice block">Соединительная</span><span class="digits-choice block">Нервная</span></p>
 	                			</td>
-	                			<td>Содержит клетки глии</td>
+	                			<td style="width: 50%">Содержит клетки глии</td>
 	                		</tr>
 	                	</table>
                   </div>
@@ -2503,6 +2502,16 @@
           biolbutton.addEventListener("click", show_math_result);    
           biolbutton.addEventListener("click", show_nvlogic_result);
           biolbutton.addEventListener("click", show_vlogic_result); 
+          /*
+          let tables = Array.from(document.querySelectorAll(".question-table"));
+          tables.forEach(el => {
+          	if(el.getBoundingClientRect().width > assignment.getBoundingClientRect().width) {
+          		console.log("detected");
+          		el.style.width = assignment.getBoundingClientRect().width * 0.9;
+          		Array.from(el.querySelectorAll("span")).forEach(elem => elem.classList.add("smallestfont"));
+          	}
+          });
+          */
          } 
 
          function show_biology_result() {
