@@ -8,15 +8,12 @@
 		 body, html {
 		 	 height: 100%;
        display: grid;
-       font-size: /*1.3vw*/ 1.3rem;
+       font-size: 1.5vw;
        margin: 0;
        padding: 0;
        box-sizing: border-box;
        font-family: sans-serif;
        background-image: url(img/school.jpg);
-      /* background-size: cover;
-       background-repeat: no-repeat;
-       background-position: center;*/
        z-index: 1;
 		 }
 
@@ -25,15 +22,6 @@
 		 	border: 1px solid red;
 		 	padding: 1rem;
 		 	margin:  0.5rem;
-		 }
-
-		 .textchoice {
-		 	/*
-		 	border-radius: 0.5rem;
-		 	border: 1px solid red;
-		 	padding: 0.05rem;
-		 	margin: 0.05rem;
-		 	*/
 		 }
 
 		 .boldtext {
@@ -65,14 +53,6 @@
 		 }
 
 
-		 /*
-		 .commainserted {
-		 	 font-weight: bold;
-		 	 font-size: 2rem;
-		 	 width: 3rem;
-		 }
-		 */
-
 		 .width {
 		 	width: 30%;
 		 }
@@ -86,11 +66,6 @@
 
 		 .textchoice:hover {
 		 	color: red;
-		 	/*
-		 	background-color: green;
-		 	color: white;
-		 	border: 1px solid green;
-		 	*/
 		 }
 
 		 .textcross {
@@ -122,11 +97,6 @@
                 .margintop {
                 margin-top: 2rem;
                 } 
-                /*
-                .topmargin {
-                	margin-top: 5%;
-                }
-                */
 
                 .marginbottom {
                 	margin-bottom: 5%;
@@ -144,10 +114,6 @@
                 border: 2px solid black;
                 border-radius: 0.5rem;
                 padding: 1rem; 
-                /*font-size: 2.5vw;*/
-                /*height: 80%;
-                width: 40%;*/
-                /*min-width: 40%;*/
                 }
 
                 .question-table {
@@ -187,28 +153,30 @@
                 .question-table td {
 									text-align: left;
 									vertical-align: middle;
-									font-size: /*2vw*/2rem;
 									border-radius: 0.5rem;
 									border:  1px solid black;
 									padding: 0.5rem; 
 								}
 
+								.question-table td.center {
+									text-align: center;
+								}
+
 								.smallerfont {
-									font-size: /*1vw*/ 1rem;
-									font-weight: bold;
+									/*font-size: 1vw;
+									font-weight: bold;*/
 								}
 
 								.question-table td.smallerfont {
-									font-size: 1rem;
 									font-weight: bold;
 								}
 
 								.question-table td.mediumfont {
-									font-size: 1.2rem;
+									/*font-size: 1.2rem;*/
 								}
 
 								.smallestfont {
-									font-size: 0.7rem;
+									/*font-size: 0.7rem;*/
 								}
 
 								.outline {
@@ -310,11 +278,11 @@
 
 		 
 			.fontsize {
-				font-size: /*2vw*/2rem;
+				font-size: 2vw;
 			}
 
 			.inputfontsize {
-				font-size: /*2vw*/ 1.2rem;
+				font-size: 1.2vw;
 			}
 
 			.bold {
@@ -322,7 +290,7 @@
 			}
 
 			.paddingbottom {
-				padding-bottom: /*3vw*/ 3rem;
+				padding-bottom: 3vw;
 			}
 
       .superpadding {
@@ -363,50 +331,15 @@
 				padding-top: 2rem;
 				padding-bottom: 2rem;
 			}
-
-			.fixedtable, .fixedtable td {
-				table-layout: fixed;
-				text-align: center;
-				vertical-align: middle;
-				font-size: 2vw;
-				margin:  auto;
-				border: 1px solid black;
-				/* border: 0; */
-			  border-collapse: collapse;
-			  border-spacing: 0;
-			}
-
-			.fixedtable .five {
-			  width: 5%;
-			}
-                        
-			.fixedtable .ten {
-			  width: 10%;
-			}
-
-			.fixedtable .fifteen {
-			 width: 15%;
-                        }	
-                         
-
-  			.fixedtable .fontsizesmall {
-			  font-size: 2vw;
-			}
-
- 			
-			.fixedtable .justify {
-				text-align: justify;
-			}
 			
-		 	
 		</style>
 
 	</head>
 	<body id="body">
 		<!--Here we have the start section of the test -->
 		<div id="preamble" class="preamble">
-			<h3 class="marg2">Тест на знания и навыки</h3>
-			<p class="centertext marg">Выберите любимые школьные предметы (лучше несколько).</p>
+			<h3 class="marg2 fontsize">Тест на знания и навыки</h3>
+			<p class="centertext marg fontsize">Выберите любимые школьные предметы (лучше несколько).</p>
 
           <table class="subjects marg1" id="subjects">
             <tr >
@@ -449,7 +382,7 @@
 			</div>
 
                 <div id="assignment" class="invisible preamble">
-                  <table class="zeroborder"><tr><td><h4 id="assignmentstatement">Далее Вам предлагается пройти мини-тесты по выбранным школьным предметам (плюс математика, русский язык, вербальная и невербальная логика).</h4></td></tr></table>
+                  <table class="zeroborder"><tr><td><h4 id="assignmentstatement" style="font-size: 2vw;">Далее Вам предлагается пройти мини-тесты по выбранным школьным предметам (плюс математика, русский язык, вербальная и невербальная логика).</h4></td></tr></table>
    
 
    							<div id="mathtest" data-test="mathtest" class="invisible margintop">
@@ -724,27 +657,27 @@
    										<tr class="digits-row">
    											<td class="removeborder">
    												<p class="center">
-   													<span class="digits-choice">300</span>
+   													<span class="digits-choice smallerfont bold">300</span>
    												</p>
    											</td>
    											<td class="removeborder">
    												<p class="center">
-   													<span class="digits-choice">148</span>
+   													<span class="digits-choice smallerfont bold">148</span>
    												</p>
    											</td>
    											<td class="removeborder">
    												<p class="center">
-   													<span class="digits-choice">152</span>
+   													<span class="digits-choice smallerfont bold">152</span>
    												</p>
    											</td>
    											<td class="removeborder">
    												<p class="center">
-   													<span class="digits-choice">240</span>
+   													<span class="digits-choice smallerfont bold">240</span>
    												</p>
    											</td>
    											<td class="removeborder">
    												<p class="center">
-   													<span class="digits-choice">4</span>
+   													<span class="digits-choice smallerfont bold">4</span>
    												</p>
    											</td>
    										</tr>
@@ -1027,7 +960,7 @@
    								<table class="zeroborder"><tr><td><h5>5. В одном из приведенных ниже слов допущена ошибка в постановке ударения: НЕВЕРНО выделена буква, обозначающая ударный гласный звук. Выделите это слово.</h5></td></tr></table>
    								<table class="question-table">
    									<tr id="rusquestion5row">
-   										<td class="boldchosen">сверлИт</td><td class="boldchosen">красИвее</td><td class="boldchosen">начАв</td><td class="boldchosen">грАжданство</td>
+   										<td class="boldchosen center">сверлИт</td><td class="boldchosen center">красИвее</td><td class="boldchosen center">начАв</td><td class="boldchosen center">грАжданство</td>
    									</tr>
    								</table>
    							</div>
@@ -1705,27 +1638,27 @@
 	                		<tr><th>Уровни научного познания</th><th>Действия</th></tr>
 	                		<tr>
 	                			<td class="digits-row mediumfont" style="width: 50%">
-	                				<p><span class="digits-choice bold block">Эмпирический</span><span class="digits-choice bold block">Теоретический</span></p>
+	                				<p class="center"><span class="digits-choice bold block">Эмпирический</span><span class="digits-choice bold block">Теоретический</span></p>
 	                			</td>
 	                			<td class="mediumfont">Наблюдение</td>
 	                		</tr>
 	                		<tr>
 	                			<td class="digits-row mediumfont" style="width: 50%">
-	                				<p><span class="digits-choice bold block">Эмпирический</span><span class="digits-choice bold block">Теоретический</span></p></td>
+	                				<p class="center"><span class="digits-choice bold block">Эмпирический</span><span class="digits-choice bold block">Теоретический</span></p></td>
 	                				<td class="mediumfont">Эксперимент</td>
 	                			</tr>
 	                		<tr>
 	                			<td class="digits-row mediumfont" style="width: 50%">
-	                				<p><span class="digits-choice bold block">Эмпирический</span><span class="digits-choice bold block">Теоретический</span></p></td>
+	                				<p class="center"><span class="digits-choice bold block">Эмпирический</span><span class="digits-choice bold block">Теоретический</span></p></td>
 	                				<td class="mediumfont">Описание объекта</td>
 	                			</tr>
 	                		<tr><td class="digits-row mediumfont" style="width: 50%">
-	                			<p><span class="digits-choice bold block">Эмпирический</span><span class="digits-choice bold block">Теоретический</span></p></td>
+	                			<p class="center"><span class="digits-choice bold block">Эмпирический</span><span class="digits-choice bold block">Теоретический</span></p></td>
 	                			<td class="mediumfont">Объяснение существующих взаимосвязей</td>
 	                		</tr>
 	                		<tr>
 	                			<td class="digits-row mediumfont" style="width: 50%">
-	                			<p><span class="digits-choice bold block">Эмпирический</span><span class="digits-choice bold block">Теоретический</span></p>
+	                			<p class="center"><span class="digits-choice bold block">Эмпирический</span><span class="digits-choice bold block">Теоретический</span></p>
 	                			</td>
 	                			<td class="mediumfont">Формулирование закономерностей</td>
 	                		</tr>
@@ -2258,7 +2191,6 @@
 								
                 </div>
 
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
         <script src="js/html2pdf.bundle.min.js"></script>
         <script>
          function change_ticks() {
@@ -2506,16 +2438,17 @@
           biolbutton.addEventListener("click", show_math_result);    
           biolbutton.addEventListener("click", show_nvlogic_result);
           biolbutton.addEventListener("click", show_vlogic_result); 
-          /*
+          
           let tables = Array.from(document.querySelectorAll(".question-table"));
           tables.forEach(el => {
-          	if(el.getBoundingClientRect().width > assignment.getBoundingClientRect().width) {
-          		console.log("detected");
-          		el.style.width = assignment.getBoundingClientRect().width * 0.9;
-          		Array.from(el.querySelectorAll("span")).forEach(elem => elem.classList.add("smallestfont"));
+          	//el.style.width = assignment.getBoundingClientRect().width * 0.9 + "px";
+          	let size = 100;
+          	while (el.style.width > assignment.getBoundingClientRect().width * 0.9) {
+          		Array.from(el.querySelectorAll("td")).forEach(elem => elem.style.fontSize = `${size = size - 5}%`);
           	}
+
           });
-          */
+          
          } 
 
          function show_biology_result() {
@@ -2593,8 +2526,6 @@
          		temp += 1;
          	});
 
-         	//document.getElementById("nvlogicresult").classList.remove("invisible");
-          //document.getElementById("nvlogicscore").innerText = nvlogic.score;
          	document.getElementById("nonverballogictest").classList.add("invisible");
 
          	All_Answers["Невербальная логика"] = nvlogic.score;
