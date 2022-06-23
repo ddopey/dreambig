@@ -1,0 +1,2844 @@
+﻿<!doctype html>
+<html dir="ltr" lang="ru">
+	<head>
+		<meta charset="uft-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Тест на знание предметов</title>
+		<style>
+
+		 body, html {
+		 	 height: 100%;
+       display: grid;
+       font-size: 2vw;;
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: sans-serif;
+       background-image: url(img/school.jpg);
+       z-index: 1;
+		 }
+
+		 .digits-choice {
+		 	border-radius: 0.5rem;
+		 	border: 1px solid red;
+		 	padding: 1rem;
+		 	margin:  0.5rem;
+		 }
+
+		 .zeroborder h5 {
+		 	font-size: 2vw;
+		 }
+
+		 .boldtext {
+		 	font-weight: bold;
+		 	color:  red;
+		 }
+
+		 .boldchosen {
+			 	color: green;
+			 	font-weight: bold;
+		 }
+
+		 .block {
+		 	display: block;
+		 	width: 80%;
+		 	font-weight: bold;
+		 	margin: auto;
+		 	margin-top: 5%;
+		 }
+
+		 .comma {
+		 }
+
+		 .commapresent {
+       background-image: url(img/test/supercomma.png);
+       background-size: contain;
+       background-repeat: no-repeat;
+       background-position: bottom;
+		 }
+
+
+		 .width {
+		 	width: 30%;
+		 }
+
+		 .halfopacity {
+		 	opacity: 0.5;
+		 }
+		 .fullopacity {
+		 	opacity: 1;
+		 }
+
+		 .textchoice:hover {
+		 	color: red;
+		 }
+
+		 .textcross {
+		 	text-decoration: line-through;
+		 }
+
+		 .digit-chosen {
+		 	border: 1px solid green;
+		 	background-color: green;
+		 	color: white;
+		 	font-weight: bold;
+		 }
+
+		 .digits-choice:hover {
+		 	border: 1px solid green;
+		 }
+
+		 .digits-row {
+		 }
+
+		 #test1 {
+		 	display: none;
+		 }
+
+                .invisible {
+                 display: none; 
+                }
+
+                .margintop {
+                margin-top: 2rem;
+                } 
+
+                .marginbottom {
+                	margin-bottom: 5%;
+                }
+
+                .zeroborder {
+                	width: 90%;
+	                margin: auto;
+                	border: 0;
+                }
+
+                .subjects {
+								margin: auto;
+                border: 2px solid black;
+                border-radius: 0.5rem;
+                padding: 0.8rem; 
+                }
+
+                .question-table {
+                	width: 90%;
+	                margin: auto;
+	                border: 2px solid black;
+	                border-radius: 0.5rem;
+	                padding: 0.5rem; 
+								  border-spacing: 0.5rem;
+                }
+
+                .imgcontainer {
+                	width: 100%;
+                	height: 8rem;
+                	background-size: contain;
+                	background-repeat: no-repeat;
+                	border: 0;
+                	background-position: center;
+                }
+
+                .question-table td.removeborder {
+                	border: 0;
+                }
+
+                .question-table tr.showborder {
+                	border: 2px solid black;
+	                border-radius: 0.5rem;
+	                padding: 0.5rem; 
+								  border-spacing: 0.5rem;
+                }
+
+                .dspan {
+                	/*display:  inline-block;*/
+                	/*width: 12%;*/
+                }
+
+                .question-table td {
+									text-align: left;
+									vertical-align: middle;
+									border-radius: 0.5rem;
+									border:  1px solid black;
+									padding: 0.5rem; 
+								}
+
+								.question-table td.center {
+									text-align: center;
+								}
+
+								.outline {
+									border: 2px solid red;
+								}
+
+								.outline:hover {
+									border: 2px solid green;
+								}
+
+								#savebutton:hover {
+									background-color: green;
+									color: white;
+								}
+
+                #startbutton:hover {
+                 background-color: green;    
+                }
+
+                #biolready:hover {
+                	background-color: green;
+                	color: white;
+                }
+
+                .marginready {
+                	margin:auto;
+                	margin-top: 1.5rem;
+                	margin-bottom: 1.5rem;
+                }
+                
+               .marg {
+                 margin-top: -1.5rem;
+                }
+                
+                .marg1 {
+                 margin-top: -0.5rem;
+                }
+
+                .margbottom {
+                	margin-bottom: 0.5rem;
+                }
+
+                .marg2 {
+                	margin-top: 0.5rem;
+                }
+
+                .radius {
+                border-radius: 0.5rem;
+                border: 2px solid black;
+                padding: 0.5rem;
+                }
+                
+                .left {
+                text-align: left;
+                padding-bottom: 5%;
+                }
+
+                .justleft {
+                	text-align: left;
+                }
+
+                .tick {
+                 background-size: contain;
+                 width: 4rem;
+                 height: 2rem;
+                 background-repeat: no-repeat;
+                 background-position: center;
+                }
+
+                .emtd {
+		 width: 2rem;
+                }
+
+                .emtick {
+                background-image: url(img/emptytick.png);
+                background-position: center;
+                }
+
+                .octick {
+                background-image: url(img/occupiedtick.png);
+                background-position: center;
+                }
+
+                .borderbottom {
+                 border-bottom: 2px solid black;
+                }
+
+		  .table {
+		  	border: 1px solid black;
+			  border-collapse: collapse;
+			  margin: 10%;
+			  margin-bottom: 2%;
+			  table-layout: fixed;
+		  }
+
+		  .invisible {
+		  	display: "none";
+		  }
+
+		 
+			.fontsize {
+				font-size: 2vw;
+			}
+
+			.inputfontsize {
+				font-size: 1vw;
+			}
+
+			.bold {
+				font-weight: bold;
+			}
+
+			.paddingbottom {
+				padding-bottom: 3vw;
+			}
+
+      .superpadding {
+			  padding: 10%;
+			}
+
+			.center {
+				text-align: center;
+			}
+
+			.justify {
+				text-align: justify;
+			}
+
+			.preamble {
+				margin:  auto;
+				text-align: center;
+				width: 80%;
+				/*font-size: 1.5vw;*/
+				background-color: white;
+				border-radius: 0.5rem;
+				padding-bottom: 1rem;
+			}
+
+			.centertext {
+			 text-align: center;
+			}
+
+			.fixedtable {
+				width: 90%;
+			}
+
+			.heading-width {
+				width: 90%;
+			}
+
+			.forbutton {
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+			}
+			
+		</style>
+
+	</head>
+	<body id="body">
+		<!--Here we have the start section of the test -->
+		<div id="preamble" class="preamble">
+			<h1 class="marg2 fontsize centertext">Выберите любимые школьные предметы (лучше несколько).</h1>
+			<!--<p class="centertext marg fontsize">Выберите любимые школьные предметы (лучше несколько).</p>-->
+
+          <table class="subjects marg1" id="subjects">
+            <tr >
+             <td class="left">Английский</td><td class="emtd"></td><td id="eng" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">Биология</td><td class="emtd"></td><td id="biol" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">География</td><td class="emtd"></td><td id="geo" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">Информатика</td><td class="emtd"></td><td id="inf" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">История</td><td class="emtd"></td><td id="hist" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">Литература</td><td class="emtd"></td><td id="lit" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">Обществознание</td><td class="emtd"></td><td id="societ" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">Физика</td><td class="emtd"></td><td id="phys" class="tick emtick"></td>
+            </tr>
+            <tr>
+             <td class="left">Химия</td><td class="emtd"></td><td id="chem" class="tick emtick"></td>
+            </tr>
+            <tr>
+              <td colspan="3" id="start" class="center fontsize"><span id="startbutton" class="radius">ГОТОВО</span></td>
+            </tr>
+          </table>
+
+          <table class="marginready invisible" id="finish">
+           	<tr>
+              <td class="center fontsize"><span class="radius" id="savebutton">СОХРАНИТЬ</span></td>
+            </tr>
+      		</table>          
+			</div>
+
+                <div id="assignment" class="invisible preamble">
+                  <table class="zeroborder"><tr><td><h4 id="assignmentstatement" style="font-size: 2vw;">Далее Вам предлагается пройти мини-тесты по выбранным школьным предметам (плюс математика, русский язык, вербальная и невербальная логика).</h4></td></tr></table>
+   
+
+   							<div id="mathtest" data-test="mathtest" class="invisible margintop">
+   								<h2>МАТЕМАТИКА</h2>
+
+   								<div id="math1">
+   									<table class="zeroborder"><tr><td><h5>1. Найдите значение выражения (6,7 – 3,2) * 2,4</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr class="digits-row showborder">
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">6,5</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">7,3</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">8,4</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">9,5</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">5,7</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+
+   								<div id="math2">
+   									<table class="zeroborder"><tr><td><h5>2. Килограмм моркови стоит 40 рублей. Олег купил 1 кг 600 г моркови. Сколько рублей сдачи он должен получить со 100 рублей.</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">24</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">36</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">73</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">84</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">55</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							<div id="math3">
+   									<table class="zeroborder"><tr><td><h5><h5>3. Решите уравнение: x<sup>2</sup> – x – 6 = 0. Если уравнение имеет более одного корня, укажите все правильные решения.</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">-2</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">3</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">-4</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">5</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">7</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							<div id="math4">
+   									<table class="zeroborder"><tr><td><h5>4. Расстояние между городами А и В равно 470 км. Из города А в город В выехал первый автомобиль, а через 3 часа после этого навстречу ему из города В выехал со скоростью 60 км/ч второй автомобиль. Найдите скорость первого автомобиля (в км/ч), если автомобили встретились на расстоянии 350 км от города А.</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">70</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">80</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">60</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">90</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">45</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							<div id="math5">
+   									<table class="zeroborder"><tr><td><h5>5. Прямоугольник разбит на четыре меньших прямоугольника двумя прямолинейными разрезами. Периметры трех из них, начиная с левого верхнего и далее по часовой стрелке, равны 24, 28 и 16. Найдите периметр четвертого прямоугольника.</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">16</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">20</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">24</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">18</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">12</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   						</div>
+
+
+   							<div id="verballogictest" data-test="verballogic" class="invisible margintop">
+   								<h2>ВЕРБАЛЬНАЯ ЛОГИКА</h2>
+
+   							<div id="verballogic1">
+   									<table class="zeroborder"><tr><td><h5>1. Машиного отца зовут Николай Викторович, а дедушку - Василий Петрович. Какое отчество у Машиной мамы?</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr class="digits-row center">
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold block">Петровна</span>
+   													<span class="digits-choice bold block">Викторовна</span>
+   													<span class="digits-choice bold block">Николаевна</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold block">Васильевна</span>
+   													<span class="digits-choice bold block">Ивановна</span>
+   													<span class="digits-choice bold block">Андреевна</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							<div id="verballogic2">
+   									<table class="zeroborder"><tr><td><h5>2. Какой предмет можно отнести к множеству 'апельсин, лимон, лайм'?</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold block">Грейпфрут</span>
+   													<span class="digits-choice bold block">Ананас</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold block">Банан</span>
+   													<span class="digits-choice bold block">Яблоко</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							<div id="verballogic3">
+   									<table class="zeroborder"><tr><td><h5>3. Пять сестер находятся на даче. Первая читает книгу, вторая готовит еду, третья играет в шахматы, четвертая разгадывает кроссворд. А чем занимается пятая сестра?</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder center">
+   												<p class="center">
+   													<span class="digits-choice bold block topmargin">Читает книгу</span>
+   													<span class="digits-choice bold block topmargin">Готовит еду</span>
+   													<span class="digits-choice bold block topmargin">Играет в шахматы</span>
+   													<span class="digits-choice bold block topmargin">Разгадывает кроссворд</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							<div id="verballogic4">
+   									<table class="zeroborder"><tr><td><h5>4. В пакете лежат фрукты. Все, кроме двух, - апельсины. Все, кроме двух, - яблоки. Все, кроме двух, - бананы. Сколько апельсинов в пакете?</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">1</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">2</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">3</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">4</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice">5</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							<div id="verballogic5">
+   									<table class="zeroborder"><tr><td><h5>5. На острове Однозначности люди либо честные и всегда говорят правду, либо хитрые и всегда говорят неправду. В стране 152 честных и 148 хитрых жителей. Царь Острова однозначности издал указ, чтобы все жители написали очерк о своей жизни, в котором содержалаь бы фраза 'Все написанное здесь - правда' или 'Все написанное здесь - ложь'. Сколько очерков содеражло фразу 'Все написанное здесь - правда'?</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice smallerfont bold">300</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice smallerfont bold">148</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice smallerfont bold">152</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice smallerfont bold">240</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice smallerfont bold">4</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							</div>
+
+   							<div id="nonverballogictest" data-test="nonverballogic" class="invisible margintop">
+   								<h2>НЕВЕРБАЛЬНАЯ ЛОГИКА</h2>
+
+   								<div id="nonverballogic1">
+   									<table class="zeroborder"><tr><td><h5>1. Выберите правильное продолжение последовательности.</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr>
+   											<td colspan="5" class="imgcontainer" style="background-image: url(img/test/logic/q1/q1.png)">
+   											</td>
+   										</tr>
+   										<tr>
+   											<td colspan="5" class="imgcontainer" style="background-image: url(img/test/logic/q1/a1.png)">
+   											</td>
+   										</tr>
+   										<tr class="digits-row">
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">1</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">2</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">3</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">4</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">5</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							<div id="nonverballogic2">
+   									<table class="zeroborder"><tr><td><h5>2. Выберите правильное продолжение последовательности.</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr>
+   											<td colspan="5" class="imgcontainer" style="background-image: url(img/test/logic/q2/q2.png)">
+   											</td>
+   										</tr>
+   										<tr>
+   											<td colspan="5" class="imgcontainer" style="background-image: url(img/test/logic/q2/a2.png)">
+   											</td>
+   										</tr>
+   										<tr class="digits-row">
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">1</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">2</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">3</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">4</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">5</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							<div id="nonverballogic3">
+   									<table class="zeroborder"><tr><td><h5>3. Выберите правильное продолжение последовательности.</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr>
+   											<td colspan="5" class="imgcontainer" style="background-image: url(img/test/logic/q3/q3.png)">
+   												<!--<img src="img/test/logic/q1/q1.png"/>-->
+   											</td>
+   										</tr>
+   										<tr>
+   											<td colspan="5" class="imgcontainer" style="background-image: url(img/test/logic/q3/a3.png)">
+   												<!--<img src="img/test/logic/q1/a1.png"/>-->
+   											</td>
+   										</tr>
+   										<tr class="digits-row">
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">1</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">2</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">3</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">4</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">5</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							<div id="nonverballogic4">
+   									<table class="zeroborder"><tr><td><h5>4. Выберите правильное продолжение последовательности.</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr>
+   											<td colspan="5" class="imgcontainer" style="background-image: url(img/test/logic/q4/q4.png)">
+   											</td>
+   										</tr>
+   										<tr>
+   											<td colspan="5" class="imgcontainer" style="background-image: url(img/test/logic/q4/a4.png)">
+   											</td>
+   										</tr>
+   										<tr class="digits-row">
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">1</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">2</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">3</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">4</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">5</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							<div id="nonverballogic5">
+   									<table class="zeroborder"><tr><td><h5>5. Выберите правильное продолжение последовательности.</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr>
+   											<td colspan="5" class="imgcontainer" style="background-image: url(img/test/logic/q5/q5.png)">
+   											</td>
+   										</tr>
+   										<tr>
+   											<td colspan="5" class="imgcontainer" style="background-image: url(img/test/logic/q5/a5.png)">
+   											</td>
+   										</tr>
+   										<tr class="digits-row">
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">1</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">2</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">3</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">4</span>
+   												</p>
+   											</td>
+   											<td class="removeborder">
+   												<p class="center">
+   													<span class="digits-choice bold">5</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							</div>
+   						
+
+   							<div id="rustest" data-test="rustest" class="invisible margintop">
+   							<h2>РУССКИЙ ЯЗЫК</h2>
+
+   							<div id="rus1">
+   								<table class="zeroborder"><tr><td><h5>1. Отредактируйте предложение: исправьте лексическую ошибку, исключив лишнее слово - на него нужно кликнуть.</h5></td></tr></table>
+   								<table class="question-table">
+   									<tr>
+   										<td id="rus1td">
+   											<span class="textchoice">Посев</span> <span class="textchoice">семян</span> <span class="textchoice">хвойных</span> <span class="textchoice">пород</span> <span class="textchoice">необходимо</span> <span class="textchoice">проводить</span> <span class="textchoice">в</span> <span class="textchoice">очень</span> <span class="textchoice">оптимальные</span> <span class="textchoice">сроки,</span> <span class="textchoice">когда</span> <span class="textchoice">почва</span> <span class="textchoice">влажная</span> <span class="textchoice">и</span> <span class="textchoice">температура</span> <span class="textchoice">ее</span> <span class="textchoice">верхних</span> <span class="textchoice">слоев</span> <span class="textchoice">достигает</span> <span class="textchoice">6-8</span> <sup>0</sup>С <span class="textchoice">для</span> <span class="textchoice">кедра</span> <span class="textchoice">и</span> <span class="textchoice">8-10</span> <sup>0</sup>С <span class="textchoice">для</span> <span class="textchoice">ели</span> <span class="textchoice">и</span> <span class="textchoice">пихты.</span>
+   										</td>
+   									</tr>
+   								</table>
+   							</div>
+
+   							<div id="rus2">
+   								<table class="zeroborder"><tr><td><h5>2. Укажите варианты ответов, в которых в обоих словах одного ряда пропущена одна и та же буква.</h5></td></tr></table>
+   								<table class="question-table">
+   									<tr>
+   										<td>затм...вать, подароч..к</td><td class="tick emtick"></td>
+   									</tr>
+   									<tr>
+   										<td>усидч..вый, ненавид..ли</td><td class="tick emtick"></td>
+   									</tr>
+   									<tr>
+   										<td>аплодир..вать, издавн..</td><td class="tick emtick"></td>
+   									</tr>
+   									<tr>
+   										<td>никел..вый, наста..вать</td><td class="tick emtick"></td>
+   									</tr>
+   									<tr>
+   										<td>солом..нка, разборч..вый</td><td class="tick emtick"></td>
+   									</tr>
+   								</table>
+   							</div>
+
+   							<div id="rus3">
+   								<table class="zeroborder"><tr><td><h5>3. Укажите все выделенные слова, на месте которых пишется НН, кликнув на них.</h5></td></tr></table>
+   								<table class="question-table">
+   									<tr>
+   										<td>
+   											Обстановка комнаты скромная: <span class="boldtext">деревя__ая</span> кровать; у окна – <span class="boldtext">письме__ый</span> стол для занятий; огромный сундук, обитый кожей и <span class="boldtext">кова__ым</span> железом, и удивительный ларчик, <span class="boldtext">оклее__ый</span> резной костью.
+   										</td>
+   									</tr>
+   								</table>
+   							</div>
+
+   							<div id="rus4">
+   								<table class="zeroborder"><tr><td><h5>4. Расставьте запятые в выделенных местах предложения</h5></td></tr></table>
+   								<table class="question-table">
+   									<tr>
+   										<td>
+   											Если <span class="comma">___</span> мне хотя бы в малой доле <span class="comma">___</span> удалось передать читателю представление о прекрасной сущности писательского труда <span class="comma">___</span> то я буду считать <span class="comma">___</span> что выполнил свой долг перед литературой. 
+   										</td>
+   									</tr>
+   								</table>
+   							</div>
+
+   							<div id="rus5">
+   								<table class="zeroborder"><tr><td><h5>5. В одном из приведенных ниже слов допущена ошибка в постановке ударения: НЕВЕРНО выделена буква, обозначающая ударный гласный звук. Выделите это слово.</h5></td></tr></table>
+   								<table class="question-table">
+   									<tr id="rusquestion5row">
+   										<td class="boldchosen center smallerfont">сверлИт</td><td class="boldchosen center smallerfont">красИвее</td><td class="boldchosen center smallerfont">начАв</td><td class="boldchosen center smallerfont">грАжданство</td>
+   									</tr>
+   								</table>
+   							</div>
+
+   						</div>
+
+   						<div id="geotest" data-test="geotest" class="invisible margintop">
+                <h2>ГЕОГРАФИЯ</h2>
+
+                <div id="geo1">
+	                	<table class="question-table">
+	                		<tr>
+	                			<td><h5>1. Определите, какой город, являющийся столицей республики в составе Российской Федерации,имеет географические координаты 62<sup>0</sup> с.ш. 34<sup>0</sup> в.д.</h5></td><td style="width: 30%" class="center"><input id="geoinput1" type="text" class="inputfontsize outline"></td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+                 <div id="geo2">
+                  	<table class="zeroborder"><tr><td><h5>2. Расположите регионы России по степени уменьшения естественного плодородия почв на их территории (от наиболее плодородного (1) к наименнее плодородному (3)).</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr class="digits-row">
+   											<td>
+   												<p class="center">
+   													<span class="digits-choice bold">1</span>
+   												</p>
+   											</td>
+   											<td>
+   												<p class="center">
+   													<span class="digits-choice bold">2</span>
+   												</p>
+   											</td>
+   											<td>
+   												<p class="center">
+   													<span class="digits-choice bold">3</span>
+   												</p>
+   											</td>
+	                			<td>
+	                				<p class="center">
+	                				<span>Архангельская область</span>
+	                				</p>
+	                		</td>
+	                		</tr>
+
+	                		<tr class="digits-row">
+   											<td>
+   												<p class="center">
+   													<span class="digits-choice bold">1</span>
+   												</p>
+   											</td>
+   											<td>
+   												<p class="center">
+   													<span class="digits-choice bold">2</span>
+   												</p>
+   											</td>
+   											<td>
+   												<p class="center">
+   													<span class="digits-choice bold">3</span>
+   												</p>
+   											</td>
+	                			<td>
+	                				<p class="center">
+	                				<span>Смоленская область</span>
+	                				</p>
+	                		</td>
+	                		</tr>
+
+	                		<tr class="digits-row">
+   											<td>
+   												<p class="center">
+   													<span class="digits-choice bold">1</span>
+   												</p>
+   											</td>
+   											<td>
+   												<p class="center">
+   													<span class="digits-choice bold">2</span>
+   												</p>
+   											</td>
+   											<td>
+   												<p class="center">
+   													<span class="digits-choice bold">3</span>
+   												</p>
+   											</td>
+	                			<td>
+	                				<p class="center">
+	                				<span>Воронежская область</span>
+	                				</p>
+	                		</td>
+	                		</tr>
+	                	</table>
+                  </div>
+
+                  <div id="geo3">
+                  	<table class="zeroborder"><tr><td><h5>3. Решите задачу</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td>Средняя соленость поверхностных вод Балтийского моря составляет 8<sup>0</sup>/<sub>00</sub>. Определите, сколько граммов солей растворено в 3 литрах его воды. Ответ запишите в виде числа (без единицы измерения).</td><td style="width: 30%" class="center"><input id="geoinput2" type="text" class="inputfontsize outline"></td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+                 <div id="geo4">
+   								<table class="zeroborder"><tr><td><h5>4. В каких двух из перечисленных регионов России средняя плотность населения наибольшая?</h5></td></tr></table>
+   								<table class="question-table">
+   									<tr>
+   										<td>Камчатский край</td><td class="tick emtick"></td>
+   									</tr>
+   									<tr>
+   										<td>Ростовская область</td><td class="tick emtick"></td>
+   									</tr>
+   									<tr>
+   										<td>Мурманская область</td><td class="tick emtick"></td>
+   									</tr>
+   									<tr>
+   										<td>Республика Карелия</td><td class="tick emtick"></td>
+   									</tr>
+   									<tr>
+   										<td>Омская область</td><td class="tick emtick"></td>
+   									</tr>
+   						
+   								</table>
+   							</div>
+
+   							<div id="geo5">
+   								<table class="zeroborder"><tr><td><h5>5. Какие два из перечисленных народов являются коренными жителями Северного Кавказа?</h5></td></tr></table>
+   								<table class="question-table">
+   									<tr>
+   										<td>Буряты</td><td class="tick emtick"></td>
+   									</tr>
+   									<tr>
+   										<td>Марийцы</td><td class="tick emtick"></td>
+   									</tr>
+   									<tr>
+   										<td>Карачаевцы</td><td class="tick emtick"></td>
+   									</tr>
+   									<tr>
+   										<td>Осетины</td><td class="tick emtick"></td>
+   									</tr>
+   									<tr>
+   										<td>Тувинцы</td><td class="tick emtick"></td>
+   									</tr>
+   								</table>
+   							</div>
+
+               </div>
+
+             	<div id="inftest" data-test="inftest" class="invisible margintop">
+                <h2>ИНФОРМАТИКА</h2>
+
+                <div id="inf1">
+   								<table class="zeroborder"><tr><td><h5>1. Решите задачу. В поле для ответа запишите цифру.</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td>Напишите наименьшее число x, для которого истинно высказывание: <br>(x > 16) <b>И НЕ</b> (x нечетное).</td><td style="width: 30%" class="center"><input id="infinput1" type="text" class="inputfontsize outline"></td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+                <div id="inf2">
+   								<table class="zeroborder"><tr><td><h5>2. Решите задачу. В поле для ответа запишите цифру.</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td>Доступ к файлу rus.doc, находящемуся на сервере obr.org, осуществляется по протоколу https. Фрагменты адреса файла закодированы цифрами от 1 до 7. Запишите в ответе последовательность этих цифр, кодирующую адрес указанного файла в сети Интернет.<br>
+	                				<ol>
+	                					<li>obr.</li>
+	                					<li>/</li>
+	                					<li>org</li>
+	                					<li>://</li>
+	                					<li>doc</li>
+	                					<li>rus.</li>
+                                                                <li>https</li>
+	                				</ol>
+	                			
+	                			</td><td style="width: 30%" class="center"><input id="infinput2" type="text" class="inputfontsize outline"></td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+                 <div id="inf3">
+   								<table class="zeroborder"><tr><td><h5>3. Решите задачу. В поле для ответа запишите цифру.</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td>Среди приведенных ниже чисел, записанных в различных системах счисления, найдите максимальное и запишите его в ответе в десятичной системе счисления (только число, основание системы счисления указывать не нужно): <br> 23<sub>16</sub>, 32<sub>8</sub>, 11110<sub>2</sub></td><td style="width: 30%" class="center"><input id="infinput3" type="text" class="inputfontsize outline"></td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+                <div id="inf4">
+   								<table class="zeroborder"><tr><td><h5>4. Решите задачу. В поле для ответа запишите цифру.</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td><p>В одной из кодировок Unicode каждый символ кодируется 16 битами. Ученик написал текст (в нем нет лишних пробелов):</p>
+                                                    <p>"Ёж, лев, слон, олень, тюлень, носорог, крокодил, аллигатор - дикие животные."</p>
+						    <p>Ученик удалил из списка название одного животного, а также лишние запятую и пробел - два пробела не должны идти подряд.</p>
+                                                    <p>При этом размер нового предложения в данной кодировке оказался на 16 байт меньше, чем размер исходного предложения. Напишите в ответе удаленное название животного.</p> 
+</td><td style="width: 30%" class="center"><input id="infinput4" type="text" class="inputfontsize outline"></td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+                <div id="inf5">
+   								<table class="zeroborder"><tr><td><h5>5. Решите задачу. В поле для ответа запишите цифру.</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td>
+	                				У исполнителя Альфа две команды, которым присвоены номера:<br>
+													<b>1. Прибавь 1</b><br>
+													<b>2. Умножь на b</b><br>
+													Программа для исполнителя – это последовательность команд.<br> 
+													(b-неизвестное натуральное число; b >= 2).<br> 
+													Первая из них увеличивает число на экране на 1, вторая умножает его на b. Алгоритм для исполнителя Альфа - это последовательность номеров команд. Найдите значение числа b, при котором <b>из числа 6</b> по алгоритму 11211 будет получено <b>число 82</b>.  
+												</td><td style="width: 30%" class="center"><input id="infinput5" type="text" class="inputfontsize outline"></td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+              </div>
+
+              <div id="chemtest" data-test="chemtest" class="invisible margintop">
+                <h2>ХИМИЯ</h2>
+
+                <div id="chem1">
+   									<table class="zeroborder"><tr><td><h5>1. Из предложенного перечня выберите два вещества с ионной связью.</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">CaO</span>
+   												</p>
+   											</td>
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">PCl<sub>3</sub></span>
+   												</p>
+   											</td>
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">Br<sub>2</sub></span>
+   												</p>
+   											</td>
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">Li<sub>3</sub>N</span>
+   												</p>
+   											</td>
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">H<sub>2</sub>S</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							<div id="chem2">
+   									<table class="zeroborder"><tr><td><h5>2. Какие два вещества из предложенного перечня вступают в реакцию с оксидом алюминия?</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">Cu(OH)<sub>2</sub></span>
+   												</p>
+   											</td>
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">HNO<sub>3</sub></span>
+   												</p>
+   											</td>
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">O<sub>2</sub></span>
+   												</p>
+   											</td>
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">Be(OH)<sub>2</sub></span>
+   												</p>
+   											</td>
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">Na<sub>2</sub>O</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   						  <div id="chem3">
+   									<table class="zeroborder"><tr><td><h5>3. Из предложенного перечня веществ выберите основание и кислотный оксид.</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">CO</span>
+   												</p>
+   											</td>
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">Mg(OH)<sub>2</sub></span>
+   												</p>
+   											</td>
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">SO<sub>2</sub></span>
+   												
+   											</td>
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">NaClO<sub>4</sub></span>
+   												</p>
+   											</td>
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">Al(OH)<sub>3</sub></span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							<div id="chem4">
+   								<table class="zeroborder"><tr><td><h5>4. Решите задачу. В поле для ответа запишите число с точностью до целых.</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td>Нитрат аммония (аммиачная селитра) - химическое соединение NH<sub>4</sub>NO<sub>3</sub>, соль азотной кислоты, которое используется в качестве азотного удобрения. Вычислите в процентах массовую долю азота в нитрате аммония.</td><td style="width: 30%" class="center"><input id="cheminput" type="text" class="inputfontsize outline"></td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+                  <div id="chem5">
+                  	<table class="zeroborder"><tr><td><h5>5. Установите соответствие между схемой процесса, происходящего в окислительно восстановительной реакции, и названием этого процесса.</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr><th>Название процесса</th><th>Схема процесса</th></tr>
+	                		<tr>
+	                			<td class="digits-row mediumfont">
+	                				<p class="center"><span class="digits-choice bold">Окисление</span><span class="digits-choice bold">Восстановление</span></p>
+	                			</td>
+	                			<td class="mediumfont">S<sup>-2</sup> &#x2192 S<sup>0</sup></td>
+	                		</tr>
+	                		<tr>
+
+	                		<tr>
+	                			<td class="digits-row mediumfont">
+	                				<p class="center"><span class="digits-choice bold">Окисление</span><span class="digits-choice bold">Восстановление</span></p>
+	                			</td>
+	                			<td class="mediumfont">H<sub>2</sub><sup>0</sup> &#x2192 2H<sup>+</sup></td>
+	                		</tr>
+	                		<tr>
+
+	                		<tr>
+	                			<td class="digits-row mediumfont">
+	                				<p class="center"><span class="digits-choice bold">Окисление</span><span class="digits-choice bold">Восстановление</span></p>
+	                			</td>
+	                			<td class="mediumfont">Cr<sup>+6</sup> &#x2192 Cr<sup>+3</sup></td>
+	                		</tr>
+	                		<tr>
+	                			
+	                	</table>
+                  </div>
+
+              </div>
+
+               <div id="engtest" data-test="engtest" class="invisible margintop">
+                <h2>АНГЛИЙСКИЙ ЯЗЫК</h2>
+                <div id="eng1">
+   								  <table class="zeroborder"><tr><td><h5>1. Заполните пропуск приведенным в правом столбце словом, поставив его в правильную грамматическую форму.</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td>Once there were four children whose names were Peter, Susan, Edmund and Lucy. This story happened to <input id="enginput1" type="text" class="inputfontsize outline" placeholder="they"> when they had to leave their home city, London, during the war.</td><td>THEY</td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+                <div id="eng2">
+   								  <table class="zeroborder"><tr><td><h5>2. Заполните пропуск приведенным в правом столбце словом, поставив его в правильную грамматическую форму.</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td>They <input id="enginput2" type="text" class="inputfontsize outline" placeholder="come"> to the house of an old Professor who lived in the country, ten miles from the nearest railway station.</td><td>COME</td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+                 <div id="engaudio">
+   								  <table class="zeroborder"><tr><td><h5>Вы услышите три коротких текста, обозначенных буквами A, B, C. Выберите правильный ответ на приведенные ниже вопросы.</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td> <p class="center">
+	                				<audio controls style="width: 70%">
+	                					<source src="audio/engtestoge.mp3" type="audio/mpeg">
+	                				</audio>
+	                			</p>
+	                			</td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+                <div id="eng3">
+   								  <table class="zeroborder"><tr><td><h5>3. Today the customers can take part in...</h5></td></tr></table>
+	                	<table class="question-table">
+											<tr>
+	                			<td class="digits-row">
+	                					<span class="digits-choice block">a children's book exhibition.</span>
+	                					<span class="digits-choice block">a lottery of international books.</span>
+	                					<span class="digits-choice block marginbottom">a workshop on making souvenirs.</span>
+	                			</td>
+	                		</tr>
+	                	</table>
+              	</div>
+
+              	<div id="eng4">
+   								  <table class="zeroborder"><tr><td><h5>4. Alice can't go shopping with Mary because...</h5></td></tr></table>
+	                	<table class="question-table">
+											<tr>
+	                			<td class="digits-row">
+	                					<span class="digits-choice block">it's her grandmother's birthday.</span>
+	                					<span class="digits-choice block">she has to help her grandmother.</span>
+	                					<span class="digits-choice block marginbottom">she is ill and has to see a doctor.</span>
+	                			</td>
+	                		</tr>
+	                	</table>
+              	</div>
+
+              	<div id="eng5">
+   								  <table class="zeroborder"><tr><td><h5>5. On Sunday, Jane is...</h5></td></tr></table>
+	                	<table class="question-table">
+											<tr>
+	                			<td class="digits-row">
+	                					<span class="digits-choice block">attending a birthday party.</span>
+	                					<span class="digits-choice block">writing an essay.</span>
+	                					<span class="digits-choice block marginbottom">going to the cinema.</span>
+	                			</td>
+	                		</tr>
+	                	</table>
+              	</div>
+
+              </div>
+
+              <div id="littest" data-test="littest" class="invisible margintop">
+                <h2>ЛИТЕРАТУРА</h2>
+
+                <div id="lit1">
+	                	<table class="question-table">
+	                		<tr>
+	                			<td><h5>1. Укажите жанр пьесы Н.В. Гоголя «Ревизор».</h5></td><td style="width: 30%" class="center"><input id="litinput1" type="text" class="inputfontsize outline"></td>
+	                		</tr>
+	                	</table>
+                 </div>
+                 <br>
+                 <div id="lit2">
+	                	<table class="question-table">
+	                		<tr>
+	                			<td><h5>2. Укажите фамилию персонажа пьесы Н.В. Гоголя «Ревизор», вызвавшего переполох в городе N («Чиновник-то из Петербурга приехал»).</h5></td><td style="width: 30%" class="center"><input id="litinput2" type="text" class="inputfontsize outline"></td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+                 <div id="lit3">
+                  	<table class="zeroborder"><tr><td><h5>3. Установите соответствие между литературными героями и названиями произведений.</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td class="smallerfont">
+													Павел Чичиков     <br>
+													Андрей Штольц      <br>
+													Александр Чацкий  <br>
+													Герасим   <br>
+	                			</td>
+	                			<td>
+														1) «Горе от ума»               <br>
+														2) «Тарас Бульба»               <br>
+														3) «Капитанская дочка»              <br>
+														4) «Обломов»              <br>
+														5) «Муму»                      <br>
+														6) «Мертвые души»              <br>
+	                			</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="smallerfont">Павел Чичиков</td>
+	                			<td class="digits-row">
+	                				<p class="center smallerfont"><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span><span class="digits-choice">6</span></p>
+	                			</td>
+	                		</tr>
+
+	                		<tr>
+	                			<td class="smallerfont">Андрей Штольц</td>
+	                			<td class="digits-row">
+	                				<p class="center smallerfont"><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span><span class="digits-choice">6</span></p>
+	                			</td>
+	                		</tr>
+
+	                		<tr>
+	                			<td class="smallerfont">Александр Чацкий</td>
+	                			<td class="digits-row">
+	                				<p class="center smallerfont"><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span><span class="digits-choice">6</span></p>
+	                			</td>
+	                		</tr>
+
+	                		<tr>
+	                			<td class="smallerfont">Герасим</td>
+	                			<td class="digits-row">
+	                				<p class="center smallerfont"><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span><span class="digits-choice">6</span></p>
+	                			</td>
+	                		</tr>
+	                		
+	                	</table>
+                  </div>
+                  <br>
+                  <div id="lit4">
+				<table class="zeroborder"><tr><td><h5>4. Прочитайте приведенное ниже определение и подберите к нему соответствующий термин</h5></td></tr>
+									<tr><td>Слово или выражение, которое употребляется в переносном значении на основе сходства двух предметов или явлений по какому-либо признаку.</td></tr>
+									<tr><td>&nbsp;</td></tr></table>
+   								
+								<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder center">
+   												<p class="center">
+   													<span class="digits-choice bold block topmargin">Гипербола</span>
+   													<span class="digits-choice bold block topmargin">Риторический вопрос</span>
+   													<span class="digits-choice bold block topmargin">Гротеск</span>
+   													<span class="digits-choice bold block topmargin">Метафора</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   									
+   							</div>
+
+   							<div id="lit5">
+									<table class="zeroborder"><tr><td><h5>4. Какой из литературных жанров описывает следующее определение</h5></td></tr>
+									<tr><td>Жанр литературы, повествующий о серьезных, иногда печальных событиях, но не заканчивающийся трагическим финалом.</td></tr>
+									<tr><td>&nbsp;</td></tr></table>
+   								  
+	 							   <table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder center">
+   												<p class="center">
+   													<span class="digits-choice bold block topmargin">Комедия</span>
+   													<span class="digits-choice bold block topmargin">Трагедия</span>
+   													<span class="digits-choice bold block topmargin">Драма</span>
+   							
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+                 </div>
+
+
+              </div>
+
+   						<div id="phystest" data-test="phystest" class="invisible margintop">
+                <h2>ФИЗИКА</h2>
+
+                <div id="phys1">
+   									<table class="zeroborder"><tr><td><h5>1. Вода в газообразном состоянии имеет во много раз меньшую плотность, чем вода в жидком состоянии при той же температуре. Чем объясняется этот факт?</h5></td></tr></table>
+   									<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder center">
+   												<p class="center">
+   													<span class="digits-choice bold block topmargin">Молекулы жидкости расположены друг к другу ближе, чем в газе.</span>
+   													<span class="digits-choice bold block topmargin">Молекулы жидкости имеют бóльшую массу, чем молекулы газа.</span>
+   													<span class="digits-choice bold block topmargin">Молекулы жидкости имеют бóльшие размеры, чем молекулы газа</span>
+   													<span class="digits-choice bold block topmargin">Молекулы жидкости имеют меньшие размеры, чем молекулы газа.</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+   							</div>
+
+   							<div id="phys2">
+   								<table class="zeroborder"><tr><td><h5>2. Решите задачу. В поле для ответа запишите только цифру (без единицы измерения).</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td>Нагревательный элемент сделан из нихромовой проволоки длиной 8 м и площадью поперечного сечения 0,05 мм<sup>2</sup>. Определите мощность, потребляемую нагревателем, при включении его в сеть с постоянным напряжением 220 В.</td><td style="width: 30%" class="center"><input id="physinput1" type="text" class="inputfontsize outline"></td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+                <div id="phys3">
+   								<table class="zeroborder"><tr><td><h5>3. Решите задачу. В поле для ответа запишите только цифру (без единицы измерения).</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td>Шар массой 2 кг, движущийся со скоростью 4 м/с, соударяется с шаром массой 3 кг, движущимся ему навстречу по той же прямой со скоростью 2 м/с. После удара шары движутся вместе. Определите, какое количество теплоты выделилось в результате соударения.</td><td style="width: 30%" class="center"><input id="physinput2" type="text" class="inputfontsize outline"></td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+                <div id="phys4">
+   								<table class="zeroborder"><tr><td><h5>4. Решите задачу. В поле для ответа запишите только цифру (без единицы измерения). Ответ дайте в кВт.</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td>В электропечи полностью расплавили слиток стали массой 1 т за 2,3 ч. Какова мощность электропечи, если известно, что до начала плавления сталь необходимо было нагреть на 1500 °С? Потерями энергии пренебречь.</td><td style="width: 30%" class="center"><input id="physinput3" type="text" class="inputfontsize outline"></td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+                <div id="phys5">
+   								<table class="zeroborder"><tr><td><h5>5. Решите задачу. В поле для ответа запишите только цифру (без единицы измерения).</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td>Мальчик и девочка тянут верёвку за противоположные концы. Девочка может тянуть с силой не более 50 Н, а мальчик – с силой 150 Н. С какой силой они могут натянуть верёвку, не сдвигаясь с места?</td><td style="width: 30%" class="center"><input id="physinput4" type="text" class="inputfontsize outline"></td>
+	                		</tr>
+	                	</table>
+                 </div>
+
+
+              </div>
+
+   						<div id="societtest" data-test="societtest" class="invisible margintop">
+                <h2>ОБЩЕСТВОЗНАНИЕ</h2>
+
+                <div id="societ1">
+   								<table class="zeroborder"><tr><td><h5>1. На уроке школьники изучали законодательство Российской Федерации на примере дела о разводе одной семейной пары. Субъектом данной учебной деятельности является(-ются)?</h5></td></tr></table>
+   								
+								<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder center">
+   												<p class="center">
+   													<span class="digits-choice bold block topmargin">Семейное законодательство</span>
+   													<span class="digits-choice bold block topmargin">Урок</span>
+   													<span class="digits-choice bold block topmargin">Школьники</span>
+   													<span class="digits-choice bold block topmargin">Семейная пара</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>								
+
+   							</div>
+
+   							 <div id="societ2">
+                  	<table class="zeroborder"><tr><td><h5>2. Что из перечисленного относится к факторам (ресурсам) производства? </h5></td></tr></table>
+	                <table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder center">
+   												<p class="center">
+   													<span class="digits-choice bold block topmargin">Труд</span>
+   													<span class="digits-choice bold block topmargin">Прибыль</span>
+   													<span class="digits-choice bold block topmargin">Налоги</span>
+   													<span class="digits-choice bold block topmargin">Заработная плата</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>	
+                  </div>
+
+                <div id="societ3">
+   								<table class="zeroborder"><tr><td><h5>3. Какую социальную роль могут исполнять как подростки, так и взрослые люди?</h5></td></tr></table>
+   								<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder center">
+   												<p class="center">
+   													<span class="digits-choice bold block topmargin">Потребитель</span>
+   													<span class="digits-choice bold block topmargin">Избиратель</span>
+   													<span class="digits-choice bold block topmargin">Ученик средней школы</span>
+   													<span class="digits-choice bold block topmargin">Водитель</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>	
+   							</div>
+
+   							<div id="societ4">
+   								<table class="zeroborder"><tr><td><h5>4. Правовые нормы, в отличие от других социальных норм,</h5></td></tr></table>
+   								<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder center">
+   												<p class="center">
+   													<span class="digits-choice bold block topmargin">Поддерживаются силой государства</span>
+   													<span class="digits-choice bold block topmargin">Регулируют поведение людей</span>
+   													<span class="digits-choice bold block topmargin">Опираются на силу общественного мнения</span>
+   													<span class="digits-choice bold block topmargin">Содержат образцы поведения</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>	
+   							</div>
+
+   							<div id="societ5">
+   								<table class="zeroborder"><tr><td><h5>5. Верны ли следующие суждения о социальном конфликте:</h5></td></tr>
+                                                                      <tr><td>А. Социальный конфликт всегда приводит к негативным последствиям.</td></tr>
+                                                                      <tr><td>Б. Социальные конфликты различаются по форме и характеру развития.</td></tr>
+													<tr><td>&nbsp;</td></tr></table>
+   								
+<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder center">
+   												<p class="center">
+   													<span class="digits-choice bold block topmargin">Верно только А</span>
+   													<span class="digits-choice bold block topmargin">Верно только Б</span>
+   													<span class="digits-choice bold block topmargin">Верны оба суждения</span>
+   													<span class="digits-choice bold block topmargin">Оба суждения неверны</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>	
+   							</div>
+
+              </div>
+
+              <div id="histtest" data-test="histtest" class="invisible margintop">
+                	<h2>ИСТОРИЯ</h2>
+
+                	<div id="hist1">
+                  	<table class="zeroborder"><tr><td><h5>1. Установите соответствие между событиями и годами.</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td class="smallerfont">
+	                										Ледовое побоище <br>
+													Отмена крепостного права в России <br>
+													Принятие Соборного уложения царя Алексея Михайловича <br>
+												
+	                			</td>
+	                			<td>
+	                										1) 1242 <br>
+													2) 1380 <br>
+													3) 1649 <br>
+													4) 1762 <br>
+													5) 1861 <br>
+												
+	                			</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="smallerfont">Ледовое побоище</td>
+	                			<td class="digits-row">
+	                				<p class="smallerfont"><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span></p>
+	                			</td>
+	                		</tr>
+
+	                		<tr>
+	                			<td class="smallerfont">Отмена крепостного права в России</td>
+	                			<td class="digits-row">
+	                				<p class="smallerfont"><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span></p>
+	                			</td>
+	                		</tr>
+
+	                		<tr>
+	                			<td class="smallerfont">Принятие Соборного уложения царя Алексея Михайловича</td>
+	                			<td class="digits-row">
+	                				<p class="smallerfont"><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span><span class="digits-choice">5</span></p>
+	                			</td>
+	                		</tr>
+
+
+	                	</table>
+                  </div>
+
+                  <div id="hist2">
+
+                  	<table class="zeroborder"><tr><td><h5>2. Прочитайте перечень процессов, событий из истории зарубежных стран.</h5></td></tr></table>
+	                	
+	                	<table class="question-table">
+	                		<tr>
+
+	                			<td colspan="2">
+													1) Греко-персидские войны     <br>
+													2) Столетняя война            <br>
+													3) Реформация в Германии      <br> 
+													4) Война за независимость британских колоний в Северной Америке  <br> 
+													
+	                			</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="smallerfont">Участником какого из перечисленных событий, процессов был М. Лютер?</td>
+	                			<td class="digits-row">
+	                				<p class="smallerfont"><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span></p>
+	                			</td>
+	                		</tr>
+
+	                		<tr>
+	                			<td class="smallerfont">В ходе какого события, процесса происходила осада Орлеана?</td>
+	                			<td class="digits-row">
+	                				<p class="smallerfont"><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span></p>
+	                			</td>
+	                		</tr>
+	                		
+	                	</table>
+                  </div>
+
+                  <div id="hist3">
+                  	<table class="zeroborder"><tr><td><h5>3. Что из перечисленного стало одной из причин (предпосылок) начала проведения в России Великих реформ 1860-1870-х гг.?</h5></td></tr></table>
+										<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder center">
+   												<p class="center">
+   													<span class="digits-choice bold block topmargin">Неудачное завершение русско-японской войны</span>
+   													<span class="digits-choice bold block topmargin">Покушение Д.В. Каракозова на императора Александра II</span>
+   													<span class="digits-choice bold block topmargin">Неудачи России в Крымской войне</span>
+   													<span class="digits-choice bold block topmargin">Создание организации "Народная воля"</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+                  </div>
+
+                  <div id="hist4">
+
+                  	<table class="zeroborder"><tr><td><h5>4. Ниже приведен перечень терминов. Все они, за исключением одного, относятся к периоду 1894-1914 гг. Найдите "выпадающий" из данного ряда термин.</h5></td></tr></table>
+	                
+			<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder center">
+   												<p class="center">
+   													<span class="digits-choice bold block topmargin">Октябристы</span>
+   													<span class="digits-choice bold block topmargin">Кадеты</span>
+   													<span class="digits-choice bold block topmargin">Стачка</span>
+   													<span class="digits-choice bold block topmargin">Петрашевцы</span>
+													<span class="digits-choice bold block topmargin">Петиция</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>	
+
+                  </div>
+
+                  <div id="hist5">
+
+                  	<table class="zeroborder"><tr><td><h5>5. Расположите в хронологической последовательности исторические события (цифра 1 - событие, которое произошло раньше остальных, 4 - позже остальных).</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr>
+	                			<td>Избрание на царство Михаила Романова</td>
+	                			<td class="digits-row">
+	                				<p class="center"><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span></p>
+	                			</td>
+	                		</tr>
+
+	                		<tr>
+	                			<td>Избрание на царство Бориса Годунова</td>
+	                			<td class="digits-row">
+	                				<p class="center"><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span></p>
+	                			</td>
+	                		</tr>
+
+	                		<tr>
+	                			<td>Формирование Второго земского ополчения</td>
+	                			<td class="digits-row">
+	                				<p class="center"><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span></p>
+	                			</td>
+	                		</tr>
+
+	                		<tr>
+	                			<td>Свержение Лжедмитрия I</td>
+	                			<td class="digits-row">
+	                				<p class="center"><span class="digits-choice">1</span><span class="digits-choice">2</span><span class="digits-choice">3</span><span class="digits-choice">4</span></p>
+	                			</td>
+	                		</tr>
+	                	</table>
+                  </div>
+
+
+              </div>
+                
+                <div id="bioltest" data-test="bioltest" class="invisible margintop">
+                	<h2>БИОЛОГИЯ</h2>
+
+                	<div id="biol1">
+	                	<table class="zeroborder"><tr><td><h5>1. Сущность клеточной теории отражена в следующем положении:</h5></td></tr></table>
+				<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder center">
+   												<p class="center">
+   													<span class="digits-choice bold block topmargin">Из клеток состоят только животные и растения</span>
+   													<span class="digits-choice bold block topmargin">Клетки всех организмов способны к фотосинтезу</span>
+   													<span class="digits-choice bold block topmargin">Все организмы состоят из клеток</span>
+   													<span class="digits-choice bold block topmargin">Клетки всех организмов имеют ядро</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+                  </div>
+
+                  <div id="biol2">
+                  	<table class="zeroborder"><tr><td><h5>2. Нервные узлы в неврной системе человека относят к ее</h5></td></tr></table>
+							<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder center">
+   												<p class="center">
+   													<span class="digits-choice bold block topmargin">Периферическому отделу</span>
+   													<span class="digits-choice bold block topmargin">Центральному отделу</span>
+   													<span class="digits-choice bold block topmargin">Коре больших полушарий</span>
+   													<span class="digits-choice bold block topmargin">Подкорковым ядрам</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+                  </div>
+
+                   <div id="biol3">
+                  	<table class="zeroborder"><tr><td><h5>3. У яблони, в отличие от сосны,</h5></td></tr></table>
+									<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder center">
+   												<p class="center">
+   													<span class="digits-choice bold block topmargin">Тело составляют органы и ткани</span>
+   													<span class="digits-choice bold block topmargin">Оплодотворение происходит при наличии воды</span>
+   													<span class="digits-choice bold block topmargin">Зародыш является частью семени</span>
+   													<span class="digits-choice bold block topmargin">Осуществляется двойное оплодотворение</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+                  </div>
+
+                  <div id="biol4">
+                  	<table class="zeroborder"><tr><td><h5>4. Поступление кислорода в тело гидры происходит через</h5></td></tr></table>
+	    				<table class="question-table">
+   										<tr class="digits-row">
+   											<td class="removeborder center">
+   												<p class="center">
+   													<span class="digits-choice bold block topmargin">Жаберные щели</span>
+   													<span class="digits-choice bold block topmargin">Дыхальца</span>
+   													<span class="digits-choice bold block topmargin">Стрекательные клетки щупалец</span>
+   													<span class="digits-choice bold block topmargin">Всю поверхность тела</span>
+   												</p>
+   											</td>
+   										</tr>
+   									</table>
+                  </div>
+
+                  <div id="biol5">
+                  	<table class="zeroborder"><tr><td><h5>5. Установите соответствие между признаками и классами животных, для которых эти признаки характерны.</h5></td></tr></table>
+	                	<table class="question-table">
+	                		<tr><th>Классы</th><th>Признаки</th></tr>
+	                		<tr>
+	                			<td class="digits-row zeroborder">
+	                				<p class="smallerfont center"><span class="digits-choice block">Насекомые</span><span class="digits-choice block">Паукообразные</span></p>
+	                			</td>
+	                			<td style="width: 100%">У части представителей в развитии имеется стадия куколки</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="digits-row">
+	                				<p class="smallerfont center"><span class="digits-choice block">Насекомые</span><span class="digits-choice block">Паукообразные</span></p></td>
+	                				<td style="width: 100%">Подавляющее большинство представителей - хищники</td>
+	                			</tr>
+	                		<tr>
+	                			<td class="digits-row">
+	                				<p class="smallerfont center"><span class="digits-choice block">Насекомые</span><span class="digits-choice block">Паукообразные</span></p></td>
+	                				<td style="width: 100%">Тело животных состоит из головы, груди и брюшка</td>
+	                			</tr>
+	                		<tr><td class="digits-row">
+	                			<p class="smallerfont center"><span class="digits-choice block">Насекомые</span><span class="digits-choice block">Паукообразные</span></p></td>
+	                			<td style="width: 100%">Животные, как правило, поглощают только жидкую пищу</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="digits-row">
+	                			<p class="smallerfont center"><span class="digits-choice block">Насекомые</span><span class="digits-choice block">Паукообразные</span></p>
+	                			</td>
+	                			<td style="width: 100%">Животные имеют четыре пары ходильных ног</td>
+	                		</tr>
+	                		<tr>
+	                			<td class="digits-row">
+	                			<p class="smallerfont center"><span class="digits-choice block">Насекомые</span><span class="digits-choice block">Паукообразные</span></p>
+	                			</td>
+	                			<td style="width: 100%">На голове животных находятся простые и сложные глаза</td>
+	                		</tr>
+	                	</table>
+                  </div>
+
+                </div>
+                				<table class="marginready" id="bioldivready">
+                         	<tr>
+                            <td id="ready" class="center fontsize"><span id="biolready" class="radius">ГОТОВО</span></td>
+                          </tr>
+                        </table>
+
+
+                  <div id="biolresult" class="invisible">
+                  	<h2>Ваш результат по биологии: <span id="biolscore"></span> из 5 возможных</h2>
+                  </div>
+
+                  <div id="rusresult" class="invisible">
+                  	<h2>Ваш результат по русскому: <span id="russcore"></span> из 5 возможных</h2>
+                  </div>
+
+                  <div id="mathresult" class="invisible">
+                  	<h2>Ваш результат по математике: <span id="mathscore"></span> из 5 возможных</h2>
+                  </div>
+
+                  <div id="vlogicresult" class="invisible">
+                  	<h2>Ваш результат по вербальной логике: <span id="vlogicscore"></span> из 5 возможных</h2>
+                  </div>
+
+                  <div id="nvlogicresult" class="invisible">
+                  	<h2>Ваш результат по невербальной логике: <span id="nvlogicscore"></span> из 5 возможных</h2>
+                  </div>
+
+                  <div id="societresult" class="invisible">
+                  	<h2>Ваш результат по обществознанию: <span id="societscore"></span> из 5 возможных</h2>
+                  </div>
+
+                  <div id="georesult" class="invisible">
+                  	<h2>Ваш результат по географии: <span id="geoscore"></span> из 5 возможных</h2>
+                  </div>
+
+                  <div id="physicsresult" class="invisible">
+                  	<h2>Ваш результат по физике: <span id="physicsscore"></span> из 5 возможных</h2>
+                  </div>
+
+                  <div id="infresult" class="invisible">
+                  	<h2>Ваш результат по информатике: <span id="infscore"></span> из 5 возможных</h2>
+                  </div>
+
+                  <div id="chemresult" class="invisible">
+                  	<h2>Ваш результат по химии: <span id="chemscore"></span> из 5 возможных</h2>
+                  </div>
+
+                  <div id="histresult" class="invisible">
+                  	<h2>Ваш результат по истории: <span id="histscore"></span> из 5 возможных</h2>
+                  </div>
+
+                  <div id="litresult" class="invisible">
+                  	<h2>Ваш результат по литературе: <span id="litscore"></span> из 5 возможных</h2>
+                  </div>
+
+                  <div id="engresult" class="invisible">
+                  	<h2>Ваш результат по английскому: <span id="engscore"></span> из 5 возможных</h2>
+                  </div>
+                        
+								
+                </div>
+
+        <script src="js/html2pdf.bundle.min.js"></script>
+        <script>
+         function change_ticks() {
+         if(this.classList.contains("emtick")) {this.classList.remove("emtick"); this.classList.add("octick");}
+         else if(this.classList.contains("octick")) {this.classList.remove("octick"); this.classList.add("emtick");}
+         }
+
+         function choose_digit(e){
+         		let all = Array.from(e.currentTarget.getElementsByTagName("span"));
+         		all.forEach(el => {el.classList.remove("digit-chosen"); el.classList.add("digit-choice");
+         	});
+         		if(e.target.tagName == "SPAN") {
+         		e.target.classList.add("digit-chosen");
+         	}
+         }
+
+         function choose_digit_math() {
+         	this.classList.toggle("digit-choice");
+         	this.classList.toggle("digit-chosen");
+         }
+
+         function choose_text() {
+         	this.classList.toggle("textcross");
+         }
+
+         function rus_3() {
+         	this.classList.toggle("boldchosen");
+         	let a = this.innerText;
+         	switch (a) {
+         		case "деревя__ая":
+         			this.innerText = "деревянная";
+         			break;
+         		case "деревянная":
+         			this.innerText = "деревя__ая";
+         			break;
+
+         		case "письме__ый":
+         			this.innerText = "письменный";
+         			break;
+         		case "письменный":
+         			this.innerText = "письме__ый";
+         			break;
+
+         		case "кова__ым":
+         			this.innerText = "кованным";
+         			break;
+         		case "кованным":
+         			this.innerText = "кова__ым";
+         			break;
+
+         		case "оклее__ый":
+         			this.innerText = "оклеенный";
+         			break;
+         		case "оклеенный":
+         			this.innerText = "оклее__ый";
+         			break;
+         	}
+         }
+
+         function rus_4() {
+         		this.classList.toggle("commapresent");
+         }
+
+         function rus_5() {
+         	Array.from(document.getElementById("rusquestion5row").querySelectorAll("td")).forEach(el => el.classList.add("boldchosen"));
+         	this.classList.remove("boldchosen");
+         	this.classList.add("boldtext");
+         }
+         
+         let biology = {
+         	correct_answers: ["Все организмы состоят из клеток", "Периферическому отделу", "Осуществляется двойное оплодотворение", "Всю поверхность тела", ["Насекомые", "Паукообразные", "Насекомые", "Паукообразные", "Паукообразные", "Насекомые"]],
+         	given_answers: [],
+         	score: 0
+         };
+
+         let russian = {
+         	correct_answers: ["очень", [0, 4], ["деревянная", "письменный", "оклеенный"], [2,3], "грАжданство"],
+         	given_answers: [],
+         	score: 0
+         };
+
+         let maths = {
+         	correct_answers: ["8,4", "36", [-2, 3], 70, 12],
+         	given_answers: [],
+         	score: 0
+         };
+
+         let vlogic = {
+         	correct_answers: ["Васильевна", "Грейпфрут", "Играет в шахматы", 1, 300],
+         	given_answers: [],
+         	score: 0
+         };
+
+         let nvlogic = {
+         	correct_answers: [2, 5, 4, 2, 3],
+         	given_answers: [],
+         	score: 0
+         };
+
+
+         let geography = {
+         	correct_answers: ["петрозаводск", [3,2,1], "24", [1, 4],  [2, 3]],
+         	given_answers: [],
+         	score: 0
+         };
+
+        let societyscience = {
+         	correct_answers: ["Школьники", "Труд", "Потребитель", "Поддерживаются силой государства", "Верно только Б"],
+         	given_answers: [],
+         	score: 0
+         };
+
+        let physics = {
+         	correct_answers: ["Молекулы жидкости расположены друг к другу ближе, чем в газе.", "275", "21,6", "100", "50"],
+         	given_answers: [],
+         	score: 0
+         };
+
+        let infs = {
+         	correct_answers: [18, 7413265, 35, "тюлень", 10],
+         	given_answers: [],
+         	score: 0
+         };
+
+        let chemistry = {
+         	correct_answers: [["CaO", "Li<sub>3</sub>N"], ["HNO<sub>3</sub>", "Na<sub>2</sub>O"], ["Mg(OH)<sub>2</sub>", "SO<sub>2</sub>"], 35, ["Окисление", "Окисление", "Восстановление"]],
+         	given_answers: [],
+         	score: 0
+         };
+
+         let All_Answers = {
+
+         };
+
+         window.onload = function() {
+         
+         let preamble = document.getElementById("preamble"),
+             startbutton = document.getElementById("startbutton"),
+             assignment = document.getElementById("assignment"),
+             assignmentstatement = document.getElementById("assignmentstatement"),
+             biolbutton = document.getElementById("biolready"),
+             bioltestsection = document.getElementById("bioltest"),
+             bioldivready = document.getElementById("bioldivready"),
+             biolresult = document.getElementById("biolresult"),
+             subjects_table = document.getElementById("subjects"),
+             biolscore = document.getElementById("biolscore");
+
+             if(window.innerWidth > window.innerHeight) {
+             	subjects_table.style.fontSize = "2vw";
+             }
+             else {
+             	subjects_table.style.fontSize = "2vh";
+             }
+
+             //compulsory test event handlers
+         startbutton.addEventListener("click", mini_test_start);
+         /*
+         biolbutton.addEventListener("click", show_russian_result);
+         biolbutton.addEventListener("click", show_math_result);    
+         biolbutton.addEventListener("click", show_nvlogic_result);
+         biolbutton.addEventListener("click", show_vlogic_result);
+         */
+
+         let tds = Array.from(document.querySelectorAll(".tick")); 
+         //biolready
+         tds.forEach(el => el.addEventListener("click", change_ticks));
+
+         function mini_test_start() {
+	         //optional test event handlers
+	         if(document.getElementById("biol").classList.contains("octick"))
+	         {biolbutton.addEventListener("click", show_biology_result);}
+	         if(document.getElementById("societ").classList.contains("octick")) {
+	         	biolbutton.addEventListener("click", show_society_result);
+	         } 
+	          if(document.getElementById("geo").classList.contains("octick")) {
+	          	biolbutton.addEventListener("click", show_geo_result);
+	          }
+	         if(document.getElementById("phys").classList.contains("octick")) {
+	         	biolbutton.addEventListener("click", show_physics_result);
+	         }
+
+	        if(document.getElementById("inf").classList.contains("octick")) {
+	         	biolbutton.addEventListener("click", show_inf_result);
+	         }
+
+	        if(document.getElementById("chem").classList.contains("octick")) {
+	         	biolbutton.addEventListener("click", show_chem_result);
+	         }
+
+	         if(document.getElementById("hist").classList.contains("octick")) {
+	         	biolbutton.addEventListener("click", show_hist_result);
+	         }
+
+	        if(document.getElementById("lit").classList.contains("octick")) {
+	         	biolbutton.addEventListener("click", show_lit_result);
+	         }
+
+	        if(document.getElementById("eng").classList.contains("octick")) {
+	         	biolbutton.addEventListener("click", show_eng_result);
+	         }
+	         /*
+	        biolbutton.addEventListener("click", show_russian_result);
+          biolbutton.addEventListener("click", show_math_result);    
+          biolbutton.addEventListener("click", show_nvlogic_result);
+          biolbutton.addEventListener("click", show_vlogic_result);
+          */
+
+          preamble.classList.add("invisible");
+          assignment.classList.remove("invisible");
+          Array.from(subjects_table.querySelectorAll(".tick")).forEach(el => {
+          if(el.classList.contains("octick")) {
+           let test_name = el.id +`test`;
+           console.log(test_name);
+           document.querySelector(`[data-test=${test_name}]`).classList.remove("invisible");
+          }
+          });
+          //compulsory tests show
+          document.getElementById("rustest").classList.remove("invisible");
+          document.getElementById("mathtest").classList.remove("invisible");
+          document.getElementById("verballogictest").classList.remove("invisible");
+          document.getElementById("nonverballogictest").classList.remove("invisible");
+          //add event listeners for tests with choosing sequences
+          Array.from(document.querySelectorAll(".digits-row")).forEach(el => el.addEventListener("click", choose_digit));
+          //add event listeners for question 1 Russian test
+          Array.from(document.querySelectorAll(".textchoice")).forEach(el => el.addEventListener("click", choose_text));
+          //add event listeners for question 3 Russian test 
+          Array.from(document.querySelectorAll(".boldtext")).forEach(el => el.addEventListener("click", rus_3));
+          //add event listeners for question 4 Russian text
+          Array.from(document.querySelectorAll(".comma")).forEach(el => el.addEventListener("click", rus_4));
+          //add event listeners for question 5 Russian text
+          Array.from(document.querySelectorAll(".boldchosen")).forEach(el => el.addEventListener("click", rus_5));
+          //special handler for math question 3
+          document.getElementById("math3").querySelector(".digits-row").removeEventListener("click", choose_digit);
+          Array.from(document.getElementById("math3").getElementsByTagName("span")).forEach(el => {
+          	el.addEventListener("click", choose_digit_math);
+        });
+          //special handler for chem questions 1-3
+          let array_of_questions = ["chem1", "chem2", "chem3"];
+          array_of_questions.forEach(el => {
+         	document.getElementById(`${el}`).querySelector(".digits-row").removeEventListener("click", choose_digit);
+          Array.from(document.getElementById(`${el}`).getElementsByTagName("span")).forEach(elem => {
+          	elem.addEventListener("click", choose_digit_math)});
+          })  
+
+         	biolbutton.addEventListener("click", show_russian_result);
+          biolbutton.addEventListener("click", show_math_result);    
+          biolbutton.addEventListener("click", show_nvlogic_result);
+          biolbutton.addEventListener("click", show_vlogic_result); 
+          
+          let tables = Array.from(document.querySelectorAll(".question-table"));
+          tables.forEach(el => {
+          	//el.style.width = assignment.getBoundingClientRect().width * 0.9 + "px";
+          	let size = 100;
+          	while (el.style.width > assignment.getBoundingClientRect().width * 0.9) {
+          		Array.from(el.querySelectorAll("td")).forEach(elem => elem.style.fontSize = `${size = size - 5}%`);
+          	}
+
+          });
+          
+         } 
+
+         function show_biology_result() {
+         	//count question 1-4
+
+	        	for (let i = 0; i < 4; i++) {
+		if(document.getElementById(`biol${i + 1}`).querySelector(".digit-chosen").innerText == biology.correct_answers[i]) {
+         		biology.score += 1;
+         		console.log(biology.score);
+         	}
+               }
+         	
+          //count question 5
+          let fifth_answers = Array.from(document.getElementById("biol5").querySelectorAll(".digit-chosen"));
+          let fifth_answers_arr = [];
+          fifth_answers.forEach(el => {
+          	fifth_answers_arr.push(el);
+          });
+          let temp = 0;
+          fifth_answers_arr.forEach((el, index) => {
+          	if(el.innerText == biology.correct_answers[4][index]) {
+          		temp += 1;
+          		console.log(temp);
+          	}
+          });
+          if(temp == 6) {
+          	biology.score += 1;
+          	console.log(biology.score);
+          }
+          
+          assignmentstatement.classList.add("invisible");
+          bioltestsection.classList.add("invisible");
+          bioldivready.classList.add("invisible");
+       // biolresult.classList.remove("invisible");
+          biolscore.innerText = biology.score;
+
+          //adding result to the object
+          All_Answers["Биология"] = biology.score;
+					
+
+         }
+
+         function show_nvlogic_result() {
+         	let temp = 1;
+         	nvlogic.correct_answers.forEach(el => {
+         		if(el == document.getElementById(`nonverballogic${temp}`).querySelector(".digit-chosen").innerText) {
+         			nvlogic.score += 1;
+         		}
+         		temp += 1;
+         	});
+
+         	document.getElementById("nonverballogictest").classList.add("invisible");
+
+         	All_Answers["Невербальная логика"] = nvlogic.score;
+         	
+         }
+
+         function show_vlogic_result() {
+         	let temp = 1;
+         	vlogic.correct_answers.forEach(el => {
+         		if(el == document.getElementById(`verballogic${temp}`).querySelector(".digit-chosen").innerText) {
+         			vlogic.score += 1;
+         		}
+         		temp += 1;
+         	});
+
+        // 	document.getElementById("vlogicresult").classList.remove("invisible");
+          document.getElementById("vlogicscore").innerText = vlogic.score;
+         	document.getElementById("verballogictest").classList.add("invisible");
+
+         	assignmentstatement.classList.add("invisible");
+          bioltestsection.classList.add("invisible");
+          bioldivready.classList.add("invisible");
+
+          All_Answers["Вербальная логика"] = vlogic.score;
+
+          //here goes the final magic
+
+          let table_content = "";
+          let i = 0;
+
+   				for (let key in All_Answers) {
+   					table_content += `<tr class="digit-choice"><td class="justleft">${key}</td><td class="emtd" id="${i}res"></td><td><span style="text-align: center">${All_Answers[key]} из 5</span></td></tr>`;
+   					i += 1;
+   				}
+
+   				i = 0;
+
+   				subjects_table.innerHTML = table_content;
+   				subjects_table.style.display = "table";
+   				subjects_table.classList.remove("subjects");
+   				assignment.classList.remove("preamble");
+   				subjects_table.classList.add("question-table");
+   				preamble.classList.remove("invisible");
+   				preamble.querySelector(".marg2").innerText = "ИТОГИ";
+   				preamble.querySelector(".centertext").classList.add("invisible");
+
+   				for (let key in All_Answers) {
+   					document.getElementById(`${i}res`).style.backgroundImage = `url(img/test/results/${All_Answers[key]}.png)`;
+   					document.getElementById(`${i}res`).style.backgroundPosition = "center";
+   					document.getElementById(`${i}res`).style.backgroundSize = "cover";
+   					document.getElementById(`${i}res`).style.backgroundRepeat = "no-repeat";
+   					i += 1;
+   				}
+
+   				let finish_button = document.getElementById("finish");
+   				finish_button.classList.remove("invisible");
+   				finish_button.addEventListener("click", function() {
+   					
+  						let options = {
+					      margin:       0.5,
+					      filename:     'results.pdf',
+					      image:        { type: 'jpeg', quality: 0.98 },
+					      html2canvas:  { scale: 1 },
+					      jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+					    };
+    					html2pdf(subjects_table, options);
+   				});
+
+         }
+
+         function show_math_result() {
+         	//count question 1
+         	if(maths.correct_answers[0] == document.getElementById("math1").querySelector(".digit-chosen").innerText)
+         	{
+         		maths.score += 1;
+         		console.log(maths.score);
+         	}
+         	//count question 2
+         	if(maths.correct_answers[1] == document.getElementById("math2").querySelector(".digit-chosen").innerText)
+         	{
+         		maths.score += 1;
+         		console.log(maths.score);
+         	}
+         	//count question 3
+         	let temp_arr = [];
+         	let temp_count = 0;
+         	Array.from(document.getElementById("math3").querySelectorAll(".digit-chosen")).forEach(el => temp_arr.push(el.innerText));
+         	maths.correct_answers[2].forEach((el, index) => {
+         		if(el == temp_arr[index]) {
+         			temp_count += 1;
+         		}
+         	});
+         	if(temp_count == 2) {
+         		maths.score += 1;
+         		console.log(maths.score);
+         	}
+         	//count question 4
+         	if(maths.correct_answers[3] == document.getElementById("math4").querySelector(".digit-chosen").innerText)
+         	{
+         		maths.score += 1;
+         		console.log(maths.score);
+         	}
+         	//count 5
+         	if(maths.correct_answers[4] == document.getElementById("math5").querySelector(".digit-chosen").innerText)
+         	{
+         		maths.score += 1;
+         		console.log(maths.score);
+         	}
+         
+         	//document.getElementById("mathresult").classList.remove("invisible");
+          document.getElementById("mathscore").innerText = maths.score;
+         	document.getElementById("mathtest").classList.add("invisible");
+
+         	All_Answers["Математика"] = maths.score;
+
+         }
+
+         function show_inf_result() {
+         		infs.correct_answers.forEach((el,index) => {
+         			if(el == document.getElementById(`infinput${index+1}`).value.toLowerCase()) {
+         				infs.score += 1;
+         			}
+
+         		});
+
+          document.getElementById("infscore").innerText = infs.score;
+         	document.getElementById("inftest").classList.add("invisible");
+
+         	All_Answers["Информатика"] = infs.score;
+         }
+
+         let english = {
+         	correct_answers: ["them", "came", "a children's book exhibition.", "she has to help her grandmother.", "going to the cinema."],
+         	given_answers: [],
+         	score: 0
+         };
+
+
+         function show_eng_result() {
+         	//count question 1
+         	if(english.correct_answers[0] == document.getElementById("enginput1").value.toLowerCase()) {
+         		english.score += 1;
+         	}
+         	//count question 2
+         	if(english.correct_answers[1] == document.getElementById("enginput2").value.toLowerCase()) {
+         		english.score += 1;
+         	}
+         	//count question 3
+         	if(english.correct_answers[2] == document.getElementById("eng3").querySelector(".digit-chosen").innerText) {
+         		english.score += 1;
+         	}
+         	//count question 4
+         	if(english.correct_answers[3] == document.getElementById("eng4").querySelector(".digit-chosen").innerText) {
+         		english.score += 1;
+         	}
+         	//count question 5
+         	if(english.correct_answers[4] == document.getElementById("eng5").querySelector(".digit-chosen").innerText) {
+         		english.score += 1;
+         	}
+
+         	//document.getElementById("engresult").classList.remove("invisible");
+          document.getElementById("engscore").innerText = english.score;
+         	document.getElementById("engtest").classList.add("invisible");
+
+         	All_Answers["Английский"] = english.score;
+         }
+
+        let literature = {
+         	correct_answers: ["комедия", "хлестаков", [6,4,1,5], "Метафора", "Драма"],
+         	given_answers: [],
+         	score: 0
+         };
+
+         function show_lit_result() {
+         	// count question 1
+         	if(literature.correct_answers[0] == document.getElementById("litinput1").value.toLowerCase()) {
+         		literature.score += 1;
+         	}
+         	//count question 2
+         	if(literature.correct_answers[1] == document.getElementById("litinput2").value.toLowerCase()) {
+         		literature.score += 1;
+         	}
+         	//count question 3
+         	let arr = Array.from(document.getElementById("lit3").querySelectorAll(".digit-chosen"));
+         	let temp = 0;
+         	literature.correct_answers[2].forEach((el, index) => {
+         		if(el = arr[index].innerText) {
+         			temp += 1;
+         		}
+         	});
+         	if(temp == 4) {
+         		literature.score += 1;
+         	}
+         	//count questions 4-5
+
+	   for (let i = 4; i < 6; i++) {
+		if(document.getElementById(`lit${i}`).querySelector(".digit-chosen").innerText == literature.correct_answers[i-1]) {
+         		literature.score += 1;
+         		console.log(literature.score);
+         	}
+               }
+      
+
+          //document.getElementById("litresult").classList.remove("invisible");
+          document.getElementById("litscore").innerText = literature.score;
+         	document.getElementById("littest").classList.add("invisible");
+
+         	All_Answers["Литература"] = literature.score;
+
+         }
+
+        let history = {
+         	correct_answers: [[1,5,3], [3,2], "Неудачи России в Крымской войне", "Петрашевцы", [4,1,3,2]],
+         	given_answers: [],
+         	score: 0
+         };
+
+         function show_hist_result() {
+         	//count questions 1-2
+         	let temp = 0;
+         	//let arr = Array.from(document.getElementById("hist1").querySelectorAll(".digit-chosen"));
+
+         	for (let i = 0; i < 2; i++) {
+         		let arr = Array.from(document.getElementById(`hist${i+1}`).querySelectorAll(".digit-chosen"));
+         		history.correct_answers[i].forEach((el, index) => {
+         			if(el == arr[index].innerText) {
+         				temp += 1;
+         			}
+         		});
+			if(i == 0) {
+         		if(temp == 3) {
+         			history.score += 1;
+         			temp = 0;
+         		}
+			}
+			if(i == 1) {
+			 if(temp == 2) {
+         			history.score += 1;
+         			temp = 0;
+         		}
+
+			}
+                     
+         	}
+
+                 //count questions 3-4 
+		       	for (let i = 3; i < 5; i++) {
+		if(document.getElementById(`hist${i}`).querySelector(".digit-chosen").innerText == history.correct_answers[i-1]) {
+         		history.score += 1;
+         		console.log(history.score);
+         	}
+               }
+
+		
+         	//count question 5
+         	temp = 0;
+         	let arr1 = Array.from(document.getElementById("hist5").querySelectorAll(".digit-chosen"));
+         	history.correct_answers[4].forEach((elem, index) => {
+         		if(elem == arr1[index].innerText) {
+         			temp += 1;
+         		}
+         	});
+         	if(temp == 4) {
+         		history.score += 1;
+         	}
+
+         	//document.getElementById("histresult").classList.remove("invisible");
+          document.getElementById("histscore").innerText = history.score;
+         	document.getElementById("histtest").classList.add("invisible");
+
+         	All_Answers["История"] = history.score;
+
+         }
+
+
+         function show_chem_result() {
+					 	//count question 1
+					 	let temp_arr = [],
+					 			coincidence = 0;
+					 	Array.from(document.getElementById("chem1").querySelectorAll(".digit-chosen")).forEach(el => {
+					 		temp_arr.push(el.innerHTML);
+					 		console.log(el.innerHTML);
+					 	});
+					 	chemistry.correct_answers[0].forEach((el,index) => {
+					 		if (el == temp_arr[index]) {
+					 			coincidence += 1;
+					 		}
+					 	});
+					 	if (coincidence == 2) {
+					 		chemistry.score += 1;
+					 		console.log(chemistry.score);
+					 	}
+					 	// count question 2
+					 	temp_arr = [];
+					 	coincidence = 0;
+
+					 	 	Array.from(document.getElementById("chem2").querySelectorAll(".digit-chosen")).forEach(el => {
+					 		temp_arr.push(el.innerHTML);
+					 		console.log(el.innerHTML);
+					 	});
+
+					 	chemistry.correct_answers[1].forEach((elem,index) => {
+					 		console.log(elem);
+							if (elem == temp_arr[index]) {
+								coincidence += 1;
+							}
+						});
+
+						if (coincidence == 2) {
+					 		chemistry.score += 1;
+					 		console.log(chemistry.score);
+					 	}
+
+					 	//count question 3
+					 			temp_arr = [];
+					 			coincidence = 0;
+					 	Array.from(document.getElementById("chem3").querySelectorAll(".digit-chosen")).forEach(el => {
+					 		temp_arr.push(el.innerHTML);
+					 	});
+					 	chemistry.correct_answers[2].forEach((el,index) => {
+					 		if (el == temp_arr[index]) {
+					 			coincidence += 1;
+					 		}
+					 	});
+					 	if (coincidence == 2) {
+					 		chemistry.score += 1;
+					 		console.log(chemistry.score);
+					 	}
+
+					 	//count question 4
+					 	if(chemistry.correct_answers[3] == document.getElementById("cheminput").value) {
+					 		chemistry.score += 1;
+					 		console.log(chemistry.score);
+					 	}
+
+					 	//count question 5
+					 	temp_arr = [];
+						coincidence = 0;
+
+					 	 Array.from(document.getElementById("chem5").querySelectorAll(".digit-chosen")).forEach(el => {
+					 		temp_arr.push(el.innerText);
+					 		console.log(el.innerText);
+					 		});
+
+						 	chemistry.correct_answers[4].forEach((elem,index) => {
+						 		console.log(elem);
+								if (elem == temp_arr[index]) {
+									coincidence += 1;
+								}
+							});
+
+							if (coincidence == 3) {
+						 		chemistry.score += 1;
+						 		console.log(chemistry.score);
+						 		
+						 	}
+
+							//document.getElementById("chemresult").classList.remove("invisible");
+		          document.getElementById("chemscore").innerText = chemistry.score;
+		         	document.getElementById("chemtest").classList.add("invisible");
+
+		         	All_Answers["Химия"] = chemistry.score;
+
+					 }
+
+
+         function show_society_result() {
+         	for (let i = 0; i < 5; i++) {
+		if(document.getElementById(`societ${i + 1}`).querySelector(".digit-chosen").innerText == societyscience.correct_answers[i]) {
+         		societyscience.score += 1;
+         		console.log(societyscience.score);
+         	}
+               }
+
+         	//document.getElementById("societresult").classList.remove("invisible");
+          document.getElementById("societscore").innerText = societyscience.score;
+         	document.getElementById("societtest").classList.add("invisible");
+
+         	All_Answers["Обществознание"] = societyscience.score;
+
+
+         }
+
+         function show_physics_result() {
+         	//count question 1
+         	if(document.getElementById("phys1").querySelector(".digit-chosen").innerText == physics.correct_answers[0]) {
+         		physics.score += 1;
+         		console.log(physics.score);
+         	}
+         //count question 2
+         if(physics.correct_answers[1] == document.getElementById("physinput1").value) {
+         	physics.score += 1;
+         	console.log(physics.score);
+         }
+
+         //count question 3
+         if(physics.correct_answers[2] == document.getElementById("physinput2").value) {
+         	physics.score += 1;
+         	console.log(physics.score);
+         }
+
+         //count question 4
+        if(physics.correct_answers[3] == document.getElementById("physinput3").value) {
+         	physics.score += 1;
+         	console.log(physics.score);
+         }
+
+         //count question 5
+         if(physics.correct_answers[4] == document.getElementById("physinput4").value) {
+         	physics.score += 1;
+         	console.log(physics.score);
+         }
+
+          //document.getElementById("physicsresult").classList.remove("invisible");
+          document.getElementById("physicsscore").innerText = physics.score;
+         	document.getElementById("phystest").classList.add("invisible");
+
+         	All_Answers["Физика"] = physics.score;
+
+         }
+
+         function show_geo_result() {
+         	//count question 1
+         	if(geography.correct_answers[0] == document.getElementById("geoinput1").value.toLowerCase()) {
+         		geography.score += 1;
+         		console.log(geography.score);
+         	}
+         	//count question 2
+         	let coincidence = 0;
+         	let second_answers = Array.from(document.getElementById("geo2").querySelectorAll(".digit-chosen"));
+         	second_answers.forEach((el, index) => {
+         		if(geography.correct_answers[1][index] == el.innerText) {
+         			coincidence += 1;
+         		}
+         	});
+
+          if(coincidence == 3) {
+          	geography.score += 1;
+          	console.log(geography.score);
+          }
+          //count question 3
+          if(geography.correct_answers[2] == document.getElementById("geoinput2").value.toLowerCase()) {
+          	geography.score += 1;
+         		console.log(geography.score);
+          }
+
+          //count question 4
+
+         let temp_arr = [];
+         coincidence = 0;
+
+         	Array.from(document.getElementById("geo4").querySelectorAll(".tick")).forEach((el, index) => {
+         		if(el.classList.contains("octick")) {
+         			temp_arr.push(index);
+         		}
+         	});
+
+        geography.correct_answers[3].forEach((el, ind) => {
+         	if(el == temp_arr[ind]) {
+         		coincidence += 1;
+         	}
+         });
+
+        if(coincidence == 2) {
+         	geography.score +=1;
+         	console.log(geography.score);
+         }
+
+         //count question 5
+
+         temp_arr = [];
+         coincidence = 0;
+
+         	Array.from(document.getElementById("geo5").querySelectorAll(".tick")).forEach((el, index) => {
+         		if(el.classList.contains("octick")) {
+         			temp_arr.push(index);
+         		}
+         	});
+
+        geography.correct_answers[4].forEach((el, ind) => {
+         	if(el == temp_arr[ind]) {
+         		coincidence += 1;
+         	}
+         });
+
+        if(coincidence == 2) {
+         	geography.score += 1;
+         	console.log(geography.score);
+         }
+
+          //document.getElementById("georesult").classList.remove("invisible");
+          document.getElementById("geoscore").innerText = geography.score;
+         	document.getElementById("geotest").classList.add("invisible");
+
+         	All_Answers["География"] = geography.score;
+
+         }   
+
+         function show_russian_result() {
+         	//count question 1
+         		if(russian.correct_answers[0] == document.getElementById("rus1td").querySelector(".textcross").innerText) {
+         			russian.score +=1;
+         			console.log(russian.score);
+         		}
+         	//count question 2
+         	let temp_arr = [];
+         	Array.from(document.getElementById("rus2").querySelectorAll(".tick")).forEach((el, index) => {
+         		if(el.classList.contains("octick")) {
+         			temp_arr.push(index);
+         		}
+         	});
+         
+         let coincidence = 0;
+         russian.correct_answers[1].forEach((el, ind) => {
+         	if(el == temp_arr[ind]) {
+         		coincidence += 1;
+         	}
+         });
+         if(coincidence == 2) {
+         	russian.score +=1;
+         	console.log(russian.score);
+         }
+         //count question 3
+         let answered_arr = [];
+         coincidence = 0;
+         Array.from(document.getElementById("rus3").querySelectorAll(".boldchosen")).forEach(el => answered_arr.push(el));
+         russian.correct_answers[2].forEach((el, ind) => {el
+         	if(el == answered_arr[ind]);
+         	coincidence += 1;
+         	if(coincidence == 3) {
+         	  russian.score +=1;
+         	  console.log(russian.score);
+         	} 
+         });
+         //count question 4
+         let temp_arr_2 = [];
+         Array.from(document.getElementById("rus4").querySelectorAll(".comma")).forEach((el,index) => {
+         	if(el.classList.contains("commapresent")) {
+         		temp_arr_2.push(index);
+         	}
+         });
+         coincidence = 0;
+         russian.correct_answers[3].forEach((el, ind) => {
+         	if (el == temp_arr_2[ind]) {
+         		coincidence += 1;
+         	}
+         });
+         if(coincidence == 2) {
+         	 russian.score +=1;
+         	 console.log(russian.score);
+         }
+         //count question 5
+         if(russian.correct_answers[4] == document.getElementById("rusquestion5row").querySelector(".boldtext").innerText) {
+         	  russian.score +=1;
+         		console.log(russian.score);
+         }
+         //document.getElementById("rusresult").classList.remove("invisible");
+         document.getElementById("russcore").innerText = russian.score;
+         document.getElementById("rustest").classList.add("invisible");
+
+         All_Answers["Русский"] = russian.score;
+       }
+
+}
+        </script> 
+	</body>
+</html>
