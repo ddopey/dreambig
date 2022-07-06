@@ -1,7 +1,7 @@
 ﻿<!doctype html>
 <html dir="ltr" lang="ru">
 	<head>
-		<meta charset="uft-8">
+		<meta charset="utf-8">
 	    <title>Выбор профессии</title>
 		<style>
 
@@ -1035,6 +1035,8 @@ const jobs_based_on_spheres = {
        display: grid;
        font-size: 1.3vw;
        margin: 0;
+       margin-top: 1rem;
+       margin-bottom: 1rem;
        padding: 0;
        box-sizing: border-box;
        font-family: sans-serif;
@@ -1199,7 +1201,7 @@ const jobs_based_on_spheres = {
 				border-bottom: 0;
 			}</style>`;
 
-              let header_html = `<!doctype html><html dir="ltr" lang="ru"><head><meta charset="uft-8"><title>Выбор профессии</title>${style_html}</head><body id="body">`;
+              let header_html = `<!doctype html><html dir="ltr" lang="ru"><head><meta charset="utf-8"><title>Выбор профессии</title>${style_html}</head><body id="body">`;
 
               const file = new File([`${header_html}<table id="test1" class="fixedtable">` + test.innerHTML + `</table></body></html>`], 'result.html', {
                   type: 'text/html',
