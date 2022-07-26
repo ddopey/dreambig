@@ -9,7 +9,7 @@
 		 body, html {
 		 	 height: 100%;
        display: grid;
-       font-size: 2vw;;
+       font-size: 1.8vw;;
        margin: 0;
        padding: 0;
        box-sizing: border-box;
@@ -26,7 +26,7 @@
 		 }
 
 		 .zeroborder h5 {
-		 	font-size: 2.5vw;
+		 	font-size: 2vw;
 		 }
 
 		 .boldtext {
@@ -114,10 +114,11 @@
                 }
 
                 .subjects {
+
 								margin: auto;
                 border: 2px solid black;
                 border-radius: 0.5rem;
-                padding: 0.8rem; 
+                padding: 1rem; 
                 }
 
                 .question-table {
@@ -159,8 +160,7 @@
 									vertical-align: middle;
 									border-radius: 0.5rem;
 									border:  1px solid black;
-									padding: 0.5rem;
-									font-size: 2.5vw; 
+									padding: 0.5rem; 
 								}
 
 								.question-table td.center {
@@ -297,7 +297,7 @@
 				margin:  auto;
 				text-align: center;
 				width: 80%;
-				/*font-size: 1.5vw;*/
+				font-size: /*2vw*/;
 				background-color: white;
 				border-radius: 0.5rem;
 				padding-bottom: 1rem;
@@ -326,7 +326,7 @@
 	<body id="body">
 		<!--Here we have the start section of the test -->
 		<div id="preamble" class="preamble">
-			<h1 class="marg2 fontsize centertext">Выберите любимые школьные предметы (лучше несколько).</h1>
+			<h3 class="marg2 fontsize centertext">Выберите любимые школьные предметы (лучше несколько).</h3>
 			<!--<p class="centertext marg fontsize">Выберите любимые школьные предметы (лучше несколько).</p>-->
 
           <table class="subjects marg1" id="subjects">
@@ -1193,6 +1193,11 @@
    													<span class="digits-choice bold">Li<sub>3</sub>N</span>
    												</p>
    											</td>
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">H<sub>2</sub>S</span>
+   												</p>
+   											</td>
    										</tr>
    									</table>
    							</div>
@@ -1214,6 +1219,11 @@
    											<td class="removeborder mediumfont">
    												<p class="center">
    													<span class="digits-choice bold">O<sub>2</sub></span>
+   												</p>
+   											</td>
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">Be(OH)<sub>2</sub></span>
    												</p>
    											</td>
    											<td class="removeborder mediumfont">
@@ -1241,7 +1251,13 @@
    											</td>
    											<td class="removeborder mediumfont">
    												<p class="center">
-   													<span class="digits-choice bold">SO<sub>2</sub></span>	
+   													<span class="digits-choice bold">SO<sub>2</sub></span>
+   												
+   											</td>
+   											<td class="removeborder mediumfont">
+   												<p class="center">
+   													<span class="digits-choice bold">NaClO<sub>4</sub></span>
+   												</p>
    											</td>
    											<td class="removeborder mediumfont">
    												<p class="center">
@@ -1320,7 +1336,7 @@
 	                		<tr>
 	                			<td> <p class="center">
 	                				<audio controls style="width: 70%">
-	                					<source src="audio/engtestoge.mp3" type="audio/mpeg">
+	                					<source src="audio/engtest.mp3" type="audio/mpeg">
 	                				</audio>
 	                			</p>
 	                			</td>
@@ -1952,37 +1968,6 @@
 
         <script src="js/html2pdf.bundle.min.js"></script>
         <script>
-
-					        	function render_html_to_canvas(html, ctx, x, y, width, height) {
-					    var xml = html_to_xml(html);
-					    xml = xml.replace(/\#/g, '%23');
-					    var data = "data:image/svg+xml;charset=utf-8,"+'<svg xmlns="http://www.w3.org/2000/svg" width="'+width+'" height="'+height+'">' +
-					                        '<foreignObject width="100%" height="100%">' +
-					                        xml+
-					                        '</foreignObject>' +
-					                        '</svg>';
-
-					    var img = new Image();
-					    img.onload = function () {
-					        ctx.drawImage(img, x, y);
-					    }
-					    img.src = data;
-					}
-
-					function html_to_xml(html) {
-					    var doc = document.implementation.createHTMLDocument('');
-					    doc.write(html);
-
-					    // You must manually set the xmlns if you intend to immediately serialize     
-					    // the HTML document to a string as opposed to appending it to a
-					    // <foreignObject> in the DOM
-					    doc.documentElement.setAttribute('xmlns', doc.documentElement.namespaceURI);
-
-					    // Get well-formed markup
-					    html = (new XMLSerializer).serializeToString(doc.body);
-					    return html;
-					}
-
          function change_ticks() {
          if(this.classList.contains("emtick")) {this.classList.remove("emtick"); this.classList.add("octick");}
          else if(this.classList.contains("octick")) {this.classList.remove("octick"); this.classList.add("emtick");}
@@ -2322,7 +2307,7 @@
           let i = 0;
 
    				for (let key in All_Answers) {
-   					table_content += `<tr class="digit-choice"><td class="justleft">${key}</td><td class="emtd" id="${i}res"></td><td><span style="text-align: center">${All_Answers[key]} из 5</span></td></tr>`;
+   					table_content += `<tr class="digit-choice"><td class="justleft">${key}</td><td class="emtd" id="${i}res"></td><td style="text-align: center"><span style="text-align: center">${All_Answers[key]} из 5</span></td></tr>`;
    					i += 1;
    				}
 
@@ -2335,7 +2320,7 @@
    				subjects_table.classList.add("question-table");
    				preamble.classList.remove("invisible");
    				preamble.querySelector(".marg2").innerText = "ИТОГИ";
-   				preamble.querySelector(".centertext").classList.add("invisible");
+   				//preamble.querySelector(".centertext").classList.add("invisible");
 
    				for (let key in All_Answers) {
    					document.getElementById(`${i}res`).style.backgroundImage = `url(img/test/results/${All_Answers[key]}.png)`;
@@ -2345,9 +2330,349 @@
    					i += 1;
    				}
 
+//here is where we shape the new reality
+
+
    				let finish_button = document.getElementById("finish");
    				finish_button.classList.remove("invisible");
    				finish_button.addEventListener("click", function() {
+
+				let style_html = `<style>
+
+		 body, html {
+		 	 height: 100%;
+       display: grid;
+       font-size: 1.8vw;;
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: sans-serif;
+       background-image: url(img/school.jpg);
+       z-index: 1;
+		 }
+
+		 .digits-choice {
+		 	border-radius: 0.5rem;
+		 	border: 1px solid red;
+		 	padding: 1rem;
+		 	margin:  0.5rem;
+		 }
+
+		 .zeroborder h5 {
+		 	font-size: 2vw;
+		 }
+
+		 .boldtext {
+		 	font-weight: bold;
+		 	color:  red;
+		 }
+
+		 .boldchosen {
+			 	color: green;
+			 	font-weight: bold;
+		 }
+
+		 .block {
+		 	display: block;
+		 	width: 80%;
+		 	font-weight: bold;
+		 	margin: auto;
+		 	margin-top: 5%;
+		 }
+
+		 .comma {
+		 }
+
+		 .commapresent {
+       background-image: url(img/test/supercomma.png);
+       background-size: contain;
+       background-repeat: no-repeat;
+       background-position: bottom;
+		 }
+
+
+		 .width {
+		 	width: 30%;
+		 }
+
+		 .halfopacity {
+		 	opacity: 0.5;
+		 }
+		 .fullopacity {
+		 	opacity: 1;
+		 }
+
+		 .textchoice:hover {
+		 	color: red;
+		 }
+
+		 .textcross {
+		 	text-decoration: line-through;
+		 }
+
+		 .digit-chosen {
+		 	border: 1px solid green;
+		 	background-color: green;
+		 	color: white;
+		 	font-weight: bold;
+		 }
+
+		 .digits-choice:hover {
+		 	border: 1px solid green;
+		 }
+
+		 .digits-row {
+		 }
+
+		 #test1 {
+		 	display: none;
+		 }
+
+                .invisible {
+                 display: none; 
+                }
+
+                .margintop {
+                margin-top: 2rem;
+                } 
+
+                .marginbottom {
+                	margin-bottom: 5%;
+                }
+
+                .zeroborder {
+                	width: 90%;
+	                margin: auto;
+                	border: 0;
+                }
+
+                .subjects {
+
+								margin: auto;
+                border: 2px solid black;
+                border-radius: 0.5rem;
+                padding: 1rem; 
+                }
+
+                .question-table {
+                	width: 90%;
+	                margin: auto;
+	                border: 2px solid black;
+	                border-radius: 0.5rem;
+	                padding: 0.5rem; 
+								  border-spacing: 0.5rem;
+                }
+
+                .imgcontainer {
+                	width: 100%;
+                	height: 8rem;
+                	background-size: contain;
+                	background-repeat: no-repeat;
+                	border: 0;
+                	background-position: center;
+                }
+
+                .question-table td.removeborder {
+                	border: 0;
+                }
+
+                .question-table tr.showborder {
+                	border: 2px solid black;
+	                border-radius: 0.5rem;
+	                padding: 0.5rem; 
+								  border-spacing: 0.5rem;
+                }
+
+                .dspan {
+                	/*display:  inline-block;*/
+                	/*width: 12%;*/
+                }
+
+                .question-table td {
+									text-align: left;
+									vertical-align: middle;
+									border-radius: 0.5rem;
+									border:  1px solid black;
+									padding: 0.5rem; 
+								}
+
+								.question-table td.center {
+									text-align: center;
+								}
+
+								.outline {
+									border: 2px solid red;
+								}
+
+								.outline:hover {
+									border: 2px solid green;
+								}
+
+								#savebutton:hover {
+									background-color: green;
+									color: white;
+								}
+
+                #startbutton:hover {
+                 background-color: green;    
+                }
+
+                #biolready:hover {
+                	background-color: green;
+                	color: white;
+                }
+
+                .marginready {
+                	margin:auto;
+                	margin-top: 1.5rem;
+                	margin-bottom: 1.5rem;
+                }
+                
+               .marg {
+                 margin-top: -1.5rem;
+                }
+                
+                .marg1 {
+                 margin-top: -0.5rem;
+                }
+
+                .margbottom {
+                	margin-bottom: 0.5rem;
+                }
+
+                .marg2 {
+                	margin-top: 0.5rem;
+                }
+
+                .radius {
+                border-radius: 0.5rem;
+                border: 2px solid black;
+                padding: 0.5rem;
+                }
+                
+                .left {
+                text-align: left;
+                padding-bottom: 5%;
+                }
+
+                .justleft {
+                	text-align: left;
+                }
+
+                .tick {
+                 background-size: contain;
+                 width: 4rem;
+                 height: 2rem;
+                 background-repeat: no-repeat;
+                 background-position: center;
+                }
+
+                .emtd {
+		 width: 2rem;
+                }
+
+                .emtick {
+                background-image: url(img/emptytick.png);
+                background-position: center;
+                }
+
+                .octick {
+                background-image: url(img/occupiedtick.png);
+                background-position: center;
+                }
+
+                .borderbottom {
+                 border-bottom: 2px solid black;
+                }
+
+		  .table {
+		  	border: 1px solid black;
+			  border-collapse: collapse;
+			  margin: 10%;
+			  margin-bottom: 2%;
+			  table-layout: fixed;
+		  }
+
+		  .invisible {
+		  	display: "none";
+		  }
+
+		 
+			.fontsize {
+				font-size: 2vw;
+			}
+
+			.inputfontsize {
+				font-size: 1vw;
+			}
+
+			.bold {
+				font-weight: bold;
+			}
+
+			.paddingbottom {
+				padding-bottom: 3vw;
+			}
+
+      .superpadding {
+			  padding: 10%;
+			}
+
+			.center {
+				text-align: center;
+			}
+
+			.justify {
+				text-align: justify;
+			}
+
+			.preamble {
+				margin:  auto;
+				text-align: center;
+				width: 80%;
+				font-size: /*2vw*/;
+				background-color: white;
+				border-radius: 0.5rem;
+				padding-bottom: 1rem;
+			}
+
+			.centertext {
+			 text-align: center;
+			}
+
+			.fixedtable {
+				width: 90%;
+			}
+
+			.heading-width {
+				width: 90%;
+			}
+
+			.forbutton {
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+			}
+			
+		</style>`;
+
+
+                		i = 0;
+   				for (let key in All_Answers) {
+   					document.getElementById(`${i}res`).style.backgroundImage = `none`;
+   					i += 1;
+   				}
+                
+
+let header_html = `<!doctype html><html dir="ltr" lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Тест на знание предметов</title>${style_html}</head><body id="body">`;
+
+              const file = new File([`${header_html}<div id="preamble" class="preamble"><h3 class="marg2 fontsize centertext">ИТОГИ</h3><table class="marg1 question-table" id="subjects" style="font-size: 2vw; display: table;">` + subjects_table.innerHTML + `</table></div></body></html>`], 'result.html', {
+                  type: 'text/html',
+		});
+               
+              download(file);
+
+
+				/*
    					
   						let options = {
 					      margin:       0.5,
@@ -2357,7 +2682,9 @@
 					      jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
 					    };
     					html2pdf(subjects_table, options);
+				*/
    				});
+				
 
          }
 
@@ -2853,6 +3180,20 @@
 
          All_Answers["Русский"] = russian.score;
        }
+
+//download function
+
+	function download(file) {
+         const link = document.createElement('a');
+         const url = URL.createObjectURL(file);
+         link.href = url;
+         link.download = file.name;
+         document.body.appendChild(link);
+         link.click();
+
+         document.body.removeChild(link);
+         window.URL.revokeObjectURL(url);
+  }
 
 }
         </script> 

@@ -6,6 +6,8 @@
 	    <title>Тест на знание предметов</title>
 		<style>
 
+
+			/*
 		 body, html {
 		 	 height: 100%;
        display: grid;
@@ -151,8 +153,8 @@
                 }
 
                 .dspan {
-                	/*display:  inline-block;*/
-                	/*width: 12%;*/
+                	display:  inline-block;
+                	width: 12%;
                 }
 
                 .question-table td {
@@ -181,21 +183,335 @@
 								}
 
 								.smallerfont {
-									/*font-size: 1vw;
-									font-weight: bold;*/
+									font-size: 1vw;
+									font-weight: bold;
 								}
 
 								.question-table td.smallerfont {
-									/*font-weight: bold;
-									font-size: 1vw;*/
+									font-weight: bold;
+									font-size: 1vw;
 								}
 
 								.question-table td.mediumfont {
-									/*font-size: 1.2rem;*/
+									font-size: 1.2rem;
 								}
 
 								.smallestfont {
-									/*font-size: 0.7rem;*/
+									font-size: 0.7rem;
+								}
+
+								.outline {
+									border: 2px solid red;
+								}
+
+								.outline:hover {
+									border: 2px solid green;
+								}
+
+								#savebutton:hover {
+									background-color: green;
+									color: white;
+								}
+
+                #startbutton:hover {
+                 background-color: green;    
+                }
+
+                #biolready:hover {
+                	background-color: green;
+                	color: white;
+                }
+
+                .marginready {
+                	margin:auto;
+                	margin-top: 1.5rem;
+                	margin-bottom: 1.5rem;
+                }
+                
+               .marg {
+                 margin-top: -1.5rem;
+                }
+                
+                .marg1 {
+                 margin-top: -0.5rem;
+                }
+
+                .margbottom {
+                	margin-bottom: 0.5rem;
+                }
+
+                .marg2 {
+                	margin-top: 0.5rem;
+                }
+
+                .radius {
+                border-radius: 0.5rem;
+                border: 2px solid black;
+                padding: 0.5rem;
+                }
+                
+                .left {
+                text-align: left;
+                padding-bottom: 5%;
+                }
+
+                .justleft {
+                	text-align: left;
+                }
+
+                .tick {
+                 background-size: contain;
+                 width: 4rem;
+                 height: 2rem;
+                 background-repeat: no-repeat;
+                 background-position: center;
+                }
+
+                .emtd {
+		 width: 2rem;
+                }
+
+                .emtick {
+                background-image: url(img/emptytick.png);
+                background-position: center;
+                }
+
+                .octick {
+                background-image: url(img/occupiedtick.png);
+                background-position: center;
+                }
+
+                .borderbottom {
+                 border-bottom: 2px solid black;
+                }
+
+		  .table {
+		  	border: 1px solid black;
+			  border-collapse: collapse;
+			  margin: 10%;
+			  margin-bottom: 2%;
+			  table-layout: fixed;
+		  }
+
+		  .invisible {
+		  	display: "none";
+		  }
+
+		 
+			.fontsize {
+				font-size: 2vw;
+			}
+
+			.inputfontsize {
+				font-size: 1vw;
+			}
+
+			.bold {
+				font-weight: bold;
+			}
+
+			.paddingbottom {
+				padding-bottom: 3vw;
+			}
+
+      .superpadding {
+			  padding: 10%;
+			}
+
+			.center {
+				text-align: center;
+			}
+
+			.justify {
+				text-align: justify;
+			}
+
+			.preamble {
+				margin:  auto;
+				text-align: center;
+				width: 80%;
+				font-size: 2vw;
+				background-color: white;
+				border-radius: 0.5rem;
+				padding-bottom: 1rem;
+			}
+
+			.centertext {
+			 text-align: center;
+			}
+
+			.fixedtable {
+				width: 90%;
+			}
+
+			.heading-width {
+				width: 90%;
+			}
+
+			.forbutton {
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+			}
+			*/
+			body, html {
+		 	 height: 100%;
+       display: grid;
+       font-size: 1.8vw;;
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: sans-serif;
+       background-image: url(img/school.jpg);
+       z-index: 1;
+		 }
+
+		 .digits-choice {
+		 	border-radius: 0.5rem;
+		 	border: 1px solid red;
+		 	padding: 1rem;
+		 	margin:  0.5rem;
+		 }
+
+		 .zeroborder h5 {
+		 	font-size: 2vw;
+		 }
+
+		 .boldtext {
+		 	font-weight: bold;
+		 	color:  red;
+		 }
+
+		 .boldchosen {
+			 	color: green;
+			 	font-weight: bold;
+		 }
+
+		 .block {
+		 	display: block;
+		 	width: 80%;
+		 	font-weight: bold;
+		 	margin: auto;
+		 	margin-top: 5%;
+		 }
+
+		 .comma {
+		 }
+
+		 .commapresent {
+       background-image: url(img/test/supercomma.png);
+       background-size: contain;
+       background-repeat: no-repeat;
+       background-position: bottom;
+		 }
+
+
+		 .width {
+		 	width: 30%;
+		 }
+
+		 .halfopacity {
+		 	opacity: 0.5;
+		 }
+		 .fullopacity {
+		 	opacity: 1;
+		 }
+
+		 .textchoice:hover {
+		 	color: red;
+		 }
+
+		 .textcross {
+		 	text-decoration: line-through;
+		 }
+
+		 .digit-chosen {
+		 	border: 1px solid green;
+		 	background-color: green;
+		 	color: white;
+		 	font-weight: bold;
+		 }
+
+		 .digits-choice:hover {
+		 	border: 1px solid green;
+		 }
+
+		 .digits-row {
+		 }
+
+		 #test1 {
+		 	display: none;
+		 }
+
+                .invisible {
+                 display: none; 
+                }
+
+                .margintop {
+                margin-top: 2rem;
+                } 
+
+                .marginbottom {
+                	margin-bottom: 5%;
+                }
+
+                .zeroborder {
+                	width: 90%;
+	                margin: auto;
+                	border: 0;
+                }
+
+                .subjects {
+
+								margin: auto;
+                border: 2px solid black;
+                border-radius: 0.5rem;
+                padding: 1rem; 
+                }
+
+                .question-table {
+                	width: 90%;
+	                margin: auto;
+	                border: 2px solid black;
+	                border-radius: 0.5rem;
+	                padding: 0.5rem; 
+								  border-spacing: 0.5rem;
+                }
+
+                .imgcontainer {
+                	width: 100%;
+                	height: 8rem;
+                	background-size: contain;
+                	background-repeat: no-repeat;
+                	border: 0;
+                	background-position: center;
+                }
+
+                .question-table td.removeborder {
+                	border: 0;
+                }
+
+                .question-table tr.showborder {
+                	border: 2px solid black;
+	                border-radius: 0.5rem;
+	                padding: 0.5rem; 
+								  border-spacing: 0.5rem;
+                }
+
+                .dspan {
+                	/*display:  inline-block;*/
+                	/*width: 12%;*/
+                }
+
+                .question-table td {
+									text-align: left;
+									vertical-align: middle;
+									border-radius: 0.5rem;
+									border:  1px solid black;
+									padding: 0.5rem; 
+								}
+
+								.question-table td.center {
+									text-align: center;
 								}
 
 								.outline {
@@ -2561,7 +2877,7 @@
           let i = 0;
 
    				for (let key in All_Answers) {
-   					table_content += `<tr class="digit-choice"><td class="justleft">${key}</td><td class="emtd" id="${i}res"></td><td><span style="text-align: center">${All_Answers[key]} из 5</span></td></tr>`;
+   					table_content += `<tr class="digit-choice"><td class="justleft">${key}</td><td class="emtd" id="${i}res"></td><td style="text-align: center"><span style="text-align: center">${All_Answers[key]} из 5</span></td></tr>`;
    					i += 1;
    				}
 
@@ -2574,7 +2890,7 @@
    				subjects_table.classList.add("question-table");
    				preamble.classList.remove("invisible");
    				preamble.querySelector(".marg2").innerText = "ИТОГИ";
-   				preamble.querySelector(".centertext").classList.add("invisible");
+   			//	preamble.querySelector(".centertext").classList.add("invisible");
 
    				for (let key in All_Answers) {
    					document.getElementById(`${i}res`).style.backgroundImage = `url(img/test/results/${All_Answers[key]}.png)`;
@@ -2587,7 +2903,341 @@
    				let finish_button = document.getElementById("finish");
    				finish_button.classList.remove("invisible");
    				finish_button.addEventListener("click", function() {
-   					
+
+   					let style_html = `<style>
+
+		 body, html {
+		 	 height: 100%;
+       display: grid;
+       font-size: 1.8vw;;
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: sans-serif;
+       background-image: url(img/school.jpg);
+       z-index: 1;
+		 }
+
+		 .digits-choice {
+		 	border-radius: 0.5rem;
+		 	border: 1px solid red;
+		 	padding: 1rem;
+		 	margin:  0.5rem;
+		 }
+
+		 .zeroborder h5 {
+		 	font-size: 2vw;
+		 }
+
+		 .boldtext {
+		 	font-weight: bold;
+		 	color:  red;
+		 }
+
+		 .boldchosen {
+			 	color: green;
+			 	font-weight: bold;
+		 }
+
+		 .block {
+		 	display: block;
+		 	width: 80%;
+		 	font-weight: bold;
+		 	margin: auto;
+		 	margin-top: 5%;
+		 }
+
+		 .comma {
+		 }
+
+		 .commapresent {
+       background-image: url(img/test/supercomma.png);
+       background-size: contain;
+       background-repeat: no-repeat;
+       background-position: bottom;
+		 }
+
+
+		 .width {
+		 	width: 30%;
+		 }
+
+		 .halfopacity {
+		 	opacity: 0.5;
+		 }
+		 .fullopacity {
+		 	opacity: 1;
+		 }
+
+		 .textchoice:hover {
+		 	color: red;
+		 }
+
+		 .textcross {
+		 	text-decoration: line-through;
+		 }
+
+		 .digit-chosen {
+		 	border: 1px solid green;
+		 	background-color: green;
+		 	color: white;
+		 	font-weight: bold;
+		 }
+
+		 .digits-choice:hover {
+		 	border: 1px solid green;
+		 }
+
+		 .digits-row {
+		 }
+
+		 #test1 {
+		 	display: none;
+		 }
+
+                .invisible {
+                 display: none; 
+                }
+
+                .margintop {
+                margin-top: 2rem;
+                } 
+
+                .marginbottom {
+                	margin-bottom: 5%;
+                }
+
+                .zeroborder {
+                	width: 90%;
+	                margin: auto;
+                	border: 0;
+                }
+
+                .subjects {
+
+								margin: auto;
+                border: 2px solid black;
+                border-radius: 0.5rem;
+                padding: 1rem; 
+                }
+
+                .question-table {
+                	width: 90%;
+	                margin: auto;
+	                border: 2px solid black;
+	                border-radius: 0.5rem;
+	                padding: 0.5rem; 
+								  border-spacing: 0.5rem;
+                }
+
+                .imgcontainer {
+                	width: 100%;
+                	height: 8rem;
+                	background-size: contain;
+                	background-repeat: no-repeat;
+                	border: 0;
+                	background-position: center;
+                }
+
+                .question-table td.removeborder {
+                	border: 0;
+                }
+
+                .question-table tr.showborder {
+                	border: 2px solid black;
+	                border-radius: 0.5rem;
+	                padding: 0.5rem; 
+								  border-spacing: 0.5rem;
+                }
+
+                .dspan {
+                	/*display:  inline-block;*/
+                	/*width: 12%;*/
+                }
+
+                .question-table td {
+									text-align: left;
+									vertical-align: middle;
+									border-radius: 0.5rem;
+									border:  1px solid black;
+									padding: 0.5rem; 
+								}
+
+								.question-table td.center {
+									text-align: center;
+								}
+
+								.outline {
+									border: 2px solid red;
+								}
+
+								.outline:hover {
+									border: 2px solid green;
+								}
+
+								#savebutton:hover {
+									background-color: green;
+									color: white;
+								}
+
+                #startbutton:hover {
+                 background-color: green;    
+                }
+
+                #biolready:hover {
+                	background-color: green;
+                	color: white;
+                }
+
+                .marginready {
+                	margin:auto;
+                	margin-top: 1.5rem;
+                	margin-bottom: 1.5rem;
+                }
+                
+               .marg {
+                 margin-top: -1.5rem;
+                }
+                
+                .marg1 {
+                 margin-top: -0.5rem;
+                }
+
+                .margbottom {
+                	margin-bottom: 0.5rem;
+                }
+
+                .marg2 {
+                	margin-top: 0.5rem;
+                }
+
+                .radius {
+                border-radius: 0.5rem;
+                border: 2px solid black;
+                padding: 0.5rem;
+                }
+                
+                .left {
+                text-align: left;
+                padding-bottom: 5%;
+                }
+
+                .justleft {
+                	text-align: left;
+                }
+
+                .tick {
+                 background-size: contain;
+                 width: 4rem;
+                 height: 2rem;
+                 background-repeat: no-repeat;
+                 background-position: center;
+                }
+
+                .emtd {
+		 width: 2rem;
+                }
+
+                .emtick {
+                background-image: url(img/emptytick.png);
+                background-position: center;
+                }
+
+                .octick {
+                background-image: url(img/occupiedtick.png);
+                background-position: center;
+                }
+
+                .borderbottom {
+                 border-bottom: 2px solid black;
+                }
+
+		  .table {
+		  	border: 1px solid black;
+			  border-collapse: collapse;
+			  margin: 10%;
+			  margin-bottom: 2%;
+			  table-layout: fixed;
+		  }
+
+		  .invisible {
+		  	display: "none";
+		  }
+
+		 
+			.fontsize {
+				font-size: 2vw;
+			}
+
+			.inputfontsize {
+				font-size: 1vw;
+			}
+
+			.bold {
+				font-weight: bold;
+			}
+
+			.paddingbottom {
+				padding-bottom: 3vw;
+			}
+
+      .superpadding {
+			  padding: 10%;
+			}
+
+			.center {
+				text-align: center;
+			}
+
+			.justify {
+				text-align: justify;
+			}
+
+			.preamble {
+				margin:  auto;
+				text-align: center;
+				width: 80%;
+				font-size: /*2vw*/;
+				background-color: white;
+				border-radius: 0.5rem;
+				padding-bottom: 1rem;
+			}
+
+			.centertext {
+			 text-align: center;
+			}
+
+			.fixedtable {
+				width: 90%;
+			}
+
+			.heading-width {
+				width: 90%;
+			}
+
+			.forbutton {
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+			}
+			
+		</style>`;
+
+
+                		i = 0;
+   				for (let key in All_Answers) {
+   					document.getElementById(`${i}res`).style.backgroundImage = `none`;
+   					i += 1;
+   				}
+                
+
+let header_html = `<!doctype html><html dir="ltr" lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Тест на знание предметов</title>${style_html}</head><body id="body">`;
+
+              const file = new File([`${header_html}<div id="preamble" class="preamble"><h3 class="marg2 fontsize centertext">ИТОГИ</h3><table class="marg1 question-table" id="subjects" style="font-size: 2vw; display: table;">` + subjects_table.innerHTML + `</table></div></body></html>`], 'result.html', {
+                  type: 'text/html',
+		});
+               
+              download(file);
+   						/*
   						let options = {
 					      margin:       0.5,
 					      filename:     'results.pdf',
@@ -2596,6 +3246,7 @@
 					      jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
 					    };
     					html2pdf(subjects_table, options);
+    					*/
    				});
 
          }
@@ -3192,6 +3843,19 @@
 
          All_Answers["Русский"] = russian.score;
        }
+
+       //download function
+
+				function download(file) {
+         const link = document.createElement('a');
+         const url = URL.createObjectURL(file);
+         link.href = url;
+         link.download = file.name;
+         document.body.appendChild(link);
+         link.click();
+         document.body.removeChild(link);
+         window.URL.revokeObjectURL(url);
+        }
 
 }
         </script> 
