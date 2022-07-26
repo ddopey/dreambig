@@ -176,7 +176,7 @@
     	 </tr>
     	 <tr id="differentrow" class="forbutton"><td class="centertext forbutton" id="centertexttd" colspan="5"><button id="forward" class="fontsize">ДАЛЬШЕ</button></td></tr>
     </table>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
 		<script src="js/iqsupertest.js"></script>
 		<script src="js/iqresults.js"></script>
     <script>
@@ -632,8 +632,153 @@
 
       body.innerHTML = head + heading + middle + bottom + btn;
       let result_button = document.getElementById("printres");
-      result_button.addEventListener("click", function(){
-      	let pdf_content = document.getElementById("finaltable");
+      result_button.addEventListener("click", function() {
+
+      	let style_html = `	<style>
+
+		 body, html {
+		 	 height: 100%;
+       display: grid;
+       font-size: 1.3vw;
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: sans-serif;
+		 }
+
+		 #test1 {
+		 	display: none;
+		 }
+
+		.vermiddle {
+			vertical-align: middle;
+			margin: 0;
+		}
+
+		.fraction {
+			display: inline;
+			border: 0;
+		}
+
+		.fixedtable .fraction td {
+			border:  0;
+		}
+
+		.fixedtable .fraction td.line {
+			border-bottom: 1px solid black;
+		}
+
+		.fixedtable .fraction td.cellsp {
+			border-bottom: 2px solid black;
+		}
+
+		.imageresize {
+			/*display: block;
+			width: 100%;
+			height: auto;*/
+			max-width: 60%;
+			max-height: 30%;
+		}
+
+		.low {
+			vertical-align: middle;
+		}
+
+		.fixedtable .low {
+			vertical-align: middle;
+			line-height: 100%;
+		} 
+
+		  .table {
+		  	border: 1px solid black;
+			  border-collapse: collapse;
+			  margin: 10%;
+			  margin-bottom: 2%;
+			  table-layout: fixed;
+		  }
+
+		  .buttontable {
+		  	margin: auto;
+		  	text-align: center;
+		  	margin-bottom: 2%;
+		  }
+
+		  .table tr, .table td {
+		  	border: 1px solid black;
+			  border-collapse: collapse;
+		  }
+
+			.fontsize {
+				font-size: 3vw;
+			}
+
+			.bold {
+				font-weight: bold;
+			}
+
+			.center {
+				text-align: center;
+			}
+
+			.justify {
+				text-align: justify;
+			}
+
+			.preamble {
+				margin:  auto;
+				text-align: center;
+				width: 80%;
+				font-size: 2vw;
+			}
+
+			 .centertext {
+			 text-align: center;
+			}
+
+			.fixedtable {
+				width: 90%;
+			}
+
+			.forbutton {
+				padding-top: 2rem;
+				padding-bottom: 2rem;
+			}
+
+			.fixedtable, .fixedtable td {
+				table-layout: fixed;
+				text-align: center;
+				vertical-align: middle;
+				font-size: 2vw;
+				margin:  auto;
+				border: 1px solid black;
+			  border-collapse: collapse;
+			  border-spacing: 0;
+			}
+
+ 			/*
+			.fixedtable .justify {
+				text-align: justify;
+			}
+			*/
+			
+			.fixedtable #differentrow  {
+				border-left: 0;
+				border-right: 0;
+				border-bottom: 0;
+			}
+		 	
+		</style>`;	
+
+      	let final_content = document.getElementById("finaltable");
+
+      	let header_html = `<!doctype html><html dir="ltr" lang="ru"><head><meta charset="uft-8"><title>Супертест</title>${style_html}</head><body id="body">`;
+      	const file = new File([`${header_html}<table class='table' id='finaltable'>` + final_content.innerHTML + `</table></body></html>`], 'result.html', {
+                  type: 'text/html',
+		});
+
+     download(file);
+
+      	/*
       	let options = {
 		      margin:       0.5,
 		      filename:     'results.pdf',
@@ -642,6 +787,7 @@
 		      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
 		    };
 		    html2pdf(pdf_content, options);
+		    */
       });
 
       }
@@ -662,6 +808,20 @@
 			}
 				resize_window();
 				window.addEventListener("resize", resize_window);
+
+				//****************************download function*******************************************
+
+					function download(file) {
+				         const link = document.createElement('a');
+				         const url = URL.createObjectURL(file);
+				         link.href = url;
+				         link.download = file.name;
+				         document.body.appendChild(link);
+				         link.click();
+
+				         document.body.removeChild(link);
+				         window.URL.revokeObjectURL(url);
+				  }
 			}
     </script>
 	</body>
